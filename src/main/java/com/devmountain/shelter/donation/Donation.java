@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Donation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     @Column

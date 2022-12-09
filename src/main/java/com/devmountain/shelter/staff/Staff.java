@@ -18,8 +18,14 @@ import java.util.List;
 public class Staff {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+
+    @Column(unique = true)
+    private String email;
+
+    @Column
+    private String password;
 
     @Column
     public String name;

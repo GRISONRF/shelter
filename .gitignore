@@ -3,8 +3,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-/src/main/java/resources/application.properties
-
+/src/main/resources/application.properties
+application.properties:15
 ### STS ###
 .apt_generated
 .classpath

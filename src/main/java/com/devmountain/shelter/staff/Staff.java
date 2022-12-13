@@ -19,25 +19,40 @@ public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-
     @Column(unique = true)
     private String email;
-
     @Column
     private String password;
-
     @Column
     public String name;
-
     @Column
     public int phone ;
-
     @Column
     public String address;
-
     @Column
     public String role;
-
     @OneToOne
     private Task task;
+
+    public Staff (StaffDto staffDto){
+        if (staffDto.getEmail() != null) {
+            this.email = staffDto.getEmail();
+        }
+        if (staffDto.getPassword() != null) {
+            this.password = staffDto.getPassword();
+        }
+        if (staffDto.getName() != null) {
+            this.name = staffDto.getName();
+        }
+        if (staffDto.getPhone() != null) {
+            this.phone = staffDto.getPhone();
+        }
+        if (staffDto.getAddress() != null) {
+            this.address = staffDto.getAddress();
+        }
+        if (staffDto.getRole() != null) {
+            this.role = staffDto.getRole();
+        }
+
+    }
 }

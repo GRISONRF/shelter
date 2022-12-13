@@ -16,7 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Staff {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
@@ -39,7 +38,6 @@ public class Staff {
     @Column
     public String role;
 
-    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonManagedReference
-    private List<Task> taskList = new ArrayList<>();
+    @OneToOne
+    private Task task;
 }

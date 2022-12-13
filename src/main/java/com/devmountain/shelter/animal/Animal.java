@@ -1,10 +1,18 @@
 package com.devmountain.shelter.animal;
 
 
+import com.devmountain.shelter.disposition.Disposition;
+import com.devmountain.shelter.health.Health;
+import com.devmountain.shelter.task.Task;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -50,6 +58,9 @@ public class Animal {
     private String availability;
 
     @Column
+    private String adoptionStatus;
+
+    @Column
     private int adoptionDate;
 
     @Column
@@ -60,5 +71,18 @@ public class Animal {
 
     @Column
     private String ownerAddress;
+
+    //disposition
+    @OneToOne
+    private Disposition disposition;
+
+    //health
+    @OneToOne
+    private Health health;
+
+    //task
+    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Task> tasks = new ArrayList<>();
 
 }

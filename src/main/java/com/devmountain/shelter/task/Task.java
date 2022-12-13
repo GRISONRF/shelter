@@ -1,5 +1,6 @@
 package com.devmountain.shelter.task;
 
+import com.devmountain.shelter.animal.Animal;
 import com.devmountain.shelter.staff.Staff;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -25,9 +26,11 @@ public class Task {
     public String when;
 
     //animal_id
-
-    //staff_id
     @ManyToOne
     @JsonBackReference
-    private Staff staffId;
+    private Animal animal;
+
+    //staff_id
+    @OneToOne
+    private Staff staff;
 }

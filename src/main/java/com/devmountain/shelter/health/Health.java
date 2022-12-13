@@ -1,6 +1,8 @@
 package com.devmountain.shelter.health;
 
 
+import com.devmountain.shelter.animal.Animal;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,4 +41,7 @@ public class Health {
     public String medicalRest;
 
     //animal_id
+    @OneToOne
+    @JsonBackReference
+    private Animal animal;
 }

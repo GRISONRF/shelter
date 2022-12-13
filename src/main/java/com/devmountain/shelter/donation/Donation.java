@@ -27,4 +27,20 @@ public class Donation {
 
     @Column
     public int phone;
+
+    public Donation(DonationDto donationDto){
+
+        if (donationDto.getDonation() != null) {
+            this.donation = donationDto.getDonation();
+        }
+        if (donationDto.getWhen() != null) {
+            this.when = donationDto.getWhen();
+        }
+        if (donationDto.getName() != null) {
+            this.name = donationDto.getName();
+        }
+        if (donationDto.getPhone() != null) {
+            this.phone = donationDto.getPhone();
+        }
+    }
 }

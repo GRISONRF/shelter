@@ -44,4 +44,28 @@ public class Health {
     @OneToOne
     @JsonBackReference
     private Animal animal;
+
+    public Health (HealthDto healthDto) {
+        if (healthDto.getSpayed() != null) {
+            this.spayed = healthDto.getSpayed();
+        }
+        if (healthDto.getStool() != null) {
+            this.stool = healthDto.getStool();
+        }
+        if (healthDto.getWeight() != null) {
+            this.weight = healthDto.getWeight();
+        }
+        if (healthDto.getAllergy() != null) {
+            this.allergy = healthDto.getAllergy();
+        }
+        if (healthDto.getDisability() != null) {
+            this.disability = healthDto.getDisability();
+        }
+        if (healthDto.getQuarantine() != null) {
+            this.quarantine = healthDto.getQuarantine();
+        }
+        if (healthDto.getMedicalRest() != null) {
+            this.medicalRest = healthDto.getMedicalRest();
+        }
+    }
 }

@@ -3,9 +3,14 @@ package com.devmountain.shelter.staff;
 import com.devmountain.shelter.task.Task;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StaffDto implements Serializable {
 
     public Long id;

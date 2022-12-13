@@ -1,9 +1,14 @@
 package com.devmountain.shelter.donation;
 
 import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class DonationDto implements Serializable {
 
     public Long id;

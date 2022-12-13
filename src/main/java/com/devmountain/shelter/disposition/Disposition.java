@@ -47,16 +47,41 @@ public class Disposition {
     @OneToOne
     private Animal animal;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Disposition that = (Disposition) o;
-        return id != null && Objects.equals(id, that.id);
+    public Disposition (DispositionDto dispositionDto){
+        if (dispositionDto.getPotty() != null) {
+            this.potty = dispositionDto.getPotty();
+        }
+        if (dispositionDto.getLeash() != null) {
+            this.leash = dispositionDto.getLeash();
+        }
+        if (dispositionDto.getKids() != null) {
+            this.kids = dispositionDto.getKids();
+        }
+        if (dispositionDto.getOtherAnimals() != null) {
+            this.otherAnimals = dispositionDto.getOtherAnimals();
+        }
+        if (dispositionDto.getTemper() != null) {
+            this.temper = dispositionDto.getTemper();
+        }
+        if (dispositionDto.getCrate() != null) {
+            this.crate = dispositionDto.getCrate();
+        }
+        if (dispositionDto.getComments() != null) {
+            this.comments = dispositionDto.getComments();
+        }
+
     }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+//        Disposition that = (Disposition) o;
+//        return id != null && Objects.equals(id, that.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return getClass().hashCode();
+//    }
 }

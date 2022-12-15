@@ -1,4 +1,8 @@
 package com.devmountain.shelter.donation;
 
-public class DonationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface DonationRepository extends JpaRepository<Donation, Long> {
 }

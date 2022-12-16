@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @Entity
-@Table (name = "Animals")
+@Table (name = "Animal")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +24,6 @@ public class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column
@@ -85,51 +84,51 @@ public class Animal {
     @JsonBackReference
     private List<Task> tasks = new ArrayList<>();
 
-    private Animal(AnimalDto animaldto){
-        if (animaldto.getSpecies() != null) {
-            this.species = animaldto.getSpecies();
+    public Animal(AnimalDto animalDto){
+        if (animalDto.getSpecies() != null) {
+            this.species = animalDto.getSpecies();
         }
-        if (animaldto.getName() != null) {
-            this.name = animaldto.getName();
+        if (animalDto.getName() != null) {
+            this.name = animalDto.getName();
         }
-        if (animaldto.getDob() != null) {
-            this.dob = animaldto.getDob();
+        if (animalDto.getDob() != null) {
+            this.dob = animalDto.getDob();
         }
-        if (animaldto.getIntakeDate() != null) {
-            this.intakeDate = animaldto.getIntakeDate();
+        if (animalDto.getIntakeDate() != null) {
+            this.intakeDate = animalDto.getIntakeDate();
         }
-        if (animaldto.getIntakeMethod() != null) {
-            this.intakeMethod = animaldto.getIntakeMethod();
+        if (animalDto.getIntakeMethod() != null) {
+            this.intakeMethod = animalDto.getIntakeMethod();
         }
-        if (animaldto.getPicture() != null) {
-            this.picture = animaldto.getPicture();
+        if (animalDto.getPicture() != null) {
+            this.picture = animalDto.getPicture();
         }
-        if (animaldto.getBreed() != null) {
-            this.breed = animaldto.getBreed();
+        if (animalDto.getBreed() != null) {
+            this.breed = animalDto.getBreed();
         }
-        if (animaldto.getFood() != null) {
-            this.food = animaldto.getFood();
+        if (animalDto.getFood() != null) {
+            this.food = animalDto.getFood();
         }
-        if (animaldto.getFood_amount() != null) {
-            this.food_amount = animaldto.getFood_amount();
+        if (animalDto.getFood_amount() != null) {
+            this.food_amount = animalDto.getFood_amount();
         }
-        if (animaldto.getAvailability() != null) {
-            this.availability = animaldto.getAvailability();
+        if (animalDto.getAvailability() != null) {
+            this.availability = animalDto.getAvailability();
         }
-        if (animaldto.getAdoptionType() != null) {
-            this.adoptionType = animaldto.getAdoptionType();
+        if (animalDto.getAdoptionType() != null) {
+            this.adoptionType = animalDto.getAdoptionType();
         }
-        if (animaldto.getAdoptionDate() != null) {
-            this.adoptionDate = animaldto.getAdoptionDate();
+        if (animalDto.getAdoptionDate() != null) {
+            this.adoptionDate = animalDto.getAdoptionDate();
         }
-        if (animaldto.getOwnerName() != null) {
-            this.ownerName = animaldto.getOwnerName();
+        if (animalDto.getOwnerName() != null) {
+            this.ownerName = animalDto.getOwnerName();
         }
-        if (animaldto.getOwnerPhone() != null) {
-            this.ownerPhone = animaldto.getOwnerPhone();
+        if (animalDto.getOwnerPhone() != null) {
+            this.ownerPhone = animalDto.getOwnerPhone();
         }
-        if (animaldto.getOwnerAddress() != null) {
-            this.ownerAddress = animaldto.getOwnerAddress();
+        if (animalDto.getOwnerAddress() != null) {
+            this.ownerAddress = animalDto.getOwnerAddress();
         }
 
     }

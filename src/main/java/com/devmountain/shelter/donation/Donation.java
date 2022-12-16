@@ -26,7 +26,7 @@ public class Donation {
     public String name;
 
     @Column
-    public int phone;
+    public Integer phone;
 
     public Donation(DonationDto donationDto){
 

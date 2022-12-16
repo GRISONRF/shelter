@@ -26,7 +26,7 @@ public class Health {
     public String stool;
 
     @Column
-    public float weight;
+    public Float weight;
 
     @Column
     public String allergy;

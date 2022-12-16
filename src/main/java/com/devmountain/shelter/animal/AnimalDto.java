@@ -1,11 +1,14 @@
 package com.devmountain.shelter.animal;
 
+import com.devmountain.shelter.task.Task;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -16,8 +19,8 @@ public class AnimalDto implements Serializable   {
     private Long id;
     private String species;
     private String name;
-    private int dob ;
-    private int intakeDate;
+    private Integer dob ;
+    private Integer intakeDate;
     private String intakeMethod;
     private String picture;
     private String breed;
@@ -25,11 +28,12 @@ public class AnimalDto implements Serializable   {
     private String food_amount;
     private String availability;
     private String adoptionType;
-    private int adoptionDate;
+    private Integer adoptionDate;
     private String ownerName;
-    private int ownerPhone;
+    private Integer ownerPhone;
     private String ownerAddress;
-    //private List<Task> tasks = new ArrayList<>(); ???
+
+    private List<Task> tasks = new ArrayList<>();
 
     public AnimalDto(Animal animal) {
         if (animal.getId() != null){
@@ -68,8 +72,8 @@ public class AnimalDto implements Serializable   {
         if (animal.getAdoptionDate() != null){
             this.adoptionDate = animal.getAdoptionDate();
         }
-        if (animal.getAdoptionStatus() != null){
-            this.adoptionType= animal.getAdoptionStatus();
+        if (animal.getAdoptionType() != null){
+            this.adoptionType= animal.getAdoptionType();
         }
         if (animal.getOwnerName() != null){
             this.ownerName = animal.getOwnerName();
@@ -80,7 +84,7 @@ public class AnimalDto implements Serializable   {
         if (animal.getOwnerAddress() != null){
             this.ownerAddress = animal.getOwnerAddress();
         }
-        n
+
 
     }
 

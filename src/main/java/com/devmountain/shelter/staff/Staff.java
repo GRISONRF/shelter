@@ -1,6 +1,7 @@
 package com.devmountain.shelter.staff;
 
 import com.devmountain.shelter.task.Task;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,13 +27,15 @@ public class Staff {
     @Column
     public String name;
     @Column
-    public int phone ;
+    public String phone;
     @Column
     public String address;
     @Column
     public String role;
-    @OneToOne
-    private Task task;
+
+    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonBackReference
+    List<Task> tasks = new ArrayList<>();
 
     public Staff (StaffDto staffDto){
         if (staffDto.getEmail() != null) {

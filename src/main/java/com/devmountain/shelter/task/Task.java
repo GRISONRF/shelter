@@ -21,21 +21,24 @@ public class Task {
     @Column
     public String task;
     @Column
-    public String when;
+    public String happenedAt;
+
     //animal_id
     @ManyToOne
     @JsonBackReference
     private Animal animal;
+
     //staff_id
-    @OneToOne
+    @ManyToOne
+    @JsonBackReference
     private Staff staff;
 
     private Task(TaskDto taskDto){
         if (taskDto.getTask() != null) {
             this.task = taskDto.getTask();
         }
-        if (taskDto.getWhen() != null) {
-            this.when = taskDto.getWhen();
+        if (taskDto.getHappenedAt() != null) {
+            this.happenedAt = taskDto.getHappenedAt();
         }
     }
 }

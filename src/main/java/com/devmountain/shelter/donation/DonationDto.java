@@ -15,7 +15,7 @@ public class DonationDto implements Serializable {
     public String donation;
     public String when;
     public String name;
-    public int phone;
+    public Integer phone;
 
     public DonationDto (Donation donation) {
 

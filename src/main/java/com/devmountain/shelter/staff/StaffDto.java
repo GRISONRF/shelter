@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,10 +20,11 @@ public class StaffDto implements Serializable {
     private String email;
     private String password;
     public String name;
-    public int phone ;
+    public String phone ;
     public String address;
     public String role;
-//    private Task task;
+
+    public List<Task> tasks = new ArrayList<>();
 
     public StaffDto (Staff staff){
         if (staff.getId() != null){

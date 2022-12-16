@@ -15,9 +15,10 @@ public class TaskDto implements Serializable {
 
     public Long id;
     public String task;
-    public String when;
+    public String happenedAt;
 
     public StaffDto staffDto;
+
     public AnimalDto animalDto;
 
     public TaskDto (Task task) {
@@ -27,8 +28,8 @@ public class TaskDto implements Serializable {
         if (task.getTask() != null){
             this.task = task.getTask();
         }
-        if (task.getWhen() != null){
-            this.when = task.getWhen();
+        if (task.getHappenedAt() != null){
+            this.happenedAt = task.getHappenedAt();
         }
 
     }

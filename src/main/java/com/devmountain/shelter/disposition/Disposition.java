@@ -10,10 +10,11 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "disposition")
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
+//@Getter
+//@Setter
+//@ToString
+//@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class Disposition {

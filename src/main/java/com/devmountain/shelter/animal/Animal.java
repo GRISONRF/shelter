@@ -34,10 +34,10 @@ public class Animal {
     private String name;
 
     @Column
-    private int dob ;
+    private Integer dob ;
 
     @Column
-    private int intakeDate;
+    private Integer intakeDate;
 
     @Column
     private String intakeMethod;
@@ -61,13 +61,13 @@ public class Animal {
     private String adoptionType;
 
     @Column
-    private int adoptionDate;
+    private Integer adoptionDate;
 
     @Column
     private String ownerName;
 
     @Column
-    private int ownerPhone;
+    private Integer ownerPhone;
 
     @Column
     private String ownerAddress;

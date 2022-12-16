@@ -13,7 +13,7 @@ public class HealthDto implements Serializable {
     public Long id;
     public String spayed;
     public String stool;
-    public float weight;
+    public Float weight;
     public String allergy;
     public String disability;
     public String quarantine;

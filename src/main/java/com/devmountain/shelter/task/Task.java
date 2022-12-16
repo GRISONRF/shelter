@@ -33,7 +33,7 @@ public class Task {
     @JsonBackReference
     private Staff staff;
 
-    private Task(TaskDto taskDto){
+    public Task(TaskDto taskDto){
         if (taskDto.getTask() != null) {
             this.task = taskDto.getTask();
         }

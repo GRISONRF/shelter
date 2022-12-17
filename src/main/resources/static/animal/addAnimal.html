@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/home.css" type="text/css">
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="title-header">
+        <span class="page-title">Add new Animal</span>
+    </div>
+
+    <div class="add-animal-form-container">
+        <form id="add-animal-form" class="form">
+            <div class="form-group">
+                <label for="species">Specie:</label>
+                <select multiple class="form-control" id="species">
+                    <option>Cat</option>
+                    <option>Dog</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Email address</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="number" class="form-control" id="dob">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="int-date">Intake Date</label>
+                <input type="number" class="form-control" id="int-date">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="int-method">Intake Method</label>
+                <select class="form-control" id="int-method">
+                    <option>Born in shelter</option>
+                    <option>Rescued</option>
+                    <option>Surrender</option>
+                    <option>Stray Animal</option>
+                    <option>Transferred</option>
+                </select>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="picture">Picture</label>
+                    <input type="file" class="form-control-file" id="picture">
+                </div>
+            </form>
+
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" class="form-control" id="breed">
+            </div>
+
+            <div class="form-group">
+                <label for="food">Food</label>
+                <input type="text" class="form-control" id="food">
+            </div>
+
+
+            <div class="form-group">
+                <label for="food-amount">Food Amount</label>
+                <input type="text" class="form-control" id="food-amount">
+            </div>
+
+            <div class="form-group">
+                <label id="availability">Availability</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="available-a" value="option1">
+                    <label class="form-check-label" for="available-a">Available For Adoption</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="available-f" value="option2">
+                    <label class="form-check-label" for="available-f">Available For Foster</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="adopted" value="option2">
+                    <label class="form-check-label" for="adopted">Adopted</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="fostered" value="option2">
+                    <label class="form-check-label" for="fostered">Fostered</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="shelter-care" value="option2">
+                    <label class="form-check-label" for="shelter-care">Shelter Care</label>
+                </div>
+            </div>
+
+            <!-- END OF ANIMAL THINGS -->
+            <!-- BEGINNING OF ANIMAL DISPOSITION -->
+
+            <div class="form-group">
+                <label for="potty">Is The Animal Potty Trained?</label>
+                <input type="text" class="form-control" id="potty">
+            </div>
+
+            <div class="form-group">
+                <label for="leach">How is The Animal With Leach?</label>
+                <input type="text" class="form-control" id="leach">
+            </div>
+
+            <div class="form-group">
+                <label for="kids">How is The Animal With Kids?</label>
+                <input type="text" class="form-control" id="kids">
+            </div>
+
+            <div class="form-group">
+                <label for="other-animals">How is The Animal With Other Animals?</label>
+                <input type="text" class="form-control" id="other-animals">
+            </div>
+
+            <div class="form-group">
+                <label for="temper">How is Animal's Temper?</label>
+                <input type="text" class="form-control" id="temper">
+            </div>
+
+            <div class="form-group">
+                <label for="crate">Is Animal Crate Trained?</label>
+                <input type="text" class="form-control" id="crate">
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Comments/Notes</label>
+                <textarea class="form-control" id="notes" rows="5"></textarea>
+            </div>
+
+
+            <!--  END OF ANIMAL'S DISPOSITION  -->
+            <!--  BEGINNING OF ANIMAL'S HEALTH  -->
+
+            <div class="form-group">
+                <label for="spayed">Is Animal Spayed?</label>
+                <select class="form-control" id="spayed">
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Neutered</option>
+                    <option>Cryptorchid</option>
+                    <option>Pregnant</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="stool">How's Animal's Stool?</label>
+                <input type="text" class="form-control" id="stool">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Animal's Weight</label>
+                <input type="text" class="form-control" id="weight">
+            </div>
+
+            <div class="form-group">
+                <label for="allergy">Allergies</label>
+                <input type="text" class="form-control" id="allergy">
+            </div>
+
+            <div class="form-group">
+                <label for="disability">Disability</label>
+                <input type="text" class="form-control" id="disability">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label id="quarantine">Quarantine?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes" value="option1">
+                    <label class="form-check-label" for="available-a">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no" value="option1">
+                    <label class="form-check-label" for="available-a">No</label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label id="rest">Medical Rest?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes2" value="option1">
+                    <label class="form-check-label" for="available-a">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no2" value="option1">
+                    <label class="form-check-label" for="available-a">No</label>
+                </div>
+            </div>
+
+            <!--  END OF HEALTH  -->
+            <!--  BEGINNING OF ADOPTION STUFF   -->
+
+            <div class="form-group">
+                <label for="adoption-date">Adoption Date</label>
+                <input type="number" class="form-control" id="adoption-date">
+            </div>
+
+            <div class="form-group">
+                <label for="owner-name">Full Name</label>
+                <input type="text" class="form-control" id="owner-name">
+            </div>
+
+            <div class="form-group">
+                <label for="owner-phone">Phone</label>
+                <input type="text" class="form-control" id="owner-phone">
+            </div>
+
+            <div class="form-group">
+                <label for="owner-address">Address</label>
+                <input type="text" class="form-control" id="owner-address">
+            </div>
+
+            <div class="mt-1">
+                <button id="submit-button" type="submit" class="btn btn-info">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="/animal/add-animal.js" type="application/javascript"></script>
+</body>
+</html>

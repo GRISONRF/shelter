@@ -36,6 +36,9 @@ public class Animal {
     private Integer dob ;
 
     @Column
+    private String gender;
+
+    @Column
     private Integer intakeDate;
 
     @Column
@@ -93,6 +96,9 @@ public class Animal {
         }
         if (animalDto.getDob() != null) {
             this.dob = animalDto.getDob();
+        }
+        if (animalDto.getGender() != null ) {
+            this.gender = animalDto.getGender();
         }
         if (animalDto.getIntakeDate() != null) {
             this.intakeDate = animalDto.getIntakeDate();

@@ -20,7 +20,7 @@ public class Donation {
     public String donation;
 
     @Column
-    public String when;
+    public String date;
 
     @Column
     public String name;
@@ -33,8 +33,8 @@ public class Donation {
         if (donationDto.getDonation() != null) {
             this.donation = donationDto.getDonation();
         }
-        if (donationDto.getWhen() != null) {
-            this.when = donationDto.getWhen();
+        if (donationDto.getDate() != null) {
+            this.date = donationDto.getDate();
         }
         if (donationDto.getName() != null) {
             this.name = donationDto.getName();

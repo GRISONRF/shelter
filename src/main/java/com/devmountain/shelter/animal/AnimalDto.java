@@ -20,6 +20,9 @@ public class AnimalDto implements Serializable   {
     private String species;
     private String name;
     private Integer dob ;
+
+    private String gender;
+
     private Integer intakeDate;
     private String intakeMethod;
     private String picture;
@@ -47,6 +50,9 @@ public class AnimalDto implements Serializable   {
         }
         if (animal.getDob() != null){
             this.dob = animal.getDob();
+        }
+        if (animal.getGender() != null) {
+            this.gender = animal.getGender();
         }
         if (animal.getIntakeDate() != null){
             this.intakeDate = animal.getIntakeDate();

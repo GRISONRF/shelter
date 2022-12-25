@@ -13,7 +13,7 @@ public class DonationDto implements Serializable {
 
     public Long id;
     public String donation;
-    public String when;
+    public String date;
     public String name;
     public Integer phone;
 
@@ -25,8 +25,8 @@ public class DonationDto implements Serializable {
         if (donation.getDonation() != null){
             this.donation = donation.getDonation();
         }
-        if (donation.getWhen() != null){
-            this.when = donation.getWhen();
+        if (donation.getDate() != null){
+            this.date = donation.getDate();
         }
         if (donation.getName() != null){
             this.name = donation.getName();

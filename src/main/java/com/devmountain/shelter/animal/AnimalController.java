@@ -21,6 +21,7 @@ public class AnimalController {
     private AnimalRepository animalRepository;
 
     @PostMapping(value = "/add-animal", consumes = "application/json")
+//    @PostMapping(value = "/add-animal")
     public void addAnimal(@RequestBody AnimalDto animalDto){
         animalService.addAnimal(animalDto);
     }

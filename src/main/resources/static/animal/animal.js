@@ -13,22 +13,23 @@ const handleSubmit = async (e) => {
 
     let bodyObj = {
         species: document.getElementById('species').value,
-        name: document.getElementById('name').value,
-        dob: document.getElementById('dob').value,
-        gender: document.getElementById('gender').value,
-        intakeDate: document.getElementById('int-date').value,
-        intakeMethod: document.getElementById('int-method').value,
-        picture: document.getElementById('picture').value,
-        breed: document.getElementById('breed').value,
-        food: document.getElementById('food').value,
-        foodAmount: document.getElementById('food-amount').value,
-        availability: document.getElementById('availability').value,
-        adoptionDate: document.getElementById('adoption-date').value,
-        ownerName: document.getElementById('owner-name').value,
-        ownerPhone: document.getElementById('owner-phone').value,
-        ownerAddress: document.getElementById('owner-address').value,
+//        name: document.getElementById('name').value,
+//        dob: document.getElementById('dob').value,
+//        gender: document.getElementById('gender').value,
+//        intakeDate: document.getElementById('int-date').value,
+//        intakeMethod: document.getElementById('int-method').value,
+//        picture: document.getElementById('picture').value,
+//        breed: document.getElementById('breed').value,
+//        food: document.getElementById('food').value,
+//        foodAmount: document.getElementById('food-amount').value,
+//        availability: document.getElementById('availability').value,
+//// ADOPTION STUFF
+//        adoptionDate: document.getElementById('adoption-date').value,
+//        ownerName: document.getElementById('owner-name').value,
+//        ownerPhone: document.getElementById('owner-phone').value,
+//        ownerAddress: document.getElementById('owner-address').value,
 // DISPOSITION STUFF
-        potty: document.getElementById('potty').value,
+//        potty: document.getElementById('potty').value,
 //        leash: document.getElementById('leash').value,
 //        kids: document.getElementById('kids').value,
 //        otherAnimals: document.getElementById('other-animals').value,
@@ -51,8 +52,9 @@ const handleSubmit = async (e) => {
         body: JSON.stringify(bodyObj),
         headers: animalConfig.headers
     })
+    console.log(response)
         .catch(err => console.error(err.message))
-    if (response.status == 200) {
+    if (response.status === 200) {
         window.location.pathname = '/animal/animals.html';
     }
 }

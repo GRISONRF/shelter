@@ -53,7 +53,7 @@ const handleSubmit = async (e) => {
         headers: animalConfig.headers
     })
     console.log(response)
-        .catch(err => console.error(err.message))
+//        .catch(err => console.error(err.message))
     if (response.status === 200) {
         window.location.pathname = '/animal/animals.html';
     }

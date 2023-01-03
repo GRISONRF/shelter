@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -16,6 +15,7 @@ public class AnimalServiceImpl implements AnimalService {
     private AnimalRepository animalRepository;
 
 //    @Override
+//    @Transactional
 //    public AnimalDto addAnimal(AnimalDto animalDto) {
 //        Animal animal = new Animal(animalDto);
 //
@@ -24,6 +24,7 @@ public class AnimalServiceImpl implements AnimalService {
 //
 //        return new AnimalDto(animalRepository.saveAndFlush(animal));
 //    }
+
     @Transactional
     public List<String> addAnimal(AnimalDto animalDto){
         List<String> response = new ArrayList<>();

@@ -26,12 +26,12 @@ public class AnimalController {
         animalService.addAnimal(animalDto);
     }
 
-//    @GetMapping("/animals")
-//    public ModelAndView findAllAnimals() {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("/animal/animals.html");
-//        return modelAndView;
-//    }
+    @GetMapping("/animals")
+    public List<AnimalDto> findAllAnimals(AnimalDto animalDto) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/animal/animals.html");
+        return animalService.findAllAnimals(animalDto);
+    }
 
 //    @GetMapping("/animals")
 //    public String testAnimals(){

@@ -40,6 +40,7 @@ public class AnimalServiceImpl implements AnimalService {
         return animalList.stream().map(AnimalDto::new).collect(Collectors.toList());
     }
 
+
 }
 
 

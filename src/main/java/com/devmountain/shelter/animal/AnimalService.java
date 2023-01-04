@@ -11,4 +11,10 @@ public interface AnimalService {
     List<String> addAnimal(AnimalDto animalDto);
 
     List<AnimalDto> findAllAnimals(AnimalDto animalDto);
+
+
+//    findAnimal
+//    AnimalDto findAnimal(Long id);
+
+//    deleteAnimal
 }

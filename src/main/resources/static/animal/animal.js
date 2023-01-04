@@ -60,3 +60,43 @@ const handleSubmit = async (e) => {
 }
 //addAnimalForm.addEventListener("submit", handleSubmit)
 document.getElementById("submit-button").addEventListener("click", handleSubmit)
+
+
+
+// get all animals
+
+async function getAnimals() {
+    await fetch(`${baseUrl}/animal/animals`, {
+        method: "GET",
+        headers: headers
+    })
+        .then(response => response.json())
+        .then(data => createAnimalCards(data))
+        .catch(err => console.error(err))
+}
+
+
+const createAnimalCards = (array) => {
+    animalContainer.innerHTML = ''
+    array.forEach(obj => {
+        let animalCard = document.createElement("div")
+        animalCard.classList.add("m-2")
+        animalCard.innerHTML = `
+            <div class="card d-flex" style="width: 18rem; height: 18rem;">
+                <div class="card-body d-flex flex-column  justify-content-between" style="height: available">
+                    <p class="card-text">${obj.body}</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
+                        //<button onclick="getNoteById(${obj.id})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#note-edit-modal">
+                        data-bs-toggle="modal" data-bs-target="#animal-edit-modal">
+                        Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `
+    animalContainer.append(animalCard);
+    })
+}
+
+getAnimals();

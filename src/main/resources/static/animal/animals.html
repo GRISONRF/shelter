@@ -5,13 +5,49 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Document</title>
+    <title>All Animals</title>
 </head>
 <body>
-    <h1>PAGE TO DISPLAY ALL THE ANIMALS!</h1>
+    <div class="header">
+        <img src="">
+
+        <nav>
+            <ul>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+                <li><a href="../appointment/appointments.html">Animals</a></li>
+                <li><a href="../client/clients.html">Staff</a></li>
+                <li><a href="./cats.html">Tasks</a></li>
+<!--                <li><a class="logout-btn" style="padding-left: 173px" href="../login.html" onclick="handleLogout()-->
+<!--                            ">Logout</a></li>-->
+            </ul>
+        </nav>
+    </div>
+
+    <div class="title-header">
+        <span class="page-title">All Animals</span>
+    </div>
+
+    <div class="content">
+        <div class="button-container">
+            <div class="button">
+                <button type="submit" id="add-animal-btn" class="add-animal-btn">Add New Animal</button>
+            </div>
+        </div>
+
+        <div class="animal-card-header">
+            <ul style="padding-inline-start: 2px;">
+                <li style="width: 100px; text-decoration: underline">Species</li>
+                <li style="width: 125px; text-decoration: underline">Name</li>
+                <li style="width: 100px; text-decoration: underline">Date Of Birth</li>
+                <li style="width: 100px; text-decoration: underline">Gender</li>
+                <li style="width: 100px; text-decoration: underline">Availability</li>
+            </ul>
+        </div>
+    </div>
 
     <div id="animal-container" class="container-fluid"></div>
-
+    <br><br><br><br><br>
+    <h1>PAGE TO DISPLAY ALL THE ANIMALS!</h1>
 
 <script src="animal.js" type="application/javascript"></script>
 </body>

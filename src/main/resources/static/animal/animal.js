@@ -26,21 +26,27 @@ async function getAnimals() {
 const createAnimalCards = (array) => {
     console.log(array);
     animalContainer.innerHTML = ''
+
+
     array.forEach(obj => {
+
+        const species = obj.species
+        const name = obj.name
+        const dob = obj.dob
+        const gender = obj.gender
+        const availability = obj.availability
+
         let animalCard = document.createElement("div")
         animalCard.classList.add("m-2")
         animalCard.innerHTML = `
-            <div class="card d-flex" style="width: 18rem; height: 18rem;">
-                <div class="card-body d-flex flex-column  justify-content-between" style="height: available">
-                    <p class="card-text">${obj.species}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
-                        //<button onclick="getNoteById(${obj.id})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#note-edit-modal">
-                        data-bs-toggle="modal" data-bs-target="#animal-edit-modal">
-                        Edit
-                        </button>
-                    </div>
-                </div>
+            <div class="animal-card">
+                <ul class="animal-styling">
+                    <li style="font-size: 17px; width: 100px">${species}</li>
+                    <li style="font-size: 17px; width: 125px">${name}</li>
+                    <li style="font-size: 17px; width: 100px">${dob}</li>
+                    <li style="font-size: 17px; width: 100px;">${gender}</li>
+                   <li style="font-size: 17px; width: 75px">${availability}</li>
+                </ul>
             </div>
         `
     animalContainer.append(animalCard);

@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
 //        breed: document.getElementById('breed').value,
 //        food: document.getElementById('food').value,
 //        foodAmount: document.getElementById('food-amount').value,
-        availability: document.getElementById('availability').value
+        availability: document.querySelector('input[name="availability"]:checked').value
 //// ADOPTION STUFF
 //        adoptionDate: document.getElementById('adoption-date').value,
 //        ownerName: document.getElementById('owner-name').value,

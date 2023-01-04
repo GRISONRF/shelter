@@ -29,6 +29,7 @@ const createAnimalCards = (array) => {
 
 
     array.forEach(obj => {
+        console.log(obj)
 
         const species = obj.species
         const name = obj.name

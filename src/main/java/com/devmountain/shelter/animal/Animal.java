@@ -29,14 +29,14 @@ public class Animal {
     @Column
     private String species;
 
-//    @Column
-//    private String name;
-//
-//    @Column
-//    private Integer dob ;
-//
-//    @Column
-//    private String gender;
+    @Column
+    private String name;
+
+    @Column
+    private String dob ;
+
+    @Column
+    private String gender;
 //
 //    @Column
 //    private Integer intakeDate;
@@ -56,8 +56,8 @@ public class Animal {
 //    @Column
 //    private String food_amount;
 //
-//    @Column
-//    private String availability;
+    @Column
+    private String availability;
 //
 //    @Column
 //    private String adoptionType;
@@ -91,15 +91,15 @@ public class Animal {
         if (animalDto.getSpecies() != null) {
             this.species = animalDto.getSpecies();
         }
-//        if (animalDto.getName() != null) {
-//            this.name = animalDto.getName();
-//        }
-//        if (animalDto.getDob() != null) {
-//            this.dob = animalDto.getDob();
-//        }
-//        if (animalDto.getGender() != null ) {
-//            this.gender = animalDto.getGender();
-//        }
+        if (animalDto.getName() != null) {
+            this.name = animalDto.getName();
+        }
+        if (animalDto.getDob() != null) {
+            this.dob = animalDto.getDob();
+        }
+        if (animalDto.getGender() != null ) {
+            this.gender = animalDto.getGender();
+        }
 //        if (animalDto.getIntakeDate() != null) {
 //            this.intakeDate = animalDto.getIntakeDate();
 //        }
@@ -118,9 +118,9 @@ public class Animal {
 //        if (animalDto.getFood_amount() != null) {
 //            this.food_amount = animalDto.getFood_amount();
 //        }
-//        if (animalDto.getAvailability() != null) {
-//            this.availability = animalDto.getAvailability();
-//        }
+        if (animalDto.getAvailability() != null) {
+            this.availability = animalDto.getAvailability();
+        }
 //        if (animalDto.getAdoptionType() != null) {
 //            this.adoptionType = animalDto.getAdoptionType();
 //        }

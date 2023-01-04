@@ -18,16 +18,16 @@ public class AnimalDto implements Serializable   {
 
     private Long id;
     private String species;
-//    private String name;
-//    private Integer dob ;
-//    private String gender;
+    private String name;
+    private String dob ;
+    private String gender;
 //    private Integer intakeDate;
 //    private String intakeMethod;
 //    private String picture;
 //    private String breed;
 //    private String food;
 //    private String food_amount;
-//    private String availability;
+    private String availability;
 //    private String adoptionType;
 //    private Integer adoptionDate;
 //    private String ownerName;
@@ -43,15 +43,15 @@ public class AnimalDto implements Serializable   {
         if (animal.getSpecies() != null){
             this.species = animal.getSpecies();
         }
-//        if (animal.getName() != null){
-//            this.name = animal.getName();
-//        }
-//        if (animal.getDob() != null){
-//            this.dob = animal.getDob();
-//        }
-//        if (animal.getGender() != null) {
-//            this.gender = animal.getGender();
-//        }
+        if (animal.getName() != null){
+            this.name = animal.getName();
+        }
+        if (animal.getDob() != null){
+            this.dob = animal.getDob();
+        }
+        if (animal.getGender() != null) {
+            this.gender = animal.getGender();
+        }
 //        if (animal.getIntakeDate() != null){
 //            this.intakeDate = animal.getIntakeDate();
 //        }
@@ -70,9 +70,9 @@ public class AnimalDto implements Serializable   {
 //        if (animal.getFood_amount() != null){
 //            this.food_amount = animal.getFood_amount();
 //        }
-//        if (animal.getAvailability() != null){
-//            this.availability = animal.getAvailability();
-//        }
+        if (animal.getAvailability() != null){
+            this.availability = animal.getAvailability();
+        }
 //        if (animal.getAdoptionDate() != null){
 //            this.adoptionDate = animal.getAdoptionDate();
 //        }

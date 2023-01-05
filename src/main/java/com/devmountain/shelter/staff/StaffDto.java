@@ -19,6 +19,7 @@ public class StaffDto implements Serializable {
     public Long id;
     private String email;
     private String password;
+
     public String name;
     public String phone ;
     public String address;

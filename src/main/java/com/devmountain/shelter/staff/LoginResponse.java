@@ -4,6 +4,6 @@ import java.util.List;
 
 @Data
 public class LoginResponse {
-    boolean isSuccessful;
-    List<String> response;
+//    boolean isSuccessful;
+//    List<String> response;
 }

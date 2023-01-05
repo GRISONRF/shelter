@@ -3,7 +3,7 @@ let loginEmail = document.getElementById('login-email')
 let loginPassword = document.getElementById('login-password')
 
 const headers = {
-    'Content-Type':'application/json'
+    'Content-Type': 'application/json'
 }
 
 const baseUrl = 'http://localhost:8080/api/staff'
@@ -26,7 +26,7 @@ const handleSubmit = async (e) =>{
     console.log(response)
 
     const responseArr = await response.json()
-    console.log(responseArr)
+//    console.log(responseArr)
 
     if (response.status === 200){
         document.cookie = `userId=${responseArr[1]}`

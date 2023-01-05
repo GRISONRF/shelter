@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <link rel="stylesheet" href="./dashboard.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
+    <title>System Management - Dashboard</title>
+</head>
+
+<body>
+<div class="header">
+<!--    <img src="g">-->
+
+    <nav>
+        <ul>
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="../animals.html">Animals</a></li>
+            <li><a href="../staff.html">Staff</a></li>
+            <li><a href="./task.html">Tasks</a></li>
+<!--        <li><a class="logout-btn" style="padding-left: 173px" href="../login.html" onclick="handleLogout()">Logout</a></li>-->
+        </ul>
+    </nav>
+</div>
+
+<div class="title-header">
+    <span class="page-title">Dashboard</span>
+</div>
+
+<div class="content">
+    <div class="layout-container">
+        <main>
+            <!-- Upcoming appointments -->
+            <div class="upcoming-tasks">
+                <p>My Tasks for Today</p>
+            </div>
+
+            <div id="dashboard-tasks-container" class="container-fluid"></div>
+        </main>
+
+        <aside>
+            <!-- Welcome text -->
+            <div id="welcomeText"></div>
+
+            <div class="quick-links">
+                <p class="quick-links">
+                    - <a href="/add-task.html">Add Task</a><br>
+                    - <a href="add-animal.html">Add Animal</a><br>
+                    - <a href="animals.html">View Animals</a>
+                </p>
+            </div><br>
+
+<!--            <p class="sidebar-title">Notes</p>-->
+<!--            <div id="note-container" class="notes-styling"></div>-->
+
+            <br><br>
+
+<!--            <p class="sidebar-title">Add note</p>-->
+<!--            <form id="note-form">-->
+<!--                <div class="form-group">-->
+<!--                    <textarea class="form-control" id="note-input" placeholder="Add your note..." rows="5" style="width: 190px"></textarea>-->
+<!--                </div>-->
+
+<!--                <div>-->
+<!--                    <button id="submit-button" type="submit" class="submit-note">Add Note</button>-->
+<!--                </div>-->
+<!--            </form>-->
+        </aside>
+    </div>
+</div>
+
+
+
+<script src="dashboard.js" type="application/javascript"></script>
+
+</body>
+</html>

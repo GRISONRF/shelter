@@ -1,0 +1,78 @@
+.content {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+/* grid settings (for main and aside) */
+.layout-container {
+    display: flex;
+}
+main {
+    flex: 3.0;
+}
+.upcoming-appointments {
+    font-size: 23px;
+
+}
+/* end grid settings */
+
+
+/* begin notes */
+aside {
+    flex: 1.0;
+    border: 1px solid #F0F0F0;
+    border-radius: 5px;
+    padding: 15px 35px 35px 35px;
+    margin-top: 75px;
+    margin-bottom: 150px;
+}
+#welcomeText {
+    font-size: 23px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.sidebar-title {
+    font-size: 20px;
+}
+.quick-links {
+    font-size: 16px;
+    display: block;
+    list-style-type: disc;
+    padding: 0;
+}
+.submit-note {
+    background-color: #62929E;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+.notes-styling {
+    inline-size: 250px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+.delete-note {
+    color: #FF3333;
+    padding-left: 25px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* end notes sidebar */
+
+
+/* begin dashboard tasks */
+.dashboard-appointment-card {
+    border: 1px #F0F0F0 solid;
+    max-width: 100%;
+}
+.appointment-styling {
+    display: inline-block;
+    width: 125px;
+    font-size: 16px;
+}
+.extra-padding {
+    padding-right: 50px;
+    font-size: 16px;
+}
+/* end dashboard tasks */

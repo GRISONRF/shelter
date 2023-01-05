@@ -10,7 +10,7 @@ let animalContainer = document.getElementById("animal-container")
 // get all animals
 
 async function getAnimals() {
-    console.log("getanimals");
+
     await fetch(`${animalConfig.baseUrl}/animal/animals`, {
         method: "GET",
         headers: animalConfig.headers

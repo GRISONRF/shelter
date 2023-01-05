@@ -45,8 +45,6 @@ const handleSubmit = async (e) => {
 //        medicalRest: document.getElementById('rest').value,
 
     }
-
-    console.log("aaaaaa")
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
         body: JSON.stringify(bodyObj),

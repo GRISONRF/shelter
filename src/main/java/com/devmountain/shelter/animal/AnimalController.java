@@ -34,7 +34,7 @@ public class AnimalController {
         modelAndView.setViewName("/animal/animals.html");
         model.addAttribute("species", animalDto.getSpecies());
 
-        return animalService.findAllAnimals(animalDto);
+        return animalService.findAllAnimals();
     }
 
 //    @RequestMapping("/animals")

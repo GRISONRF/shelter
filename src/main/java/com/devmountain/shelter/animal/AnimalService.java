@@ -10,7 +10,7 @@ public interface AnimalService {
     @Transactional
     List<String> addAnimal(AnimalDto animalDto);
 
-    List<AnimalDto> findAllAnimals(AnimalDto animalDto);
+    List<AnimalDto> findAllAnimals();
 
 
 //    findAnimal

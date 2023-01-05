@@ -18,6 +18,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+
     @Column
     public String task;
     @Column

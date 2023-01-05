@@ -34,8 +34,27 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+//    @Transactional
+//    public List<String> addAnimal(List<String> animalDto){
+//        List<String> response = new ArrayList<>();
+//
+//        AnimalDto animal = new AnimalDto();
+//        animal.setName(animalDto.get(0));
+//        animal.setSpecies(animalDto.get(1));
+//        animal.setDob(animalDto.get(2));
+//        animal.setGender(animalDto.get(3));
+//        animal.setAvailability(animalDto.get(4));
+//
+//        Animal savedAnimal = new Animal(animal);
+//        animalRepository.saveAndFlush(savedAnimal);
+//        response.add("Animal Added Successfully");
+//        return response;
+//    }
+
+
+
     @Override
-    public List<AnimalDto> findAllAnimals(AnimalDto animalDto) {
+    public List<AnimalDto> findAllAnimals() {
         List<Animal> animalList = animalRepository.findAll();
         return animalList.stream().map(AnimalDto::new).collect(Collectors.toList());
     }

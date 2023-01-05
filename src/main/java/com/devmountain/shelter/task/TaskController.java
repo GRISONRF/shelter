@@ -1,10 +1,9 @@
 package com.devmountain.shelter.task;
 
+import com.devmountain.shelter.animal.AnimalDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -24,5 +23,11 @@ public class TaskController {
         modelAndView.setViewName("/task/tasks.html");
 
         return taskService.findAllTasks();
+    }
+
+
+    @PostMapping(value = "/addTask", consumes = "application/json")
+    public void addTask(@RequestBody TaskDto taskDto){
+        taskService.addTask(taskDto);
     }
 }

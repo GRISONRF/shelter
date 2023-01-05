@@ -1,0 +1,20 @@
+nav {
+    margin-top: 17px;
+    margin-left: 130px;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 18px;
+}
+ul > li {
+    display: inline-block;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.form {
+
+}

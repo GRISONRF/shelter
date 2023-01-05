@@ -1,6 +1,5 @@
 package com.devmountain.shelter.staff;
 
-import com.devmountain.shelter.animal.AnimalDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,7 +34,7 @@ public class StaffServiceImpl implements StaffService {
         Optional<Staff> staffOptional = staffRepository.findByEmail(staffDto.getEmail());
 
         if (staffOptional.isPresent()){
-            if(passwordEncoder.matches(staffDto.getPassword(), staffOptional.get().getPassword())){
+            if(staffDto.getPassword().matches(staffOptional.get().getPassword())){
                 response.add("http://localhost:8080/dashboard.html");
                 response.add(String.valueOf(staffOptional.get().getId()));
             } else {
@@ -48,15 +47,16 @@ public class StaffServiceImpl implements StaffService {
     }
 
 
+
 //    public LoginResponse staffLogin(StaffDto staffDto) {
 //        System.out.println(staffDto);
 //        LoginResponse response = new LoginResponse();
-//        Optional<Staff> userOptional = staffRepository.findByEmail(staffDto.getEmail());
-//        if(userOptional.isPresent()) {
-//            if(staffDto.getPassword().equals(userOptional.get().getPassword())) {
-////            if(passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())) {
+//        Optional<Staff> staffOptional = staffRepository.findByEmail(staffDto.getEmail());
+//        if(staffOptional.isPresent()) {
+//            if(staffDto.getPassword().equals(staffOptional.get().getPassword())) {
+////            if(passwordEncoder.matches(staffDto.getPassword(), staffOptional.get().getPassword())) {
 //                response.setSuccessful(true);
-//                response.setResponse(List.of("http://localhost:8080/",String.valueOf(userOptional.get().getId())));
+//                response.setResponse(List.of("http://localhost:8080/",String.valueOf(staffOptional.get().getId())));
 //            } else {
 //                response.setSuccessful(false);
 //                response.setResponse(List.of("Email or password incorrect"));
@@ -74,6 +74,15 @@ public class StaffServiceImpl implements StaffService {
     public List<StaffDto> findAllStaff() {
         List<Staff> staffList = staffRepository.findAll();
         return staffList.stream().map(StaffDto::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public StaffDto findStaff(Long id) {
+        Staff staff = staffRepository.findById(id).get();
+
+        StaffDto staffDto = new StaffDto(staff);
+
+        return staffDto;
     }
 
 

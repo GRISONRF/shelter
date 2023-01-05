@@ -10,9 +10,11 @@ public interface StaffService {
     List<String> addStaff(StaffDto staffDto);
 
 //    LoginResponse staffLogin(StaffDto staffDto);
+    @Autowired
     List<String> staffLogin(StaffDto staffDto);
 
     List<StaffDto> findAllStaff();
 
+    StaffDto findStaff(Long id);
 }
 

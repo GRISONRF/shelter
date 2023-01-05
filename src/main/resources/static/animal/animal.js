@@ -21,12 +21,9 @@ async function getAnimals() {
 //        .catch(err => console.error(err))
 }
 
-
-
 const createAnimalCards = (array) => {
     console.log(array);
     animalContainer.innerHTML = ''
-
 
     array.forEach(obj => {
         console.log(obj)
@@ -53,5 +50,13 @@ const createAnimalCards = (array) => {
     animalContainer.append(animalCard);
     })
 }
-
 getAnimals();
+
+
+// add a new animal btn
+
+const addAnimalBtn = document.getElementById('add-animal-btn')
+
+addAnimalBtn.addEventListener("click", function() {
+    document.location.href = '/animal/addAnimal.html'
+})

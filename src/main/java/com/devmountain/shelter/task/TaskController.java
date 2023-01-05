@@ -25,9 +25,13 @@ public class TaskController {
         return taskService.findAllTasks();
     }
 
-
     @PostMapping(value = "/addTask", consumes = "application/json")
     public void addTask(@RequestBody TaskDto taskDto){
         taskService.addTask(taskDto);
+    }
+
+    @DeleteMapping("/{taskId}")
+    public void deleteTaskById(@PathVariable Long taskId) {
+        taskService.deleteTaskById(taskId);
     }
 }

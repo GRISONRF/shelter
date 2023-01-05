@@ -10,4 +10,6 @@ public interface TaskService {
 
     @Transactional
     List<String> addTask(TaskDto taskDto);
+
+    void deleteTaskById(Long taskId);
 }

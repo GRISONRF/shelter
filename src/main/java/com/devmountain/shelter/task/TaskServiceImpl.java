@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,6 +28,13 @@ public class TaskServiceImpl implements TaskService {
         taskRepository.saveAndFlush(task);
         response.add("Task Added Successfully");
         return response;
+    }
+
+    @Override
+    @Transactional
+    public void deleteTaskById(Long taskId) {
+        Optional<Task> taskOptional = taskRepository.findById(taskId);
+        taskOptional.ifPresent(task -> taskRepository.delete(task));
     }
 
 

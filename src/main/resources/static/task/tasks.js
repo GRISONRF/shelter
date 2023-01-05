@@ -27,6 +27,7 @@ const createTaskCards = (array) => {
     array.forEach(obj => {
         console.log(obj)
 
+        const taskId = obj.id
         const name = obj.name
         const task = obj.task
         const happenedAt = obj.happenedAt
@@ -39,10 +40,24 @@ const createTaskCards = (array) => {
                     <li style="font-size: 17px; width: 100px">${name}</li>
                     <li style="font-size: 17px; width: 125px">${task}</li>
                     <li style="font-size: 17px; width: 100px">${happenedAt}</li>
+                    <li><text class="delete" onclick="handleDeleteTask(${taskId})">delete</text></li>
                 </ul>
             </div>
         `
     taskContainer.append(taskCard);
     })
+
+
+
+async function handleDeleteTask(taskId){
+    await fetch(`${taskConfig.baseUrl}/` + taskId, {
+        method: "DELETE",
+        headers: taskConfig.headers
+    })
+        .catch(err => console.error(err))
+
+    return findAllTasks();
 }
+}
+
 getTask();

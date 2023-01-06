@@ -21,6 +21,8 @@ public class StaffController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private StaffRepository staffRepository;
 
 
 //    @GetMapping("/login")
@@ -43,8 +45,18 @@ public class StaffController {
 //
 //    }
 
+//    @PostMapping(value = "/login", headers = "Content-Type=application/json")
+//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto){
+//
+//        var response = staffService.staffLogin(staffDto);
+//        System.out.println(response);
+//        return ResponseEntity.ok().body(response);
+//
+//    }
+
     @PostMapping(value = "/login", consumes = "application/json")
     public List<String> staffLogin(@RequestBody StaffDto staffDto){
+        System.out.println(staffDto);
         return staffService.staffLogin(staffDto);
     }
 

@@ -22,7 +22,7 @@ const handleSubmit = async (e) =>{
         body: JSON.stringify(bodyObj),
         headers: headers
     })
-        .catch(err => console.error(err.message))
+//        .catch(err => console.error(err.message))
     console.log(response)
 
     const responseArr = await response.json()

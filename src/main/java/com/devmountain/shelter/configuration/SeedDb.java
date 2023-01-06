@@ -56,8 +56,8 @@ public class SeedDb implements CommandLineRunner {
 
 //        Animal animalTest = animalRepository.findById(1L).orElse(null);
 //        Staff staffTest = staffRepository.findById(1L).orElse(null);
-        Task task1 = new Task(null, "Take the trash out", "Wednesday - 2pm", animal1, staff1);
-        taskRepository.saveAll(Arrays.asList(task1));
+//        Task task1 = new Task(null, "Take the trash out", "Wednesday - 2pm", animal1, staff1);
+//        taskRepository.saveAll(Arrays.asList(task1));
 
     }
 }

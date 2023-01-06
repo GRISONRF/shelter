@@ -35,7 +35,7 @@ public class StaffServiceImpl implements StaffService {
 
         if (staffOptional.isPresent()){
             if(staffDto.getPassword().matches(staffOptional.get().getPassword())){
-                response.add("http://localhost:8080/dashboard.html");
+                response.add("http://localhost:8080/dashboard/dashboard.html");
                 response.add(String.valueOf(staffOptional.get().getId()));
             } else {
                 response.add("Email or password incorrect");

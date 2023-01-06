@@ -30,9 +30,9 @@ public class Task {
     private Animal animal;
 
     //staff_id
-    @ManyToOne
-    @JsonBackReference
-    private Staff staff;
+//    @ManyToOne
+//    @JsonBackReference
+//    private Staff staff;
 
     public Task(TaskDto taskDto){
         if (taskDto.getTask() != null) {

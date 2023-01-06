@@ -7,15 +7,15 @@ let taskContainer = document.getElementById("task-container")
 
 
 //find all tasks
-async function findAllTasks() {
-    await fetch(`${taskConfig.baseUrl}`, {
-        method: "GET",
-        headers: taskConfig.headers
-    })
-        .then(response => response.json())
-        .then(data => createTaskCards(data))
-        .catch(err => console.error(err))
-}
+//async function findAllTasks() {
+//    await fetch(`${taskConfig.baseUrl}/tasks`, {
+//        method: "GET",
+//        headers: taskConfig.headers
+//    })
+//        .then(response => response.json())
+//        .then(data => createTaskCards(data))
+//        .catch(err => console.error(err))
+//}
 
 
 //delete task
@@ -26,11 +26,11 @@ async function handleDeleteTask(taskId){
     })
         .catch(err => console.error(err))
 
-    return findAllTasks();
+    return getTask();
 }
 
 
-// get all the tasks
+// get all the tasks to create the cards
 async function getTask() {
     console.log("inside getTask")
 

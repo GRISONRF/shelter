@@ -28,7 +28,7 @@ const createTaskCards = (array) => {
         console.log(obj)
 
         const taskId = obj.id
-        const name = obj.name
+        const name = obj.staffDto.name
         const task = obj.task
         const happenedAt = obj.happenedAt
 

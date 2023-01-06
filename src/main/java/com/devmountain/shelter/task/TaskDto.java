@@ -1,6 +1,7 @@
 package com.devmountain.shelter.task;
 
 import com.devmountain.shelter.animal.AnimalDto;
+import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffDto;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,8 @@ public class TaskDto implements Serializable {
 
     public AnimalDto animalDto;
 
+
+
     public TaskDto (Task task) {
         if (task.getId() != null){
             this.id = task.getId();
@@ -32,5 +35,7 @@ public class TaskDto implements Serializable {
             this.happenedAt = task.getHappenedAt();
         }
 
+        this.staffDto = new StaffDto();
+        this.staffDto.setName(task.getStaff().getName());
     }
 }

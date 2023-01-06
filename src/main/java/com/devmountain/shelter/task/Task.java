@@ -25,14 +25,14 @@ public class Task {
     public String happenedAt;
 
     //animal_id
-    @ManyToOne
-    @JsonBackReference
-    private Animal animal;
-
-    //staff_id
 //    @ManyToOne
 //    @JsonBackReference
-//    private Staff staff;
+//    private Animal animal;
+
+    //staff_id
+    @ManyToOne
+    @JsonBackReference
+    private Staff staff;
 
     public Task(TaskDto taskDto){
         if (taskDto.getTask() != null) {

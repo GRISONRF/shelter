@@ -69,5 +69,9 @@ public class StaffController {
         return staffService.findAllStaff();
     }
 
+    @GetMapping("/{staffId}")
+    public StaffDto findById(@PathVariable Long staffId) {
+        return staffService.findStaff(staffId);
+    }
 
 }

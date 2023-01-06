@@ -52,12 +52,49 @@ public class SeedDb implements CommandLineRunner {
         staff1.setPhone("(720) 232-0909");
         staff1.setAddress("Denver-CO");
         staff1.setRole("Volunteer");
-        staffRepository.saveAll(Arrays.asList(staff1));
+
+        Staff staff2 = new Staff();
+        staff2.setName("Sandra Olmo");
+        staff2.setPassword("123test");
+        staff2.setEmail("staff2@test.com");
+        staff1.setPhone("(720) 111-5050");
+        staff1.setRole("Manager");
+
+        Staff staff3 = new Staff();
+        staff3.setName("Patrick Callahan");
+        staff3.setPassword("123test");
+        staff3.setEmail("staff3@test.com");
+        staff1.setPhone("(360) 455-9977");
+        staff1.setRole("Animal caretaker");
+
+        Staff staff4 = new Staff();
+        staff4.setName("Gloria Phipps");
+        staff4.setPassword("123test");
+        staff4.setEmail("staff4@test.com");
+        staff1.setPhone("(240) 324-1133");
+        staff1.setRole("Veterinarian");
+
+        Staff staff5 = new Staff();
+        staff5.setName("Dennis Johnson");
+        staff5.setPassword("123test");
+        staff5.setEmail("staff5@test.com");
+        staff1.setPhone("(240) 689-4022");
+        staff1.setRole("Kennel technician");
+        staffRepository.saveAll(Arrays.asList(staff1,staff2, staff3, staff4, staff5));
+
+
+
 
         Animal animalTest = animalRepository.findById(1L).orElse(null);
         Staff staffTest = staffRepository.findById(1L).orElse(null);
         Task task1 = new Task(null, "Take the trash out", "Wednesday - 2pm", staff1);
-        taskRepository.saveAll(Arrays.asList(task1));
+        Task task2 = new Task(null, "Feed the cats", "Monday - 7am and 6pm", staff2);
+        Task task3 = new Task(null, "Take Fluffy to get the vaccines", "Tuesday 1pm", staff4);
+        Task task4 = new Task(null, "Clean the kennel", "Friday", staff3);
+        Task task5 = new Task(null, "Feed the dogs", "Tuesday - 10am", staff1);
+        taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4, task5));
+
+
 
     }
 }

@@ -6,6 +6,7 @@ const taskConfig = {
 let taskContainer = document.getElementById("task-container")
 
 
+//find all tasks
 async function findAllTasks() {
     await fetch(`${taskConfig.baseUrl}`, {
         method: "GET",
@@ -17,10 +18,7 @@ async function findAllTasks() {
 }
 
 
-
-
-
-
+//delete task
 async function handleDeleteTask(taskId){
     await fetch(`${taskConfig.baseUrl}/` + taskId, {
         method: "DELETE",
@@ -32,10 +30,7 @@ async function handleDeleteTask(taskId){
 }
 
 
-
-
-
-
+// get all the tasks
 async function getTask() {
     console.log("inside getTask")
 
@@ -77,8 +72,13 @@ const createTaskCards = (array) => {
     })
 
 
-
-
 }
-
 getTask();
+
+
+// add a new task btn
+const addTaskBtn = document.getElementById('add-task-btn')
+
+addTaskBtn.addEventListener("click", function() {
+    document.location.href = '/task/add-task.html'
+})

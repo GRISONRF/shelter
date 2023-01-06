@@ -5,7 +5,36 @@ const taskConfig = {
 
 let taskContainer = document.getElementById("task-container")
 
-//get all the task
+
+async function findAllTasks() {
+    await fetch(`${taskConfig.baseUrl}`, {
+        method: "GET",
+        headers: taskConfig.headers
+    })
+        .then(response => response.json())
+        .then(data => createTaskCards(data))
+        .catch(err => console.error(err))
+}
+
+
+
+
+
+
+async function handleDeleteTask(taskId){
+    await fetch(`${taskConfig.baseUrl}/` + taskId, {
+        method: "DELETE",
+        headers: taskConfig.headers
+    })
+        .catch(err => console.error(err))
+
+    return findAllTasks();
+}
+
+
+
+
+
 
 async function getTask() {
     console.log("inside getTask")
@@ -40,7 +69,7 @@ const createTaskCards = (array) => {
                     <li style="font-size: 17px; width: 100px">${name}</li>
                     <li style="font-size: 17px; width: 125px">${task}</li>
                     <li style="font-size: 17px; width: 100px">${happenedAt}</li>
-                    <li><text class="delete" onclick="handleDeleteTask(${taskId})">delete</text></li>
+                    <li><button class="delete" onclick="handleDeleteTask(${taskId})">delete</button></li>
                 </ul>
             </div>
         `
@@ -49,15 +78,7 @@ const createTaskCards = (array) => {
 
 
 
-async function handleDeleteTask(taskId){
-    await fetch(`${taskConfig.baseUrl}/` + taskId, {
-        method: "DELETE",
-        headers: taskConfig.headers
-    })
-        .catch(err => console.error(err))
 
-    return findAllTasks();
-}
 }
 
 getTask();

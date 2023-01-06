@@ -30,6 +30,22 @@ public class TaskServiceImpl implements TaskService {
         return response;
     }
 
+//    @Override
+//    @Transactional
+//    public List<String> addTask(TaskDto taskDto) {
+//        System.out.println(taskDto);
+//
+//        Task task = new Task(taskDto);
+//        System.out.println(taskDto.getStaffDto().name);
+//        if(staffDto.getName().contains(taskDto.getStaffDto().name)) {
+//            Optional<Staff> staffOptional = StaffRepository.findById(taskDto.getStaffDto().getName());
+//        }
+//        task.setStaff(staffOptional.get());
+//
+//        return new TaskDto(taskRepository.saveAndFlush(task));
+//    }
+
+
     @Override
     @Transactional
     public void deleteTaskById(Long taskId) {

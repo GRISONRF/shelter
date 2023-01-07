@@ -21,12 +21,12 @@ public class AnimalDto implements Serializable   {
     private String name;
     private String dob ;
     private String gender;
-//    private Integer intakeDate;
-//    private String intakeMethod;
+    private String intakeDate;
+    private String intakeMethod;
 //    private String picture;
-//    private String breed;
-//    private String food;
-//    private String food_amount;
+    private String breed;
+    private String food;
+    private String food_amount;
     private String availability;
 //    private String adoptionType;
 //    private Integer adoptionDate;
@@ -52,24 +52,24 @@ public class AnimalDto implements Serializable   {
         if (animal.getGender() != null) {
             this.gender = animal.getGender();
         }
-//        if (animal.getIntakeDate() != null){
-//            this.intakeDate = animal.getIntakeDate();
-//        }
-//        if (animal.getIntakeMethod() != null){
-//            this.intakeMethod = animal.getIntakeMethod();
-//        }
+        if (animal.getIntakeDate() != null){
+            this.intakeDate = animal.getIntakeDate();
+        }
+        if (animal.getIntakeMethod() != null){
+            this.intakeMethod = animal.getIntakeMethod();
+        }
 //        if (animal.getPicture() != null){
 //            this.picture = animal.getPicture();
 //        }
-//        if (animal.getBreed() != null){
-//            this.breed = animal.getBreed();
-//        }
-//        if (animal.getFood() != null){
-//            this.food = animal.getFood();
-//        }
-//        if (animal.getFood_amount() != null){
-//            this.food_amount = animal.getFood_amount();
-//        }
+        if (animal.getBreed() != null){
+            this.breed = animal.getBreed();
+        }
+        if (animal.getFood() != null){
+            this.food = animal.getFood();
+        }
+        if (animal.getFood_amount() != null){
+            this.food_amount = animal.getFood_amount();
+        }
         if (animal.getAvailability() != null){
             this.availability = animal.getAvailability();
         }

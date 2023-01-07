@@ -37,25 +37,25 @@ public class Animal {
 
     @Column
     private String gender;
-//
-//    @Column
-//    private Integer intakeDate;
-//
-//    @Column
-//    private String intakeMethod;
-//
+
+    @Column
+    private String intakeDate;
+
+    @Column
+    private String intakeMethod;
+
 //    @Column
 //    private String picture;
 //
-//    @Column
-//    private String breed;
-//
-//    @Column
-//    private String food;
-//
-//    @Column
-//    private String food_amount;
-//
+    @Column
+    private String breed;
+
+    @Column
+    private String food;
+
+    @Column
+    private String food_amount;
+
     @Column
     private String availability;
 //
@@ -100,24 +100,24 @@ public class Animal {
         if (animalDto.getGender() != null ) {
             this.gender = animalDto.getGender();
         }
-//        if (animalDto.getIntakeDate() != null) {
-//            this.intakeDate = animalDto.getIntakeDate();
-//        }
-//        if (animalDto.getIntakeMethod() != null) {
-//            this.intakeMethod = animalDto.getIntakeMethod();
-//        }
+        if (animalDto.getIntakeDate() != null) {
+            this.intakeDate = animalDto.getIntakeDate();
+        }
+        if (animalDto.getIntakeMethod() != null) {
+            this.intakeMethod = animalDto.getIntakeMethod();
+        }
 //        if (animalDto.getPicture() != null) {
 //            this.picture = animalDto.getPicture();
 //        }
-//        if (animalDto.getBreed() != null) {
-//            this.breed = animalDto.getBreed();
-//        }
-//        if (animalDto.getFood() != null) {
-//            this.food = animalDto.getFood();
-//        }
-//        if (animalDto.getFood_amount() != null) {
-//            this.food_amount = animalDto.getFood_amount();
-//        }
+        if (animalDto.getBreed() != null) {
+            this.breed = animalDto.getBreed();
+        }
+        if (animalDto.getFood() != null) {
+            this.food = animalDto.getFood();
+        }
+        if (animalDto.getFood_amount() != null) {
+            this.food_amount = animalDto.getFood_amount();
+        }
         if (animalDto.getAvailability() != null) {
             this.availability = animalDto.getAvailability();
         }

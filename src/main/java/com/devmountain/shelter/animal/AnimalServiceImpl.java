@@ -60,6 +60,13 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
 
+    @Override
+    public AnimalDto findAnimalById(Long id){
+        Animal animal = animalRepository.findById(id).get();
+        AnimalDto animalDto = new AnimalDto(animal);
+        return animalDto;
+    }
+
 }
 
 

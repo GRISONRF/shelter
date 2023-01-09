@@ -12,6 +12,8 @@ public interface AnimalService {
 
     List<AnimalDto> findAllAnimals();
 
+    AnimalDto findAnimalById(Long animalId);
+
 
 //    findAnimal
 //    AnimalDto findAnimal(Long id);

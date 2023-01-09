@@ -38,7 +38,7 @@ public class SeedDb implements CommandLineRunner {
 
         Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption");
         Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster");
-        Animal animal3 = new Animal(null, "Dog", "Fluffy", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption");
+        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption");
         Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transderred", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered");
         Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care");
         animalRepository.saveAll(Arrays.asList(animal1, animal2, animal3, animal4, animal5));

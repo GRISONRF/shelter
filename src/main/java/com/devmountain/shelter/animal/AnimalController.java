@@ -31,7 +31,7 @@ public class AnimalController {
     public List<AnimalDto> findAllAnimals(AnimalDto animalDto, Model model) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/animal/animals.html");
-        model.addAttribute("species", animalDto.getSpecies());
+//        model.addAttribute("species", animalDto.getSpecies());
 
         return animalService.findAllAnimals();
     }
@@ -42,11 +42,19 @@ public class AnimalController {
 //    }
 
 
-    @RequestMapping("/{animalId}")
-    public String viewAnimal(@PathVariable long animalId, Model model) {
-        Animal animal = animalRepository.getReferenceById(animalId);
-        model.addAttribute("animal", animal);
-        return "viewAnimal";
-    }
+//    @RequestMapping("/{animalId}")
+//    public String viewAnimal(@PathVariable long animalId, Model model) {
+//
+//        Animal animal = animalRepository.getReferenceById(animalId);
+//        model.addAttribute("animal", animal);
+//        return "viewAnimal";
+//    }
+        @GetMapping("/animal-profile/{animalId}")
+        public AnimalDto findAnimalById(@PathVariable Long animalId) {
+            System.out.println("ITS GETTING HERE!!!!!");
+            System.out.println("***********************************************************************");
+            return animalService.findAnimalById(animalId);
+        }
+
 
 }

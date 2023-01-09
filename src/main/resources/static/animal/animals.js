@@ -5,7 +5,9 @@ const animalConfig = {
         }
     }
 
-const animalProfileUrl = animalConfig.baseUrl + '/animal/animal-profile/'
+//const animalProfileUrl = animalConfig.baseUrl + '/animal/animal-profile/'
+const animalProfileUrl = 'http://localhost:8080/animalPage/'
+
 
 let animalContainer = document.getElementById("animal-container")
 

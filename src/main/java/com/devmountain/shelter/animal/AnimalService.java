@@ -14,9 +14,4 @@ public interface AnimalService {
 
     AnimalDto findAnimalById(Long animalId);
 
-
-//    findAnimal
-//    AnimalDto findAnimal(Long id);
-
-//    deleteAnimal
 }

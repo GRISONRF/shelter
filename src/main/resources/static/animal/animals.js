@@ -5,21 +5,25 @@ const animalConfig = {
         }
     }
 
+const animalProfileUrl = animalConfig.baseUrl + '/animal/animal-profile/'
+
 let animalContainer = document.getElementById("animal-container")
 
 
 //get one animal
 async function handleAnimalClick(animalId){
-    await fetch(`${animalConfig.baseUrl}/animal/${animalId}`, {
+    await fetch(`${animalConfig.baseUrl}/animal/animal-profile/${animalId}`, {
         method: "GET",
-        headers: taskConfig.headers
+        headers: animalConfig.headers
     })
     .then(response => response.json())
     .then(data => {
         const animalName = data.name
         console.log(data)
+        window.location.replace(animalProfileUrl + data.id)
+
         })
-//        .catch(err => console.error(err))
+
 
 }
 
@@ -28,11 +32,11 @@ async function getAnimal() {
 
     await fetch(`${animalConfig.baseUrl}/animals`, {
         method: "GET",
-        headers: taskConfig.headers
+        headers: animalConfig.headers
     })
         .then(response => response.json())
 
-        .then(data => createTaskCards(data))
+        .then(data => createAnimalCards(data))
 //        .catch(err => console.error(err))
 }
 
@@ -71,7 +75,7 @@ const createAnimalCards = (array) => {
             <div class="animal-card">
                 <ul class="animal-styling">
                     <li style="font-size: 17px; width: 100px">${species}</li>
-                    <li onClick="handleAnimalClick(${id})'"style="font-size: 17px; width: 125px">${name}</li>
+                    <li onClick="handleAnimalClick(${id})"style="font-size: 17px; width: 125px">${name}</li>
                     <li style="font-size: 17px; width: 100px">${dob}</li>
                     <li style="font-size: 17px; width: 100px;">${gender}</li>
                    <li style="font-size: 17px; width: 75px">${availability}</li>

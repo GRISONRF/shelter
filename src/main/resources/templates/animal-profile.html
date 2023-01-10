@@ -12,5 +12,15 @@
 <body>
 
 <h1> animal page</h1>
+
+<div th:text="${animal.name}">Data will be displayed here</div>
+<p ></p>
+
+<table>
+    <tr th:each="item : ${animal}">
+        <td th:text="${animal.name}"></td>
+        <td th:text="${animal.dob}"></td>
+    </tr>
+</table>
 </body>
 </html>

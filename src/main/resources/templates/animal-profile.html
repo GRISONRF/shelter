@@ -18,8 +18,21 @@
 
 <table>
     <tr th:each="item : ${animal}">
+        <td th:text="${animal.species}"></td>
         <td th:text="${animal.name}"></td>
         <td th:text="${animal.dob}"></td>
+        <td th:text="${animal.gender}"></td>
+        <td th:text="${animal.intakeDate}"></td>
+        <td th:text="${animal.intakeMethod}"></td>
+        <td th:text="${animal.breed}"></td>
+        <td th:text="${animal.food}"></td>
+        <td th:text="${animal.food_amount}"></td>
+        <td th:text="${animal.availability}"></td>
+
+
+
+
+
     </tr>
 </table>
 </body>

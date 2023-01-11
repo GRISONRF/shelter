@@ -24,7 +24,7 @@ public class AnimalRestController {
     private AnimalRepository animalRepository;
 
 
-    @PostMapping("/add-animal")   //should it be a @RequestParam instead?
+    @PostMapping("/add-animal")
     public void addAnimal(@RequestPart("image") MultipartFile image, @RequestBody AnimalDto animalDto) throws IOException {
 
         Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(

@@ -1,7 +1,7 @@
 const animalConfig = {
     baseUrl: 'http://localhost:8080/api',
     headers: {
-        'Content-Type':'application/json'
+        'Content-Type':'multipart/form-data'
         }
     }
 

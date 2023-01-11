@@ -5,11 +5,12 @@ const animalConfig = {
         }
     }
 
+const imageInput = document.getElementById('image');
 const addAnimalForm = document.getElementById('add-animal-form')
 console.log("Hello")
 const handleSubmit = async (e) => {
     console.log("second hello")
-    e.preventDefault()
+    e.preventDefault();
 
     let bodyObj = {
         species: document.getElementById('species').value,
@@ -18,7 +19,7 @@ const handleSubmit = async (e) => {
         gender: document.getElementById('gender').value,
         intakeDate: document.getElementById('int-date').value,
         intakeMethod: document.getElementById('int-method').value,
-//        picture: document.getElementById('picture').value,
+        image: imageInput.files[0],
         breed: document.getElementById('breed').value,
         food: document.getElementById('food').value,
         foodAmount: document.getElementById('food-amount').value,
@@ -45,6 +46,7 @@ const handleSubmit = async (e) => {
 //        medicalRest: document.getElementById('rest').value,
 
     }
+    console.log(bodyObj)
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
         body: JSON.stringify(bodyObj),

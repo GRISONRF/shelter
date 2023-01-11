@@ -1,7 +1,7 @@
 package com.devmountain.shelter.staff;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,8 +14,8 @@ public class StaffServiceImpl implements StaffService {
 
     @Autowired
     private StaffRepository staffRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<String> addStaff(StaffDto staffDto){

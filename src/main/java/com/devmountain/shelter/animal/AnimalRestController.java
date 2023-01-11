@@ -1,11 +1,17 @@
 package com.devmountain.shelter.animal;
 
+import com.cloudinary.*;
+import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 
 //layer is where we will actually be defining our RESTful API endpoints and creating the paths that can deliver up the information to the client that they want.
@@ -17,8 +23,17 @@ public class AnimalRestController {
     @Autowired
     private AnimalRepository animalRepository;
 
-    @PostMapping(value = "/add-animal", consumes = "application/json")
-    public void addAnimal(@RequestBody AnimalDto animalDto){
+
+    @PostMapping("/add-animal")
+    public void addAnimal(@RequestPart("image") MultipartFile image, @RequestBody AnimalDto animalDto) throws IOException {
+
+        Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+                "cloud_name", System.getenv("CLOUDINARY_NAME"),
+                "api_key", System.getenv("CLOUDINARY_KEY"),
+                "api_secret", System.getenv("CLOUDINARY_API_SECRET")
+        ));
+        Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+        animalDto.setPicture((String) uploadResult.get("secure_url"));
         animalService.addAnimal(animalDto);
     }
 
@@ -52,5 +67,22 @@ public class AnimalRestController {
             return animalService.findAnimalById(animalId);
         }
 
+//        @PostMapping("/post-form-data")
+//        public String handleFormData(@RequestParam("my-file") MultipartFile file) throws IOException {
+//
+//            System.out.println("~~~~~~~~~~~~ SAVING THE PICTURE METHOD!!!!!!!!!! ~~~~~~~~~~~~~~~");
+//
+//            File pic = new File("src/main/resources/image.jpg");
+//            Map uploadResult = cloudinary.uploader().upload(pic, (ObjectUtils.asMap(
+//                    "cloud_name", System.getenv("CLOUDINARY_NAME"),
+//                    "api_key", System.getenv("CLOUDINARY_KEY"),
+//                    "api_secret", System.getenv("CLOUDINARY_API_SECRET")
+//            )));
+//            String url = (String) uploadResult.get("url");
+//
+//
+//
+//            return "redirect:/success";
+//        }
 
 }

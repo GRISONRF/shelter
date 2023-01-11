@@ -10,6 +10,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="stylesheet" href="../forms.css" type="text/css">
+    <script src="https://cdn.cloudinary.com/cloudinary-core/stable/cloudinary-core-shrinkwrap.min.js"></script>
 
     <title>Home</title>
 </head>
@@ -20,7 +21,7 @@
     </div>
 
     <div class="add-animal-form-container">
-        <form id="add-animal-form" class="form">
+        <form id="add-animal-form" class="form" enctype = "multipart/form-data">
             <div class="form-group">
                 <label for="species">Specie:</label>
                 <select multiple class="form-control" id="species">
@@ -229,11 +230,22 @@
 <!--                <input type="text" class="form-control" id="owner-address">-->
 <!--            </div>-->
 
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control-file" id="image" accept="image/*">
+            </div>
+
             <div class="mt-1">
                 <button id="submit-button" type="submit" class="btn btn-info">Submit</button>
             </div>
 
+
         </form>
+<!--        <form action="post-form-data" method="post" enctype="multipart/form-data">-->
+<!--            <input type="file" name="my-file">-->
+<!--            <input type="submit">-->
+
+<!--        </form>-->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

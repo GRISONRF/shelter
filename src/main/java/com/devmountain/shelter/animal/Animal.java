@@ -44,9 +44,9 @@ public class Animal {
     @Column
     private String intakeMethod;
 
-//    @Column
-//    private String picture;
-//
+    @Column
+    private String picture;
+
     @Column
     private String breed;
 
@@ -106,9 +106,9 @@ public class Animal {
         if (animalDto.getIntakeMethod() != null) {
             this.intakeMethod = animalDto.getIntakeMethod();
         }
-//        if (animalDto.getPicture() != null) {
-//            this.picture = animalDto.getPicture();
-//        }
+        if (animalDto.getPicture() != null) {
+            this.picture = animalDto.getPicture();
+        }
         if (animalDto.getBreed() != null) {
             this.breed = animalDto.getBreed();
         }

@@ -15,6 +15,8 @@ target/
 .sts4-cache
 .application.properties
 .notes.md
+.secrets.sh
+secrets.sh
 
 ### IntelliJ IDEA ###
 .idea

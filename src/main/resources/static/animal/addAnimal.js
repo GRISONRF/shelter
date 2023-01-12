@@ -1,9 +1,28 @@
 const animalConfig = {
     baseUrl: 'http://localhost:8080/api',
     headers: {
-        'Content-Type':'multipart/form-data'
+        'Content-Type':'application/json'
         }
     }
+let imgUrl = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Hello World!");
+  var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dwn0hs3si',
+        uploadPreset: 'emgrvd7m'}, (error, result) => {
+          if (!error && result && result.event === "success") {
+            console.log('Done! Here is the image info: ', result.info.url);
+            imgUrl = result.info.url;
+          }
+        }
+      )
+
+      document.getElementById("upload_widget").addEventListener("click", function(){
+
+          myWidget.open();
+        }, false);
+});
 
 const imageInput = document.getElementById('image');
 const addAnimalForm = document.getElementById('add-animal-form')
@@ -19,7 +38,7 @@ const handleSubmit = async (e) => {
         gender: document.getElementById('gender').value,
         intakeDate: document.getElementById('int-date').value,
         intakeMethod: document.getElementById('int-method').value,
-        image: imageInput.files[0],
+        image: imgUrl,
         breed: document.getElementById('breed').value,
         food: document.getElementById('food').value,
         foodAmount: document.getElementById('food-amount').value,
@@ -50,7 +69,7 @@ const handleSubmit = async (e) => {
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
-        headers: animalConfig.headers
+//        headers: animalConfig.headers
     })
     console.log(response)
 //        .catch(err => console.error(err.message))

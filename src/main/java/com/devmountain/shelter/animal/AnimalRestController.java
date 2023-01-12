@@ -23,19 +23,23 @@ public class AnimalRestController {
     @Autowired
     private AnimalRepository animalRepository;
 
-
-    @PostMapping("/add-animal")
-    public void addAnimal(@RequestPart("image") MultipartFile image, @RequestBody AnimalDto animalDto) throws IOException {
-
-        Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", System.getenv("CLOUDINARY_NAME"),
-                "api_key", System.getenv("CLOUDINARY_KEY"),
-                "api_secret", System.getenv("CLOUDINARY_API_SECRET")
-        ));
-        Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
-        animalDto.setPicture((String) uploadResult.get("secure_url"));
+    @PostMapping(value = "/add-animal", consumes = "application/json")
+    public void addAnimal(@RequestBody AnimalDto animalDto){
         animalService.addAnimal(animalDto);
     }
+//    @PostMapping("/add-animal")
+//    public void addAnimal(@RequestPart("image") MultipartFile image, @RequestBody AnimalDto animalDto) throws IOException {
+//        System.out.println("INSIDE ADD ANIMAL FUNCTION *******************");
+//
+//        Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+//                "cloud_name", System.getenv("CLOUDINARY_NAME"),
+//                "api_key", System.getenv("CLOUDINARY_KEY"),
+//                "api_secret", System.getenv("CLOUDINARY_API_SECRET")
+//        ));
+//        Map uploadResult = cloudinary.uploader().upload(image.getBytes(), ObjectUtils.emptyMap());
+//        animalDto.setPicture((String) uploadResult.get("secure_url"));
+//        animalService.addAnimal(animalDto);
+//    }
 
 
     @GetMapping("/animals")

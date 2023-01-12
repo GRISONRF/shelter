@@ -69,7 +69,7 @@ const handleSubmit = async (e) => {
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
-//        headers: animalConfig.headers
+        headers: animalConfig.headers
     })
     console.log(response)
 //        .catch(err => console.error(err.message))

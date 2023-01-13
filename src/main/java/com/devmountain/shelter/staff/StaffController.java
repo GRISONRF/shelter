@@ -1,5 +1,7 @@
 package com.devmountain.shelter.staff;
 
+import com.devmountain.shelter.task.Task;
+import com.devmountain.shelter.task.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,11 @@ public class StaffController {
     @Autowired
     private StaffService staffService;
 
-    @Autowired StaffRepository staffRepository;
+    @Autowired
+    private StaffRepository staffRepository;
+
+    @Autowired
+    private TaskRepository taskRepository;
 
 //    @PostMapping("/login")
 //    public String staffLogin(@RequestBody StaffDto staffDto, Model model) {
@@ -55,7 +61,9 @@ public class StaffController {
     public String dashboard(@RequestParam("staffId") long staffId, Model model) {
         System.out.println("Inside of dashboard!!! *******");
         Staff staff = staffRepository.findById(staffId).orElseThrow();
+        List<Task> tasks = taskRepository.findByStaff(staff);
         model.addAttribute("staff", staff);
+        model.addAttribute("tasks", tasks);
         return "dashboard";
     }
 

@@ -10,4 +10,8 @@ import java.util.List;
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findAllByStaffEquals(Staff staff);
+
+    List<Task> findByStaffId(long staffId);
+
+    List<Task> findByStaff(Staff staff);
 }

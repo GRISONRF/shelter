@@ -44,6 +44,17 @@
                     <p th:text="'Name: ' + ${staff.name}"></p>
                 </div>
 
+                <table>
+                    <tr>
+                        <th>Task name</th>
+                        <th>Task description</th>
+                    </tr>
+                    <tr th:each="task : ${tasks}">
+                        <td th:text="${task.task}"></td>
+                        <td th:text="${task.happenedAt}"></td>
+                    </tr>
+                </table>
+
 <!--                <div th:if="${staff != null}">-->
 <!--                    <p th:text="'TASKS: ' + ${staff.task}"></p>-->
 <!--                </div>-->

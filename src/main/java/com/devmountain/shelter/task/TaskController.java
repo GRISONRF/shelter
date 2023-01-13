@@ -2,6 +2,7 @@ package com.devmountain.shelter.task;
 
 import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffDto;
+import com.devmountain.shelter.staff.StaffRepository;
 import com.devmountain.shelter.staff.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,6 +24,8 @@ public class TaskController {
     @Autowired
     public StaffService staffService;
 
+    @Autowired
+    public StaffRepository staffRepository;
 
     @GetMapping(value="/{id}")
     public String getTasksByStaffId(@PathVariable Long id, Model model){
@@ -32,5 +35,14 @@ public class TaskController {
         model.addAttribute("tasks", tasks);
 
         return "dashboard";
+    }
+
+
+    @GetMapping("/newTask")
+    public String newTask(Model model) {
+        System.out.println("* * * * * * INSIDE OF NEW TASK!! * * * ");
+        List<Staff> staffList = staffRepository.findAll();
+        model.addAttribute("staffList", staffList);
+        return "newTask";
     }
 }

@@ -5,19 +5,6 @@ const taskConfig = {
 
 let taskContainer = document.getElementById("task-container")
 
-
-//find all tasks
-//async function findAllTasks() {
-//    await fetch(`${taskConfig.baseUrl}/tasks`, {
-//        method: "GET",
-//        headers: taskConfig.headers
-//    })
-//        .then(response => response.json())
-//        .then(data => createTaskCards(data))
-//        .catch(err => console.error(err))
-//}
-
-
 //delete task
 async function handleDeleteTask(taskId){
     await fetch(`${taskConfig.baseUrl}/` + taskId, {
@@ -28,7 +15,6 @@ async function handleDeleteTask(taskId){
 
     return getTask();
 }
-
 
 // get all the tasks to create the cards
 async function getTask() {
@@ -75,10 +61,30 @@ const createTaskCards = (array) => {
 }
 getTask();
 
+const staffConfig = {
+    baseUrl: 'http://localhost:8080/staff',
+    headers: {'Content-Type':'application/json'}
+}
 
-// add a new task btn
-const addTaskBtn = document.getElementById('add-task-btn')
+async function getStaff() {
+    console.log("inside of get staff")
+    const response = await fetch(`${staffConfig.baseUrl}/all`, {
+        method: "GET",
+        headers: staffConfig.headers
+    });
+    const data = await response.json();
+    console.log(data)
+    return data;
+}
+
+
+const addTaskBtn = document.getElementById('add-task-btn');
 
 addTaskBtn.addEventListener("click", function() {
-    document.location.href = '/task/add-task.html'
-})
+    window.location.href = '/taskPage/newTask';
+});
+
+
+
+
+

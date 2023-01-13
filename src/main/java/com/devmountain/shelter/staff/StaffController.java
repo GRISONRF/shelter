@@ -18,10 +18,8 @@ public class StaffController {
 
     @Autowired
     private StaffService staffService;
-
     @Autowired
     private StaffRepository staffRepository;
-
     @Autowired
     private TaskRepository taskRepository;
 
@@ -67,6 +65,10 @@ public class StaffController {
         return "dashboard";
     }
 
+    @GetMapping("/all")
+    public List<Staff> getAllStaff() {
+        return staffRepository.findAll();
+    }
 
 
 }

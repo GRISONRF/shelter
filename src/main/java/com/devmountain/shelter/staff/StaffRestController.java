@@ -70,4 +70,10 @@ public class StaffRestController {
         return staffService.findStaff(staffId);
     }
 
+    @GetMapping("/all")
+    public List<Staff> getAllStaff() {
+        return staffRepository.findAll();
+    }
+
+
 }

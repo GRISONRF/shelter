@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,25 +11,32 @@
     <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="stylesheet" href="../forms.css" type="text/css">
 
-    <title>WRONG PAGE</title>
+    <title>Add a New Task</title>
 </head>
 <body>
 
 <div class="title-header">
-    <span class="page-title">AWRONNNGGGGGG</span>
+    <span class="page-title">Add new Task</span>
 </div>
 
 <div class="add-task-form-container">
     <form id="add-task-form" class="form">
 
 
-        <div class="form-group">
-            <label for="name">Staff Name</label>
-            <input type="text" class="form-control" id="name">
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="staff">Staff</label>-->
+<!--            <select id="staff" class="form-control">-->
+<!--                <option value="0">Select Staff</option>-->
+<!--                <th:block th:each="staff: ${staffList}">-->
+<!--                    <option th:value="${staff.id}" th:text="${staff.name}"></option>-->
+<!--                </th:block>-->
+<!--            </select>-->
+<!--        </div>-->
 
-        <label for="staff-select">Select Staff:</label>
-        <select id="staff-select"></select>
+        <select id="staff-select">
+            <option th:each="staff : ${staffList}" th:value="${staff.id}" th:text="${staff.name}"></option>
+        </select>
+
 
 
         <div class="form-group">
@@ -53,6 +60,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-<script src="newTask.js" type="application/javascript"></script>
+<script src="task/newTask.js" type="application/javascript"></script>
 </body>
 </html>

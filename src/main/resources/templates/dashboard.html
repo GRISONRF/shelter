@@ -32,7 +32,7 @@
         <main>
             <!-- Upcoming appointments -->
             <div class="upcoming-tasks">
-                <p>My Tasks for Today</p>
+
             </div>
 
 
@@ -45,9 +45,10 @@
                 </div>
 
                 <table>
+                    <p>TASKS FOR THE WEEK</p>
                     <tr>
-                        <th>Task name</th>
-                        <th>Task description</th>
+                        <th>What</th>
+                        <th>When</th>
                     </tr>
                     <tr th:each="task : ${tasks}">
                         <td th:text="${task.task}"></td>
@@ -70,8 +71,8 @@
 
             <div class="quick-links">
                 <p class="quick-links">
-                    - <a href="/add-task.html">Add Task</a><br>
-                    - <a href="add-animal.html">Add Animal</a><br>
+                    - <a href="task/add-task.html">Add Task</a><br>
+                    - <a href="animal/add-animal.html">Add Animal</a><br>
                     - <a href="animals.html">View Animals</a>
                 </p>
             </div><br>

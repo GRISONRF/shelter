@@ -1,5 +1,5 @@
 const taskConfig = {
-    baseUrl: 'http://localhost:8080/api',
+    baseUrl: 'http://localhost:8080/',
     headers: {
         'Content-Type':'application/json'
         }
@@ -17,7 +17,7 @@ const handleSubmit = async (e) => {
         happenedAt: document.getElementById('happenedAt').value,
     }
 
-    const response = await fetch(`${taskConfig.baseUrl}/task/addTask`, {
+    const response = await fetch(`${taskConfig.baseUrl}/api/task/addTask`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: taskConfig.headers

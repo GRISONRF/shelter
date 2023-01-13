@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @ComponentScan
 @Controller
-@RequestMapping("animalPage")
+@RequestMapping("/animalPage")
 public class AnimalController {
     @Autowired
     private AnimalService animalService;
@@ -23,4 +23,6 @@ public class AnimalController {
         model.addAttribute("animal", animal);
         return "animal-profile";
     }
+
+
 }

@@ -1,77 +1,37 @@
 package com.devmountain.shelter.staff;
 
-import com.devmountain.shelter.animal.AnimalDto;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/staff")
+@ComponentScan
+@Controller
+@RequestMapping("/staff")
 public class StaffController {
 
     @Autowired
     private StaffService staffService;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
-    @Autowired
-    private StaffRepository staffRepository;
-
-
-//    @GetMapping("/login")
-//    public String handleGet() {
-//        return "This endpoint only supports POST requests";
-//    }
-
-//    @PostMapping("/login")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto, HttpServletResponse httpResponse, HttpSession session){
-//
-//        LoginResponse response = (LoginResponse) service.staffLogin(staffDto);
-//        if (response.isSuccessful()) {
-//            session.setAttribute("staff-id", response.getResponse().get(1));
-//            System.out.println(session.getAttribute("staff-id"));
-//
-//            return ResponseEntity.ok().body(response.getResponse());
-//        } else {
-//            return ResponseEntity.badRequest().body(response.getResponse());
-//        }
-//
-//    }
-
-//    @PostMapping(value = "/login", headers = "Content-Type=application/json")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto){
-//
-//        var response = staffService.staffLogin(staffDto);
-//        System.out.println(response);
-//        return ResponseEntity.ok().body(response);
-//
-//    }
-
-    @PostMapping(value = "/login", consumes = "application/json")
-    public List<String> staffLogin(@RequestBody StaffDto staffDto){
-        System.out.println(staffDto);
-        return staffService.staffLogin(staffDto);
+    @PostMapping("/login")
+    public String staffLogin(@ModelAttribute StaffDto staffDto, Model model) {
+        List<String> response = staffService.staffLogin(staffDto);
+        if (response.size() == 2) {
+            model.addAttribute("staffId", response.get(1));
+            System.out.println("********** staff id ***********" + response.get(0));
+            return "redirect:" + response.get(0);
+        } else {
+            model.addAttribute("error", response.get(0));
+            return "login";
+        }
     }
 
-    @GetMapping("/staff")
-    public List<StaffDto> findAllStaff(StaffDto staffDto, Model model) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/staff/all-staff.html");
-//        model.addAttribute("species", staffDto.getName());
 
-        return staffService.findAllStaff();
-    }
 
-    @GetMapping("/{staffId}")
-    public StaffDto findById(@PathVariable Long staffId) {
-        return staffService.findStaff(staffId);
-    }
 
 }

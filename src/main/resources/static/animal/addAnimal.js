@@ -38,10 +38,10 @@ const handleSubmit = async (e) => {
         gender: document.getElementById('gender').value,
         intakeDate: document.getElementById('int-date').value,
         intakeMethod: document.getElementById('int-method').value,
-        image: imgUrl,
+        picture: imgUrl,
         breed: document.getElementById('breed').value,
         food: document.getElementById('food').value,
-        foodAmount: document.getElementById('food-amount').value,
+        food_amount: document.getElementById('food-amount').value,
         availability: document.querySelector('input[name="availability"]:checked').value
 //// ADOPTION STUFF
 //        adoptionDate: document.getElementById('adoption-date').value,

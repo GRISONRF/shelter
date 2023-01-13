@@ -39,42 +39,11 @@ public class AnimalRestController {
         return animalService.findAllAnimals();
     }
 
-//    @RequestMapping("/animals")
-//    public String getAnimals(Model model) {
-//        model.addAttribute("Animal", )
-//    }
-
-
-//    @RequestMapping("/{animalId}")
-//    public String viewAnimal(@PathVariable long animalId, Model model) {
-//
-//        Animal animal = animalRepository.getReferenceById(animalId);
-//        model.addAttribute("animal", animal);
-//        return "viewAnimal";
-//    }
         @GetMapping("/animal-profile/{animalId}")
         public AnimalDto findAnimalById(@PathVariable Long animalId) {
-            System.out.println("ITS GETTING HERE!!!!!");
-            System.out.println("***********************************************************************");
             return animalService.findAnimalById(animalId);
         }
 
-//        @PostMapping("/post-form-data")
-//        public String handleFormData(@RequestParam("my-file") MultipartFile file) throws IOException {
-//
-//            System.out.println("~~~~~~~~~~~~ SAVING THE PICTURE METHOD!!!!!!!!!! ~~~~~~~~~~~~~~~");
-//
-//            File pic = new File("src/main/resources/image.jpg");
-//            Map uploadResult = cloudinary.uploader().upload(pic, (ObjectUtils.asMap(
-//                    "cloud_name", System.getenv("CLOUDINARY_NAME"),
-//                    "api_key", System.getenv("CLOUDINARY_KEY"),
-//                    "api_secret", System.getenv("CLOUDINARY_API_SECRET")
-//            )));
-//            String url = (String) uploadResult.get("url");
-//
-//
-//
-//            return "redirect:/success";
-//        }
+
 
 }

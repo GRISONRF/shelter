@@ -1,37 +1,36 @@
 package com.devmountain.shelter.task;
 
-import com.devmountain.shelter.animal.AnimalDto;
+import com.devmountain.shelter.staff.Staff;
+import com.devmountain.shelter.staff.StaffDto;
+import com.devmountain.shelter.staff.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("api/task")
+@ComponentScan
+@Controller
+@RequestMapping("taskPage")
 public class TaskController {
 
     @Autowired
-    private TaskService taskService;
+    public TaskService taskService;
+    @Autowired
+    public StaffService staffService;
 
-    @Autowired TaskRepository taskRepository;
 
-    @GetMapping("/tasks")
-    public List<TaskDto> findAllTasks(TaskDto taskDto, Model model) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/task/tasks.html");
+    @GetMapping(value="/{id}")
+    public String getTasksByStaffId(@PathVariable Long id, Model model){
+        StaffDto staff = staffService.findStaff(id);
+        List<Task> tasks = taskService.findAllTasksById(id);
+        model.addAttribute("staff", staff);
+        model.addAttribute("tasks", tasks);
 
-        return taskService.findAllTasks();
-    }
-
-    @PostMapping(value = "/addTask", consumes = "application/json")
-    public void addTask(@RequestBody TaskDto taskDto){
-        taskService.addTask(taskDto);
-    }
-
-    @DeleteMapping("/{taskId}")
-    public void deleteTaskById(@PathVariable Long taskId) {
-        taskService.deleteTaskById(taskId);
+        return "dashboard";
     }
 }

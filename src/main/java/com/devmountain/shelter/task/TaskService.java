@@ -12,4 +12,6 @@ public interface TaskService {
     List<String> addTask(TaskDto taskDto);
 
     void deleteTaskById(Long taskId);
+
+    List<Task> findAllTasksById(Long id);
 }

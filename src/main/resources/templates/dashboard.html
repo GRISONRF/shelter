@@ -34,15 +34,21 @@
             <div class="upcoming-tasks">
                 <p>My Tasks for Today</p>
             </div>
-<!--            <div>-->
 
-<!--                <div th:if="${user == null}">-->
-<!--                    <a href="/login">Login First</a>-->
+
+                <div th:if="${staff == null}">
+                    <a href="/login">Login First</a>
+                </div>
+
+                <div th:if="${staff != null}">
+                    <p th:text="'Name: ' + ${staff.name}"></p>
+                </div>
+
+<!--                <div th:if="${staff != null}">-->
+<!--                    <p th:text="'TASKS: ' + ${staff.task}"></p>-->
 <!--                </div>-->
 
-<!--                <div th:if="${user != null}">-->
 
-<!--                </div>-->
 
             <div id="dashboard-tasks-container" class="container-fluid"></div>
         </main>

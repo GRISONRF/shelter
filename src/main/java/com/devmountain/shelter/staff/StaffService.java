@@ -16,5 +16,7 @@ public interface StaffService {
     List<StaffDto> findAllStaff();
 
     StaffDto findStaff(Long id);
+
+//    Object getStaffById(Long staffId);
 }
 

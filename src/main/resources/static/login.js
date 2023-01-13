@@ -25,7 +25,7 @@ const handleSubmit = async (e) =>{
 //        .catch(err => console.error(err.message))
     console.log(response)
 
-    const responseArr = await response.json()
+    window.location.replace(response.url);
 //    console.log(responseArr)
 
     if (response.status === 200){

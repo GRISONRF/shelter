@@ -31,11 +31,16 @@ async function getTask() {
 }
 
 const createTaskCards = (array) => {
-    console.log(array)
+    console.log(array + "create task cards")
     taskContainer.innerHTML = ''
 
     array.forEach(obj => {
+        console.log("OBJECT:")
         console.log(obj)
+        console.log("staffDTO")
+        console.log(obj.staffDto)
+        console.log("staff dto name")
+        console.log(obj.staffDto.name)
 
         const taskId = obj.id
         const name = obj.staffDto.name

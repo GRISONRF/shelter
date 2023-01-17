@@ -12,12 +12,13 @@ const handleSubmit = async (e) => {
     e.preventDefault()
 
     let bodyObj = {
-        name: document.getElementById('name').value,
+        staff: document.getElementById('staff-select').value,
         task: document.getElementById('task').value,
         happenedAt: document.getElementById('happenedAt').value,
     }
+    console.log(bodyObj)
 
-    const response = await fetch(`${taskConfig.baseUrl}/api/task/addTask`, {
+    const response = await fetch(`${taskConfig.baseUrl}api/task/addTask`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: taskConfig.headers

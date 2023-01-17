@@ -18,6 +18,8 @@ public class TaskRestController {
 
     @GetMapping("/tasks")
     public List<TaskDto> findAllTasks(TaskDto taskDto, Model model) {
+        System.out.println("************ inside of rest controller find all tasks");
+
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/task/tasks.html");
 
@@ -26,6 +28,7 @@ public class TaskRestController {
 
     @PostMapping(value = "/addTask", consumes = "application/json")
     public void addTask(@RequestBody TaskDto taskDto){
+        System.out.println("************ inside of rest controller add task");
         taskService.addTask(taskDto);
     }
 

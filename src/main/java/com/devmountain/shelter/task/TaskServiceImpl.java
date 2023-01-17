@@ -38,11 +38,27 @@ public class TaskServiceImpl implements TaskService {
     @Transactional
     public List<String> addTask(TaskDto taskDto){
         List<String> response = new ArrayList<>();
+//        System.out.println(taskDto.getStaffDto());
+//        System.out.println(taskDto.getStaffDto().getName());
+
+
+
         Task task = new Task(taskDto);
+        System.out.println("****** INSIDE OF ADDTASK." + task);
+        System.out.println(taskDto);
         taskRepository.saveAndFlush(task);
         response.add("Task Added Successfully");
         return response;
     }
+
+//    @Transactional
+//    public List<Task> addTask(TaskDto taskDto){
+//        Task task = new Task(taskDto);
+//        taskRepository.saveAndFlush(task);
+//        return taskRepository.findAll();
+//    }
+
+
 
     @Override
     @Transactional

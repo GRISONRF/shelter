@@ -18,6 +18,8 @@ public class TaskDto implements Serializable {
     public String task;
     public String happenedAt;
 
+    public Long staff;
+
     public StaffDto staffDto;
 
     public AnimalDto animalDto;
@@ -38,4 +40,5 @@ public class TaskDto implements Serializable {
         this.staffDto = new StaffDto();
         this.staffDto.setName(task.getStaff().getName());
     }
+
 }

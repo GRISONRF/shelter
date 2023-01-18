@@ -10,9 +10,10 @@ console.log("Hello")
 const handleSubmit = async (e) => {
     console.log("second hello")
     e.preventDefault()
+    console.log(typeof document.getElementById('staff-select').value)
 
     let bodyObj = {
-        staff: document.getElementById('staff-select').value,
+        staff: Number(document.getElementById('staff-select').value),
         task: document.getElementById('task').value,
         happenedAt: document.getElementById('happenedAt').value,
     }

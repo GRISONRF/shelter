@@ -38,12 +38,13 @@ public class TaskServiceImpl implements TaskService {
     @Transactional
     public List<String> addTask(TaskDto taskDto){
         List<String> response = new ArrayList<>();
-//        System.out.println(taskDto.getStaffDto());
-//        System.out.println(taskDto.getStaffDto().getName());
-
-
+        Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaff());
+        System.out.println("STAFF? " + staffOptional);
 
         Task task = new Task(taskDto);
+        staffOptional.ifPresent(staff -> {
+            task.setStaff(staff);
+        });
         System.out.println("****** INSIDE OF ADDTASK." + task);
         System.out.println(taskDto);
         taskRepository.saveAndFlush(task);
@@ -52,8 +53,13 @@ public class TaskServiceImpl implements TaskService {
     }
 
 //    @Transactional
-//    public List<Task> addTask(TaskDto taskDto){
+//    @Override
+//    public TaskDto addTask(TaskDto taskDto){
 //        Task task = new Task(taskDto);
+//
+//        );
+//
+//        task.setStaff(staffOptional.get());
 //        taskRepository.saveAndFlush(task);
 //        return taskRepository.findAll();
 //    }

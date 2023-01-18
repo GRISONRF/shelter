@@ -26,10 +26,10 @@ public class TaskRestController {
         return taskService.findAllTasks();
     }
 
-    @PostMapping(value = "/addTask", consumes = "application/json")
+    @PostMapping(value = "/addTask")
     public void addTask(@RequestBody TaskDto taskDto){
         System.out.println("************ inside of rest controller add task");
-        System.out.println(taskDto.staff);
+        System.out.println(taskDto.staffId);
 
         System.out.println(taskDto);
         taskService.addTask(taskDto);

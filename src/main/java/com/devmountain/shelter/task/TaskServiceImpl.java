@@ -38,13 +38,17 @@ public class TaskServiceImpl implements TaskService {
     @Transactional
     public List<String> addTask(TaskDto taskDto){
         List<String> response = new ArrayList<>();
-        Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaff());
+        Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaffId());
         System.out.println("STAFF? " + staffOptional);
 
         Task task = new Task(taskDto);
-        staffOptional.ifPresent(staff -> {
+        staffOptional.ifPresentOrElse(staff -> {
             task.setStaff(staff);
+        },()->{
+            System.out.println("staff id not found");
+            //add some logging here to understand why staff is not found.
         });
+
         System.out.println("****** INSIDE OF ADDTASK." + task);
         System.out.println(taskDto);
         taskRepository.saveAndFlush(task);

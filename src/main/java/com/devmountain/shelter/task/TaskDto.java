@@ -18,11 +18,11 @@ public class TaskDto implements Serializable {
     public String task;
     public String happenedAt;
 
-    public Long staff;
+    public Long staffId;
 
     public StaffDto staffDto;
 
-    public AnimalDto animalDto;
+//    public AnimalDto animalDto;
 
 
 

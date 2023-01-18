@@ -13,7 +13,7 @@ const handleSubmit = async (e) => {
     console.log(typeof document.getElementById('staff-select').value)
 
     let bodyObj = {
-        staff: Number(document.getElementById('staff-select').value),
+        staffId: document.getElementById('staff-select').value,
         task: document.getElementById('task').value,
         happenedAt: document.getElementById('happenedAt').value,
     }

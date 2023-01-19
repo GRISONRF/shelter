@@ -10,9 +10,4 @@ import java.util.Optional;
 public interface StaffRepository extends JpaRepository<Staff, Long> {
     Optional<Staff> findByEmail(String email);
 
-
-
-
-
-
 }

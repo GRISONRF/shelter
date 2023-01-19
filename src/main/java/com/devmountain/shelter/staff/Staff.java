@@ -33,9 +33,10 @@ public class Staff {
     @Column
     public String role;
 
-    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonBackReference
-    List<Task> tasks = new ArrayList<>();
+//    @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    List<Task> tasks = new ArrayList<>();
+
 
     public Staff (StaffDto staffDto){
         if (staffDto.getEmail() != null) {

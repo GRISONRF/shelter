@@ -20,6 +20,7 @@ public class TaskServiceImpl implements TaskService {
     @Autowired
     private StaffRepository staffRepository;
 
+
     @Override
     public List<TaskDto> findAllTasks() {
         List<Task> taskList = taskRepository.findAll();
@@ -37,6 +38,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Transactional
     public List<String> addTask(TaskDto taskDto){
+        System.out.println("FIRST LINE ADD TASK !!!!!!!!!!!!!!!!!!!!!!!!!!!");
         List<String> response = new ArrayList<>();
         Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaffId());
         System.out.println("STAFF? " + staffOptional);
@@ -56,16 +58,17 @@ public class TaskServiceImpl implements TaskService {
         return response;
     }
 
+
 //    @Transactional
 //    @Override
-//    public TaskDto addTask(TaskDto taskDto){
+//    public TaskDto addTask(TaskDto taskDto){   //changed the addTask to return a taskDto
 //        Task task = new Task(taskDto);
-//
-//        );
+//        Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaffId());
+//        System.out.println("\n" + staffOptional);
 //
 //        task.setStaff(staffOptional.get());
-//        taskRepository.saveAndFlush(task);
-//        return taskRepository.findAll();
+//        return new TaskDto(taskRepository.saveAndFlush(task));
+//
 //    }
 
 

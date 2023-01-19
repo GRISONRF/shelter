@@ -97,3 +97,31 @@ const addAnimalBtn = document.getElementById('add-animal-btn')
 addAnimalBtn.addEventListener("click", function() {
     document.location.href = '/animal/addAnimal.html'
 })
+
+///////////////////////// filter ////////////////////
+//const select = document.getElementById("filter-select");
+//
+//select.addEventListener("change", function() {
+//  const selectedValue = select.value;
+//  if (selectedValue === "available") {
+//    await fetch(`${animalConfig.baseUrl}/animals?available=true`, {
+//            method: "GET",
+//            headers: animalConfig.headers
+//        })
+//            .then(response => response.json())
+//
+//            .then(data => createAnimalCards(data))
+//
+//  } else if (selectedValue === "cats") {
+//
+//  } else if (selectedValue === "dogs") {
+//
+//
+//  }   else if (selectedValue === "male") {
+//
+//  }   else if (selectedValue === "female") {
+//
+//  }
+//
+//});
+

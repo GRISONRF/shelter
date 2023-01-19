@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class TaskDto implements Serializable {
 
     public Long id;
-    public String task;
+    public String name;
     public String happenedAt;
 
     public Long staffId;
@@ -30,8 +30,8 @@ public class TaskDto implements Serializable {
         if (task.getId() != null){
             this.id = task.getId();
         }
-        if (task.getTask() != null){
-            this.task = task.getTask();
+        if (task.getName() != null){
+            this.name = task.getName();
         }
         if (task.getHappenedAt() != null){
             this.happenedAt = task.getHappenedAt();

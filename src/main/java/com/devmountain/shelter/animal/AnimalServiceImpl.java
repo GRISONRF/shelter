@@ -59,6 +59,18 @@ public class AnimalServiceImpl implements AnimalService {
         return animalList.stream().map(AnimalDto::new).collect(Collectors.toList());
     }
 
+//    public List<AnimalDto> findAnimals(String filter) {
+//        List<Animal> animals;
+//        if (filter != null) {
+//            // Use the filter to retrieve the filtered data from the repository
+//            animals = animalRepository.findByFilter(filter);
+//        } else {
+//            // Retrieve all the data from the repository
+//            animals = animalRepository.findAll();
+//        }
+//        return animals.stream().map(AnimalDto::new).collect(Collectors.toList());
+//    }
+
 
     @Override
     public AnimalDto findAnimalById(Long id){
@@ -66,6 +78,11 @@ public class AnimalServiceImpl implements AnimalService {
         AnimalDto animalDto = new AnimalDto(animal);
         return animalDto;
     }
+
+//    @Override
+//    public List<Animal> getAnimals(boolean available, String gender, String species) {
+//        return null;
+//    }
 
 }
 

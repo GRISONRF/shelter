@@ -20,23 +20,20 @@ public class Task {
     public Long id;
 
     @Column
-    public String task;
+    public String name;
     @Column
     public String happenedAt;
 
-    //animal_id
-//    @ManyToOne
-//    @JsonBackReference
-//    private Animal animal;
 
     //staff_id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="staff_id")
     @JsonBackReference
     private Staff staff;
 
     public Task(TaskDto taskDto){
-        if (taskDto.getTask() != null) {
-            this.task = taskDto.getTask();
+        if (taskDto.getName() != null) {
+            this.name = taskDto.getName();
         }
         if (taskDto.getHappenedAt() != null) {
             this.happenedAt = taskDto.getHappenedAt();

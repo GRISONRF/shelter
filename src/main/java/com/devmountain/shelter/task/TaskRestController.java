@@ -35,6 +35,11 @@ public class TaskRestController {
         taskService.addTask(taskDto);
     }
 
+//    public TaskDto addTask(@RequestBody TaskDto taskDto){   //changed the addTask to return a taskDto
+//        return (TaskDto) taskService.addTask(taskDto);
+//
+//    }
+
     @DeleteMapping("/{taskId}")
     public void deleteTaskById(@PathVariable Long taskId) {
         taskService.deleteTaskById(taskId);

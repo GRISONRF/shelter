@@ -14,4 +14,5 @@ public interface AnimalService {
 
     AnimalDto findAnimalById(Long animalId);
 
+//    List<AnimalDto> getAnimals(boolean available, String gender, String species);
 }

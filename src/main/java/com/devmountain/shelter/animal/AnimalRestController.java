@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -39,10 +40,38 @@ public class AnimalRestController {
         return animalService.findAllAnimals();
     }
 
-        @GetMapping("/animal-profile/{animalId}")
-        public AnimalDto findAnimalById(@PathVariable Long animalId) {
+    @GetMapping("/animal-profile/{animalId}")
+    public AnimalDto findAnimalById(@PathVariable Long animalId) {
             return animalService.findAnimalById(animalId);
         }
+
+//    @GetMapping("/animals")
+//    public List<AnimalDto> findAnimals(@RequestParam(value = "filter", required = false) String filter) {
+//        List<Animal> animals;
+//        if(filter != null) {
+//            if (filter.equals("available")) {
+//                animals = animalRepository.findByAvailability(true);
+//            } else if (filter.equals("male")) {
+//                animals = animalRepository.findByGender("male");
+//            } else if (filter.equals("female")) {
+//                animals = animalRepository.findByGender("female");
+//            } else if (filter.equals("cat")) {
+//                animals = animalRepository.findBySpecies("cat");
+//            } else if (filter.equals("dog")) {
+//                animals = animalRepository.findBySpecies("dog");
+//            } else {
+//                animals = animalRepository.findAll();
+//            }
+//        }else{
+//            animals = animalRepository.findAll();
+//        }
+//
+//        List<AnimalDto> animalsDto = new ArrayList<>();
+//        for (Animal animal : animals) {
+//            animalsDto.add(new AnimalDto(animal));
+//        }
+//        return animalsDto;
+//    }
 
 
 

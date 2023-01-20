@@ -30,39 +30,31 @@ public class AnimalRestController {
         animalService.addAnimal(animalDto);
     }
 
-
-    @GetMapping("/animals")
-    public List<AnimalDto> findAllAnimals(AnimalDto animalDto, Model model) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/animal/animals.html");
-//        model.addAttribute("species", animalDto.getSpecies());
-
-        return animalService.findAllAnimals();
-    }
-
     @GetMapping("/animal-profile/{animalId}")
     public AnimalDto findAnimalById(@PathVariable Long animalId) {
             return animalService.findAnimalById(animalId);
         }
 
+    @GetMapping("/animals")
+    public List<AnimalDto> findAllAnimals(AnimalDto animalDto, Model model) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/animal/animals.html");
+        return animalService.findAllAnimals();
+    }
+
+
 //    @GetMapping("/animals")
 //    public List<AnimalDto> findAnimals(@RequestParam(value = "filter", required = false) String filter) {
 //        List<Animal> animals;
 //        if(filter != null) {
-//            if (filter.equals("available")) {
-//                animals = animalRepository.findByAvailability(true);
-//            } else if (filter.equals("male")) {
-//                animals = animalRepository.findByGender("male");
-//            } else if (filter.equals("female")) {
-//                animals = animalRepository.findByGender("female");
-//            } else if (filter.equals("cat")) {
+//            if (filter.equals("cat")) {
 //                animals = animalRepository.findBySpecies("cat");
 //            } else if (filter.equals("dog")) {
 //                animals = animalRepository.findBySpecies("dog");
 //            } else {
 //                animals = animalRepository.findAll();
 //            }
-//        }else{
+//        } else {
 //            animals = animalRepository.findAll();
 //        }
 //

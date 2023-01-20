@@ -51,7 +51,7 @@
                         <th>When</th>
                     </tr>
                     <tr th:each="task : ${tasks}">
-                        <td th:text="${task.task}"></td>
+                        <td th:text="${task.name}"></td>
                         <td th:text="${task.happenedAt}"></td>
                     </tr>
                 </table>

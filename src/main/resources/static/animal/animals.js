@@ -4,7 +4,6 @@ const animalConfig = {
         'Content-Type':'application/json'
         }
     }
-
 //const animalProfileUrl = animalConfig.baseUrl + '/animal/animal-profile/'
 const animalProfileUrl = 'http://localhost:8080/animalPage/'
 
@@ -43,18 +42,70 @@ async function getAnimal() {
 }
 
 
-// get all animals
-async function getAnimals() {
+//// get all animals
+//async function getAnimals() {
+//
+//    await fetch(`${animalConfig.baseUrl}/animal/animals`, {
+//        method: "GET",
+//        headers: animalConfig.headers
+//    })
+//        .then(response => response.json())
+//
+//        .then(data => createAnimalCards(data))
+////        .catch(err => console.error(err))
+//}
+const select = document.getElementById("filter-select");
 
+
+const filterAnimals = (data, selection) => {
+    console.log(data)
+    switch (selection) {
+        case "Cats":
+            return data.filter(animal => animal.species === "Cat");
+        case "Dogs":
+            return data.filter(animal => animal.species === "Dog");
+        case "Female":
+            return data.filter(animal => animal.gender === "Female");
+        case "Male":
+            return data.filter(animal => animal.gender === "Male");
+        case "Available":
+            return data.filter(animal => animal.availability === "Available");
+        default:
+            return data;
+    }
+}
+
+select.addEventListener('change', () => {
+    const selectedOption = select.selectedOptions[0].innerHTML;
+    getAnimalsByFilter(selectedOption);
+  });
+
+async function getAnimalsByFilter(selection) {
     await fetch(`${animalConfig.baseUrl}/animal/animals`, {
         method: "GET",
         headers: animalConfig.headers
     })
         .then(response => response.json())
-
-        .then(data => createAnimalCards(data))
-//        .catch(err => console.error(err))
+        .then(data => {
+            console.log(data)
+            createAnimalCards(filterAnimals(data, selection));
+        })
 }
+
+const getAnimals = async () => {
+    await fetch(`${animalConfig.baseUrl}/animal/animals`, {
+        method: "GET",
+        headers: animalConfig.headers
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const selection = document.getElementById("filter-select").value;
+                createAnimalCards(data);
+        })
+}
+
+
 
 const createAnimalCards = (array) => {
     console.log(array);
@@ -91,7 +142,6 @@ getAnimals();
 
 
 // add a new animal btn
-
 const addAnimalBtn = document.getElementById('add-animal-btn')
 
 addAnimalBtn.addEventListener("click", function() {
@@ -99,29 +149,15 @@ addAnimalBtn.addEventListener("click", function() {
 })
 
 ///////////////////////// filter ////////////////////
-//const select = document.getElementById("filter-select");
-//
-//select.addEventListener("change", function() {
-//  const selectedValue = select.value;
-//  if (selectedValue === "available") {
-//    await fetch(`${animalConfig.baseUrl}/animals?available=true`, {
-//            method: "GET",
-//            headers: animalConfig.headers
-//        })
-//            .then(response => response.json())
-//
-//            .then(data => createAnimalCards(data))
-//
-//  } else if (selectedValue === "cats") {
-//
-//  } else if (selectedValue === "dogs") {
-//
-//
-//  }   else if (selectedValue === "male") {
-//
-//  }   else if (selectedValue === "female") {
-//
-//  }
-//
+
+//document.getElementById("filter-select").addEventListener("change", function() {
+//    let filter = this.value;
+//    if(filter !== "all"){
+//        let filteredAnimals = array.filter(animal => animal[filter] === filter);
+//        createAnimalsCards(filteredAnimals);
+//    }else{
+//        createAnimalsCards(array);
+//    }
 //});
+///////////////////////// end of filter ////////////////////
 

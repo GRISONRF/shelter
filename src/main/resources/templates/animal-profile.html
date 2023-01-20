@@ -32,15 +32,41 @@
 
     <main>
         <h1 th:text="${animal.name}"></h1>
-        <img th:attr="src=${animal.picture}" alt="Animal picture">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img th:attr="src=${animal.picture}" class="img-fluid" alt="Animal Profile Picture">
+                </div>
+                <div class="col-sm-8">
+                    <div class="div1">
+                        <p>Name:</p>
+                        <p th:text="${animal.name}"></p>
+                    </div>
+                    <div class="div2">
+                        <p>Specie:</p>
+                        <p th:text="${animal.species}"></p>
+                    </div>
+                    <div class="div3">
+                        <p>Gender:</p>
+                        <p th:text="${animal.gender}"></p>
+                    </div>
+                    <div class="div4">
+                        <p>Date of Birth:</p>
+                        <p th:text="${animal.dob}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
         <table>
             <tr>
-                <th>Species</th>
-                <th>Name</th>
-                <th>DOB</th>
-                <th>Gender</th>
                 <th>Intake Date</th>
                 <th>Intake Method</th>
                 <th>Breed</th>
@@ -49,10 +75,6 @@
                 <th>Availability</th>
             </tr>
             <tr>
-                <td th:text="${animal.species}"></td>
-                <td th:text="${animal.name}"></td>
-                <td th:text="${animal.dob}"></td>
-                <td th:text="${animal.gender}"></td>
                 <td th:text="${animal.intakeDate}"></td>
                 <td th:text="${animal.intakeMethod}"></td>
                 <td th:text="${animal.breed}"></td>

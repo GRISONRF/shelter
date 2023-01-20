@@ -173,3 +173,28 @@ footer {
     text-align: center;
 }
 
+/* to display animal's information */
+.container {
+    width: 100%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-sm-4,
+.col-sm-8 {
+    flex: 1;
+}
+.img-fluid {
+    max-width: 80%;
+    height: auto;
+}
+
+.div1, .div2, .div3, .div4 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.div1 p:first-child, .div2 p:first-child, .div3 p:first-child, .div4 p:first-child {
+    margin-right: 10px;
+}

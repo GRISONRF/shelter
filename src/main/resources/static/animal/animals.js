@@ -115,6 +115,7 @@ const createAnimalCards = (array) => {
         console.log(obj)
 
         const id = obj.id
+        const picture = obj.picture
         const species = obj.species
         const name = obj.name
         const dob = obj.dob
@@ -127,6 +128,9 @@ const createAnimalCards = (array) => {
         animalCard.innerHTML = `
             <div class="animal-card">
                 <ul class="animal-styling">
+                    <li style="font-size: 17px; width: 100px">
+                        <img src="${picture}" width="100" height="100" alt="Animal Image">
+                    </li>
                     <li style="font-size: 17px; width: 100px">${species}</li>
                     <li onClick="handleAnimalClick(${id})"style="font-size: 17px; width: 125px">${name}</li>
                     <li style="font-size: 17px; width: 100px">${dob}</li>

@@ -4,36 +4,64 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="../style.css" type="text/css">
-    <link rel="stylesheet" href="./animals.css" type="text/css">
+    <link rel="stylesheet" href="../animal-profile.css" type="text/css">
+<!--
+    <link rel="stylesheet" href="animal/animals.css" type="text/css">
+-->
 
-    <title>All Animals</title>
+    <title>Animal Profile</title>
 </head>
 <body>
+    <div class="header">
+        <img src="">
+        <nav>
+            <ul>
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../animal/animals.html">Animals</a></li>
+                <li><a href="../staff/all-staff.html">Staff</a></li>
+                <li><a href="../task/tasks.html">Tasks</a></li>
+                <li><a class="logout-btn" style="padding-left: 173px" href="../login.html" onclick="handleLogout()
+                                ">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
 
-<h1> animal page</h1>
+    <div class="title-header">
+        <span class="page-title" th:text="${animal.name}"></span>
+    </div>
 
-<div th:text="${animal.name}">Data will be displayed here</div>
-<p ></p>
-
-<table>
-    <tr th:each="item : ${animal}">
-        <td th:text="${animal.species}"></td>
-        <td th:text="${animal.name}"></td>
-        <td th:text="${animal.dob}"></td>
-        <td th:text="${animal.gender}"></td>
-        <td th:text="${animal.intakeDate}"></td>
-        <td th:text="${animal.intakeMethod}"></td>
-        <td th:text="${animal.breed}"></td>
-        <td th:text="${animal.food}"></td>
-        <td th:text="${animal.food_amount}"></td>
-        <td th:text="${animal.availability}"></td>
+    <main>
+        <h1 th:text="${animal.name}"></h1>
+        <img th:attr="src=${animal.picture}" alt="Animal picture">
 
 
+        <table>
+            <tr>
+                <th>Species</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Intake Date</th>
+                <th>Intake Method</th>
+                <th>Breed</th>
+                <th>Food</th>
+                <th>Food Amount</th>
+                <th>Availability</th>
+            </tr>
+            <tr>
+                <td th:text="${animal.species}"></td>
+                <td th:text="${animal.name}"></td>
+                <td th:text="${animal.dob}"></td>
+                <td th:text="${animal.gender}"></td>
+                <td th:text="${animal.intakeDate}"></td>
+                <td th:text="${animal.intakeMethod}"></td>
+                <td th:text="${animal.breed}"></td>
+                <td th:text="${animal.food}"></td>
+                <td th:text="${animal.food_amount}"></td>
+                <td th:text="${animal.availability}"></td>
+            </tr>
+        </table>
+    </main>
 
-
-
-    </tr>
-</table>
 </body>
 </html>

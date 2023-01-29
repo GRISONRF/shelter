@@ -41,11 +41,11 @@
                 </div>
 
                 <div th:if="${staff != null}">
-                    <p th:text="'Name: ' + ${staff.name}"></p>
+                    <p th:text="'Hello ' + ${staff.name}"></p>
                 </div>
 
                 <table>
-                    <p>TASKS FOR THE WEEK</p>
+                    <p>YOUR TASKS FOR THE WEEK</p>
                     <tr>
                         <th>What</th>
                         <th>When</th>
@@ -53,6 +53,7 @@
                     <tr th:each="task : ${tasks}">
                         <td th:text="${task.name}"></td>
                         <td th:text="${task.happenedAt}"></td>
+                        <td><button class="delete-button">Task done!</button></td>
                     </tr>
                 </table>
 
@@ -98,7 +99,7 @@
 
 
 
-<script src="dashboard.js" type="application/javascript"></script>
+<script src="/dashboard/dashboard.js" type="application/javascript"></script>
 
 </body>
 </html>

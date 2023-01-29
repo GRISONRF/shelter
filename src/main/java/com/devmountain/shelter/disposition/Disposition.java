@@ -47,7 +47,6 @@ public class Disposition {
     //animal_id
     @OneToOne
     private Animal animal;
-
     public Disposition (DispositionDto dispositionDto){
         if (dispositionDto.getPotty() != null) {
             this.potty = dispositionDto.getPotty();

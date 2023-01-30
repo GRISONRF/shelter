@@ -53,7 +53,8 @@
                     <tr th:each="task : ${tasks}">
                         <td th:text="${task.name}"></td>
                         <td th:text="${task.happenedAt}"></td>
-                        <td><button class="delete-button">Task done!</button></td>
+                        <td><button class="delete-button" onClick="handleDeleteTask(${task.id})">Task done!</button></td>
+
                     </tr>
                 </table>
 

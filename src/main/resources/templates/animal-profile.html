@@ -4,7 +4,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../style.css" type="text/css">
     <link rel="stylesheet" href="../animal-profile.css" type="text/css">
+
 <!--
     <link rel="stylesheet" href="animal/animals.css" type="text/css">
 -->
@@ -13,7 +15,8 @@
 </head>
 <body>
     <div class="header">
-        <img src="">
+        <img src="../images/flower.png" style="height: 90px;">
+
         <nav>
             <ul>
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
@@ -31,7 +34,7 @@
     </div>
 
     <main>
-        <h1 th:text="${animal.name}"></h1>
+<!--        <h1 th:text="${animal.name}"></h1>-->
 
 
         <div class="container">
@@ -61,10 +64,6 @@
         </div>
 
 
-
-
-
-
         <table>
             <tr>
                 <th>Intake Date</th>
@@ -83,6 +82,42 @@
                 <td th:text="${animal.availability}"></td>
             </tr>
         </table>
+        <div class="table-group">
+            <table class="col-md-6">
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Potty Trained?</b></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Leash Reactive?</b></td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Good With Kids?</b></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Good With Other Animals?</b></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Temper:</b></td>
+                    <td>Timid</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;"><b>Crate Trained?</b></td>
+                    <td>No</td>
+                </tr>
+            </table>
+            <table class="col-md-6">
+                <tr>
+                    <th>Additional Comments:</th>
+                </tr>
+                <tr>
+                    <td>Loves playing with her toys, very </td>
+                </tr>
+            </table>
+        </div>
     </main>
 
 </body>

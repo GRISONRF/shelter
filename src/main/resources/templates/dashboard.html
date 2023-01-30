@@ -40,23 +40,24 @@
                     <a href="/login">Login First</a>
                 </div>
 
-                <div th:if="${staff != null}">
-                    <p th:text="'Hello ' + ${staff.name}"></p>
+                <div th:if="${staff != null}" class="dash-name">
+                    <p th:text="'Hello ' + ${staff.name}" style="font-size: 30px;"></p>
                 </div>
+                <div class="task-table-container">
+                    <table>
+                        <p>YOUR TASKS FOR THE WEEK:</p>
+                        <tr>
+                            <th style="width: 360px">What</th>
+                            <th>When</th>
+                        </tr>
+                        <tr th:each="task : ${tasks}">
+                            <td th:text="${task.name}"></td>
+                            <td th:text="${task.happenedAt}" style="width: 200px"></td>
+                            <td><button class="delete-button" onClick="handleDeleteTask(${task.id})">Task done!</button></td>
 
-                <table>
-                    <p>YOUR TASKS FOR THE WEEK</p>
-                    <tr>
-                        <th>What</th>
-                        <th>When</th>
-                    </tr>
-                    <tr th:each="task : ${tasks}">
-                        <td th:text="${task.name}"></td>
-                        <td th:text="${task.happenedAt}"></td>
-                        <td><button class="delete-button" onClick="handleDeleteTask(${task.id})">Task done!</button></td>
-
-                    </tr>
-                </table>
+                        </tr>
+                    </table>
+                </div>
 
 <!--                <div th:if="${staff != null}">-->
 <!--                    <p th:text="'TASKS: ' + ${staff.task}"></p>-->
@@ -67,12 +68,10 @@
             <div id="dashboard-tasks-container" class="container-fluid"></div>
         </main>
 
-        <aside>
-            <!-- Welcome text -->
-            <div id="welcomeText"></div>
-
+<!--        <aside>-->
             <div class="quick-links">
-                <p class="quick-links">
+                <p>Quick links:</p>
+                <p>
                     - <a href="task/add-task.html">Add Task</a><br>
                     - <a href="animal/add-animal.html">Add Animal</a><br>
                     - <a href="animals.html">View Animals</a>
@@ -94,7 +93,7 @@
 <!--                    <button id="submit-button" type="submit" class="submit-note">Add Note</button>-->
 <!--                </div>-->
 <!--            </form>-->
-        </aside>
+<!--        </aside>-->
     </div>
 </div>
 

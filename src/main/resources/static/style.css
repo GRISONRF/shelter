@@ -76,3 +76,26 @@ a:active {
     color: #cbab3c;
     border-color: #f8f9fa;
 }
+
+.layout-container {
+    margin: 30px;
+    font-size: 20px;
+
+}
+
+.dash-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.task-table-container {
+    border: 1px solid #ccc; /* add a thin line */
+    padding: 10px; /* add some padding */
+    padding-bottom: 30px;
+}
+
+.quick-links {
+    margin-top: 50px;
+    margin-left: 10px;
+}

@@ -7,6 +7,7 @@ nav {
     align-items: center;
     font-family: 'Source Sans Pro', sans-serif !important;
     font-size: 18px;
+
 }
 ul > li {
     display: inline-block;
@@ -16,5 +17,14 @@ ul > li {
 }
 
 .form {
+    padding-top: 20px;
+    padding-left: 30px;
+}
 
+.form-group {
+    padding: 10px;
+}
+
+.form-row {
+    display: flex;
 }

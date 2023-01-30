@@ -37,9 +37,9 @@ const createStaffCards = (array) => {
             <div class="staff-card">
                 <ul class="staff-styling">
                     <li style="font-size: 17px; width: 100px">${name}</li>
-                    <li style="font-size: 17px; width: 125px">${role}</li>
-                    <li style="font-size: 17px; width: 100px">${email}</li>
-                    <li style="font-size: 17px; width: 100px;">${phone}</li>
+                    <li style="font-size: 17px; width: 115px">${role}</li>
+                    <li style="font-size: 17px; width: 130px">${email}</li>
+                    <li style="font-size: 17px; width: 124px;">${phone}</li>
                 </ul>
             </div>
         `

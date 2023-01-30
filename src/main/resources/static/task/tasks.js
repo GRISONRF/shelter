@@ -41,15 +41,24 @@ const createTaskCards = (array) => {
         const taskName = obj.name
         const happenedAt = obj.happenedAt
 
+        console.log(typeof happenedAt)
+
         let taskCard = document.createElement("div")
         taskCard.classList.add("m-2")
         taskCard.innerHTML = `
             <div class="task-card">
                 <ul class="task-styling">
-                    <li style="font-size: 17px; width: 100px">${staffName}</li>
-                    <li style="font-size: 17px; width: 125px">${taskName}</li>
-                    <li style="font-size: 17px; width: 100px">${happenedAt}</li>
-                    <li><button class="delete" onclick="handleDeleteTask(${taskId})">delete</button></li>
+                    <li style="font-size: 17px; width: 160px;; border-bottom: 1px solid #ddd">${staffName}</li>
+                    <li style="font-size: 17px; width: 160px; border-bottom: 1px solid #ddd">${taskName}</li>
+                    <li style="font-size: 17px; width: 160px; border-bottom: 1px solid #ddd">${happenedAt}</li>
+
+                    ${staffName === "Amanda Jones"? `<li><button class="delete" onclick="handleDeleteTask(${taskId})" style="background-color: #cbab3c; color: white">delete</button></li>`: ''}
+
+
+
+
+
+
                 </ul>
             </div>
         `

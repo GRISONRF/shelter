@@ -22,66 +22,70 @@
 
     <div class="add-animal-form-container">
         <form id="add-animal-form" class="form">
-            <div class="form-group">
-                <label for="species">Specie:</label>
-                <select multiple class="form-control" id="species">
-                    <option>Cat</option>
-                    <option>Dog</option>
-                </select>
+            <div class="form-row">
+
+                <div class="form-group col-md-2">
+                    <label for="species">Specie:</label>
+                    <select class="form-control" id="species">
+                        <option value="">Select</option>
+                        <option>Cat</option>
+                        <option>Dog</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="breed">Breed</label>
+                    <input type="text" class="form-control" id="breed">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="gender">Gender:</label>
+                    <input type="text" class="form-control" id="gender">
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-7">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
-            </div>
+            <div class="form-row">
 
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="text" class="form-control" id="dob">
-            </div>
-
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <input type="text" class="form-control" id="gender">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="int-date">Intake Date</label>
-                <input type="text" class="form-control" id="int-date">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="int-method">Intake Method</label>
-                <select class="form-control" id="int-method">
-                    <option>Born in shelter</option>
-                    <option>Rescued</option>
-                    <option>Surrender</option>
-                    <option>Stray Animal</option>
-                    <option>Transferred</option>
-                </select>
-            </div>
-
-<!--            <form>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="picture">Picture</label>-->
-<!--                    <input type="file" class="form-control-file" id="picture">-->
-<!--                </div>-->
-<!--            </form>-->
-
-            <div class="form-group">
-                <label for="breed">Breed</label>
-                <input type="text" class="form-control" id="breed">
-            </div>
-
-            <div class="form-group">
-                <label for="food">Food</label>
-                <input type="text" class="form-control" id="food">
+                <div class="form-group col-md-7">
+                    <label for="int-method">Intake Method</label>
+                    <select class="form-control" id="int-method">
+                        <option value="">Select method</option>
+                        <option>Born in shelter</option>
+                        <option>Rescued</option>
+                        <option>Surrender</option>
+                        <option>Stray Animal</option>
+                        <option>Transferred</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="int-date">Intake Date</label>
+                    <input type="date" class="form-control" id="int-date">
+                </div>
             </div>
 
 
-            <div class="form-group">
-                <label for="food-amount">Food Amount</label>
-                <input type="text" class="form-control" id="food-amount">
+            <div class="form-row" >
+                <div class="form-group col-md-6">
+                    <label for="food">Type of Food/Brand</label>
+                    <input type="text" class="form-control" id="food">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="food-amount">Food Amount</label>
+                    <input type="text" class="form-control" id="food-amount">
+                </div>
             </div>
 
             <div class="form-group">
@@ -233,10 +237,11 @@
             <div class="form-group">
 <!--                <label for="image">Image</label>-->
 <!--                <input type="file" class="form-control-file" id="image" accept="image/*">-->
-                    <button id="upload_widget" class="cloudinary-button" type="button">Upload files</button>
+                    <button id="upload_widget" class="cloudinary-button" type="button" style="
+    background-color: #f8f9fa; color: #cbab3c">Upload picture</button>
             </div>
 
-            <div class="mt-1">
+            <div class="mt-1" style="padding-left: 10px;">
                 <button id="submit-button" type="submit" class="btn btn-info">Submit</button>
 
 

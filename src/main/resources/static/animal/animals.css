@@ -1,0 +1,14 @@
+.animal-styling {
+    display: flex;
+    align-items: center;
+}
+
+.animal-card {
+  border: 1px solid #e1ba1042;
+}
+
+
+a:hover {
+    text-decoration: none !important;
+    color: #62929E !important;
+}

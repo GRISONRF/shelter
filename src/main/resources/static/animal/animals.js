@@ -131,11 +131,11 @@ const createAnimalCards = (array) => {
                     <li style="font-size: 17px; width: 100px">
                         <img src="${picture}" width="100" height="100" alt="Animal Image">
                     </li>
-                    <li style="font-size: 17px; width: 100px">${species}</li>
+                    <li style="font-size: 17px; width: 70px">${species}</li>
                     <li onClick="handleAnimalClick(${id})"style="font-size: 17px; width: 125px">${name}</li>
-                    <li style="font-size: 17px; width: 100px">${dob}</li>
+                    <li style="font-size: 17px; width: 150px">${dob}</li>
                     <li style="font-size: 17px; width: 100px;">${gender}</li>
-                   <li style="font-size: 17px; width: 75px">${availability}</li>
+                   <li style="font-size: 17px; width: 100px">${availability}</li>
                 </ul>
             </div>
         `

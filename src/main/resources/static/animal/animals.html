@@ -32,12 +32,20 @@
     <div class="content">
         <div class="button-container">
             <div class="button">
-                <button type="submit" id="add-animal-btn" class="add-animal-btn">Add New Animal</button>
+                <button type="submit" id="add-animal-btn" class="add-animal-btn" style="
+                    margin-left: 30px;
+                    margin-top: 30px;
+                    background-color: #f8f9fa;
+                    color: #cbab3c;
+                    font-size: 20px;
+                    border-color: #f8f9fa;
+                ">Add New Animal</button>
             </div>
         </div>
 
-        <select id="filter-select">
-            <p>Filter by:</p>
+        <p style="margin-left: 30px;">Filter by:</p>
+        <select id="filter-select" style="margin-left: 30px;font-size: 20px;border-color: #e1ba10;">
+            <option value="">Select</option>
             <option value="Cats">Cats</option>
             <option value="Dogs">Dogs</option>
             <option value="Female">Female</option>
@@ -48,11 +56,11 @@
 
 
         <div class="animal-card-header">
-            <ul style="padding-inline-start: 2px;">
+            <ul>
                 <li style="width: 100px; text-decoration: underline">Picture</li>
-                <li style="width: 100px; text-decoration: underline">Species</li>
+                <li style="width: 70px; text-decoration: underline">Specie</li>
                 <li style="width: 125px; text-decoration: underline">Name</li>
-                <li style="width: 100px; text-decoration: underline">Date Of Birth</li>
+                <li style="width: 150px; text-decoration: underline">Date Of Birth</li>
                 <li style="width: 100px; text-decoration: underline">Gender</li>
                 <li style="width: 100px; text-decoration: underline">Availability</li>
             </ul>
@@ -61,7 +69,6 @@
 
     <div id="animal-container" class="container-fluid"></div>
     <br><br><br><br><br>
-    <h1>PAGE TO DISPLAY ALL THE ANIMALS!</h1>
 
 <script src="animals.js" type="application/javascript"></script>
 </body>

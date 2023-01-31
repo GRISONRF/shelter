@@ -99,3 +99,7 @@ a:active {
     margin-top: 50px;
     margin-left: 10px;
 }
+
+.hidden {
+display: none;
+}

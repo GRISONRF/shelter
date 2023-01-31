@@ -45,4 +45,11 @@ public class TaskController {
         model.addAttribute("staffList", staffList);
         return "newTask";
     }
+
+
+//    @DeleteMapping("/tasks/{id}")
+//    public String deleteTaskById(@PathVariable("id") Long id) {
+//        taskService.deleteTaskById(id);
+//        return "redirect:/tasks";
+//    }
 }

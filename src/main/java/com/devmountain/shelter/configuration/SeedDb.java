@@ -57,29 +57,33 @@ public class SeedDb implements CommandLineRunner {
         staff2.setName("Sandra Olmo");
         staff2.setPassword("123test");
         staff2.setEmail("staff2@test.com");
-        staff1.setPhone("(720) 111-5050");
-        staff1.setRole("Manager");
+        staff2.setPhone("(720) 111-5050");
+        staff2.setAddress("Denver-CO");
+        staff2.setRole("Manager");
 
         Staff staff3 = new Staff();
         staff3.setName("Patrick Callahan");
         staff3.setPassword("123test");
         staff3.setEmail("staff3@test.com");
-        staff1.setPhone("(360) 455-9977");
-        staff1.setRole("Animal caretaker");
+        staff3.setPhone("(360) 455-9977");
+        staff3.setAddress("Denver-CO");
+        staff3.setRole("Animal caretaker");
 
         Staff staff4 = new Staff();
         staff4.setName("Gloria Phipps");
         staff4.setPassword("123test");
         staff4.setEmail("staff4@test.com");
-        staff1.setPhone("(240) 324-1133");
-        staff1.setRole("Veterinarian");
+        staff4.setPhone("(240) 324-1133");
+        staff4.setAddress("Denver-CO");
+        staff4.setRole("Veterinarian");
 
         Staff staff5 = new Staff();
         staff5.setName("Dennis Johnson");
         staff5.setPassword("123test");
         staff5.setEmail("staff5@test.com");
-        staff1.setPhone("(240) 689-4022");
-        staff1.setRole("Kennel technician");
+        staff5.setPhone("(240) 689-4022");
+        staff5.setAddress("Denver-CO");
+        staff5.setRole("Kennel technician");
         staffRepository.saveAll(Arrays.asList(staff1,staff2, staff3, staff4, staff5));
 
 

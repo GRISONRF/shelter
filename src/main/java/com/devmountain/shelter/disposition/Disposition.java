@@ -44,9 +44,11 @@ public class Disposition {
     @Column(columnDefinition = "varchar(500)")
     public String comments;
 
-    //animal_id
-    @OneToOne
-    private Animal animal;
+//    @OneToOne
+//    @JoinColumn(name = "animal_id")
+//    private Animal animal;
+
+
     public Disposition (DispositionDto dispositionDto){
         if (dispositionDto.getPotty() != null) {
             this.potty = dispositionDto.getPotty();

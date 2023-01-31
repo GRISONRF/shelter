@@ -2,6 +2,7 @@ package com.devmountain.shelter.configuration;
 
 import com.devmountain.shelter.animal.Animal;
 import com.devmountain.shelter.animal.AnimalRepository;
+import com.devmountain.shelter.disposition.Disposition;
 import com.devmountain.shelter.disposition.DispositionRepository;
 import com.devmountain.shelter.health.HealthRepository;
 import com.devmountain.shelter.staff.Staff;
@@ -35,6 +36,19 @@ public class SeedDb implements CommandLineRunner {
 
     @Override
     public void run(String ... args) throws Exception {
+
+
+        //TRY TO SEED THE DB WITH DISPOSITION
+//        Disposition disposition1 = new Disposition(null, "Potty", "leash", "Good with kids", "Good with other animals", "Good temper", "Good in crate", "No comments", null);
+//
+//        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption", null);
+//
+//        animal1.setDisposition(disposition1);
+//        disposition1.setAnimal(animal1);
+//        dispositionRepository.save(disposition1);
+//        animalRepository.save(animal1);
+
+
 
         Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption");
         Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster");

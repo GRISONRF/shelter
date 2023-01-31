@@ -1,11 +1,11 @@
-const taskConfig = {
-    baseUrl: 'http://localhost:8080/api/task',
-    headers: {'Content-Type':'application/json'}
-}
-const staffConfig = {
-    baseUrl: 'http://localhost:8080/api/staff',
-    headers: {'Content-Type':'application/json'}
-}
+//const taskConfig = {
+//    baseUrl: 'http://localhost:8080/api/task',
+//    headers: {'Content-Type':'application/json'}
+//}
+//const staffConfig = {
+//    baseUrl: 'http://localhost:8080/api/staff',
+//    headers: {'Content-Type':'application/json'}
+//}
 
 //async function handleDeleteTask(taskId) {
 ////    console.log(staffId)
@@ -42,8 +42,14 @@ call handle delete task:
 
 */
 
-async function handleDeleteTask(taskId) {
-    console.log(taskId);
-    const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
-    taskRow.remove();
+//async function handleDeleteTask(taskId) {
+//    console.log(taskId);
+//    const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
+//    taskRow.remove();
+//}
+
+function handleDeleteTask(taskId) {
+    console.log("inside of here")
+    const taskElement = document.querySelector([data-task-id='${taskId}']);
+    taskElement.classList.add('hidden');
 }

@@ -44,9 +44,9 @@ public class Disposition {
     @Column(columnDefinition = "varchar(500)")
     public String comments;
 
-//    @OneToOne
-//    @JoinColumn(name = "animal_id")
-//    private Animal animal;
+    @OneToOne
+    @JoinColumn(name = "animal_id")
+    private Animal animal;
 
 
     public Disposition (DispositionDto dispositionDto){

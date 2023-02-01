@@ -50,12 +50,12 @@ public class SeedDb implements CommandLineRunner {
 
 
 
-        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption");
-        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster");
-        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption");
-        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered");
-        Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care");
-        animalRepository.saveAll(Arrays.asList(animal1, animal2, animal3, animal4, animal5));
+//        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption");
+//        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster");
+//        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption");
+//        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered");
+//        Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care");
+//        animalRepository.saveAll(Arrays.asList(animal1, animal2, animal3, animal4, animal5));
 
 
         Staff staff1 = new Staff();
@@ -103,7 +103,7 @@ public class SeedDb implements CommandLineRunner {
 
 
 
-        Animal animalTest = animalRepository.findById(1L).orElse(null);
+//        Animal animalTest = animalRepository.findById(1L).orElse(null);
         Staff staffTest = staffRepository.findById(1L).orElse(null);
         Task task1 = new Task(null, "Take the trash out", "Wednesday - 2pm", staff1);
         Task task2 = new Task(null, "Feed the cats", "Monday - 7am and 6pm", staff2);

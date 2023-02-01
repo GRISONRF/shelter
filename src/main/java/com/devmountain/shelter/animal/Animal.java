@@ -75,8 +75,8 @@ public class Animal {
 //    private String ownerAddress;
 //
     //disposition
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "animal")
-//    private Disposition disposition;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "animal")
+    private Disposition disposition;
 //
 //    //health
 //    @OneToOne

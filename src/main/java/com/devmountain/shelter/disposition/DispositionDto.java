@@ -22,7 +22,7 @@ public class DispositionDto implements Serializable {
     public String crate;
     public String comments;
 
-//    private Long animalId;
+    private Long animalId;
 
     private DispositionDto(Disposition disposition){
         if (disposition.getId() != null) {

@@ -1,5 +1,7 @@
 package com.devmountain.shelter.staff;
 
+import com.devmountain.shelter.animal.Animal;
+import com.devmountain.shelter.animal.AnimalRepository;
 import com.devmountain.shelter.task.Task;
 import com.devmountain.shelter.task.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ public class StaffController {
     private StaffRepository staffRepository;
     @Autowired
     private TaskRepository taskRepository;
+    @Autowired
+    private AnimalRepository animalRepository;
 
 //    @PostMapping("/login")
 //    public String staffLogin(@RequestBody StaffDto staffDto, Model model) {
@@ -43,6 +47,10 @@ public class StaffController {
         if (staffOptional.isPresent()){
             if(staffDto.getPassword().matches(staffOptional.get().getPassword())){
                 System.out.println(" *   *   *    inside of .isPresent");
+
+                List<Animal> animals = animalRepository.findAll(); // get the animal data
+                System.out.println(animals + "****** ANIMALS <<<<<<<<<");
+                model.addAttribute("animals", animals); // add the data to the model object
                 return "redirect:/staff/dashboard?staffId="+staffOptional.get().getId();
 
             } else {
@@ -60,6 +68,8 @@ public class StaffController {
         System.out.println("Inside of dashboard!!! *******");
         Staff staff = staffRepository.findById(staffId).orElseThrow();
         List<Task> tasks = taskRepository.findByStaff(staff);
+        List<Animal> animals = animalRepository.findAll();
+        model.addAttribute("animals", animals);
         model.addAttribute("staff", staff);
         model.addAttribute("tasks", tasks);
         return "dashboard";

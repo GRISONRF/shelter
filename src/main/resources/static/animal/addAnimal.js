@@ -68,7 +68,8 @@ const handleSubmit = async (e) => {
     console.log(bodyObj)
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
-        body: JSON.stringify(bodyObj),
+        b
+
         headers: animalConfig.headers
     })
     console.log(response)

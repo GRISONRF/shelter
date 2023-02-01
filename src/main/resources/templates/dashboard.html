@@ -62,16 +62,10 @@
                     </table>
                 </div>
 
-<!--                <div th:if="${staff != null}">-->
-<!--                    <p th:text="'TASKS: ' + ${staff.task}"></p>-->
-<!--                </div>-->
-
 
 
             <div id="dashboard-tasks-container" class="container-fluid"></div>
         </main>
-
-<!--        <aside>-->
             <div class="quick-links">
                 <p>Quick links:</p>
                 <p>
@@ -81,22 +75,17 @@
                 </p>
             </div><br>
 
-<!--            <p class="sidebar-title">Notes</p>-->
-<!--            <div id="note-container" class="notes-styling"></div>-->
-
             <br><br>
 
-<!--            <p class="sidebar-title">Add note</p>-->
-<!--            <form id="note-form">-->
-<!--                <div class="form-group">-->
-<!--                    <textarea class="form-control" id="note-input" placeholder="Add your note..." rows="5" style="width: 190px"></textarea>-->
-<!--                </div>-->
 
-<!--                <div>-->
-<!--                    <button id="submit-button" type="submit" class="submit-note">Add Note</button>-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </aside>-->
+<!--            <div th:each="${animals}">-->
+<!--                <div th:text="${animal.name}"></div>-->
+<!--                <div th:text="${animal.species}"></div>-->
+<!--            </div>-->
+
+
+        <canvas id="myChart"></canvas>
+
     </div>
 </div>
 
@@ -104,11 +93,60 @@
 
 <!--<script src="/dashboard/dashboard.js" type="application/javascript"></script>-->
 <script>
-    $(document).ready(function() {
-        $('.delete-button').click(function() {
-            $(this).closest('tr').hide();
-        });
-    });
+      $(document).ready(function() {
+          $('.delete-button').click(function() {
+              $(this).closest('tr').hide();
+          });
+      });
+
+      var animals = ${animals};
+      console.log(animals);
+
+<!--      var ctx = document.getElementById('myChart').getContext('2d');-->
+<!--      var chartData = [];-->
+
+<!--      // Get the data from the model-->
+<!--      var animals = ${animals};-->
+
+<!--      // Prepare the chart data-->
+<!--      animals.forEach(function(animal) {-->
+<!--        chartData.push({-->
+<!--          x: animal.name,-->
+<!--          y: animal.age-->
+<!--        });-->
+<!--      });-->
+
+<!--      var myChart = new Chart(ctx, {-->
+<!--        type: 'pie',-->
+<!--        data: {-->
+<!--          labels: chartData.map(function(data) { return data.x; }),-->
+<!--          datasets: [{-->
+<!--            label: 'Animal Ages',-->
+<!--            data: chartData.map(function(data) { return data.y; }),-->
+<!--            backgroundColor: [-->
+<!--              'rgba(255, 99, 132, 0.2)',-->
+<!--              'rgba(54, 162, 235, 0.2)',-->
+<!--              'rgba(255, 206, 86, 0.2)',-->
+<!--              'rgba(75, 192, 192, 0.2)',-->
+<!--              'rgba(153, 102, 255, 0.2)',-->
+<!--              'rgba(255, 159, 64, 0.2)'-->
+<!--            ],-->
+<!--            borderColor: [-->
+<!--              'rgba(255, 99, 132, 1)',-->
+<!--              'rgba(54, 162, 235, 1)',-->
+<!--              'rgba(255, 206, 86, 1)',-->
+<!--              'rgba(75, 192, 192, 1)',-->
+<!--              'rgba(153, 102, 255, 1)',-->
+<!--              'rgba(255, 159, 64, 1)'-->
+<!--            ],-->
+<!--            borderWidth: 1-->
+<!--          }]-->
+<!--        },-->
+<!--        options: {}-->
+<!--      });-->
+
+</script>
+
 </script>
 
 </body>

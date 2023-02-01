@@ -6,26 +6,29 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @ComponentScan
 @Controller
-@RequestMapping("/animalPage")
-public class AnimalController {
+@RequestMapping("/chart")
+public class ChartController {
+
     @Autowired
     private AnimalService animalService;
     @Autowired
     private AnimalRepository animalRepository;
 
 
-    @GetMapping(value = "/{id}")
-    public String getAnimalId(@PathVariable Long id, Model model) {
-        AnimalDto animal = animalService.findAnimalById(id);
-        model.addAttribute("animal", animal);
-        return "animal-profile";
+    @GetMapping("/chart")
+    public String chart(Model model){
+        List<Animal> animals = animalRepository.findAll();
+        model.addAttribute("animals", animals);
+        System.out.println("**************** animals ***********");
+        System.out.println(animals);
+        return "chart";
     }
+
 
 }

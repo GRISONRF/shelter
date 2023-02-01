@@ -37,7 +37,7 @@ public class AnimalDto implements Serializable   {
 //
 //    private List<Task> tasks = new ArrayList<>();
 
-//    private DispositionDto disposition;
+    private DispositionDto disposition;
 
     public AnimalDto(Animal animal) {
         if (animal.getId() != null){

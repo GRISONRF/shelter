@@ -48,8 +48,8 @@ call handle delete task:
 //    taskRow.remove();
 //}
 
-function handleDeleteTask(taskId) {
-    console.log("inside of here")
-    const taskElement = document.querySelector([data-task-id='${taskId}']);
-    taskElement.classList.add('hidden');
-}
+//function handleDeleteTask(taskId) {
+//    console.log("inside of here")
+//    const taskElement = document.querySelector([data-task-id='${taskId}']);
+//    taskElement.classList.add('hidden');
+//}

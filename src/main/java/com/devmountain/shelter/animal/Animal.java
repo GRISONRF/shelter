@@ -75,7 +75,7 @@ public class Animal {
 //    private String ownerAddress;
 //
     //disposition
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "animal")
+    @OneToOne(cascade = CascadeType.MERGE, mappedBy = "animal")
     private Disposition disposition;
 //
 //    //health

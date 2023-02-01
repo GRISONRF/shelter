@@ -17,9 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @Configuration
-@ComponentScan(basePackages = {"com.devmountain.shelter.staff"})
-@ComponentScan(basePackages = {"com.devmountain.shelter.animal"})
-//@Profile("Test")
+@ComponentScan(basePackages = {"com.devmountain.shelter.staff", "com.devmountain.shelter.animal"})
+
 public class SeedDb implements CommandLineRunner {
 
     @Autowired
@@ -39,14 +38,16 @@ public class SeedDb implements CommandLineRunner {
 
 
         //TRY TO SEED THE DB WITH DISPOSITION
-//        Disposition disposition1 = new Disposition(null, "Potty", "leash", "Good with kids", "Good with other animals", "Good temper", "Good in crate", "No comments", null);
-//
-//        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption", null);
-//
+        Disposition disposition1 = new Disposition(null, "Potty", "leash", "Good with kids", "Good with other animals", "Good temper", "Good in crate", "No comments", null);
+        dispositionRepository.save(disposition1);
+
+        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/640px-Cat03.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption", null);
+
+//        disposition1 = dispositionRepository.save(disposition1);
+        animal1.setDisposition(disposition1);
+        animalRepository.save(animal1);
 //        animal1.setDisposition(disposition1);
 //        disposition1.setAnimal(animal1);
-//        dispositionRepository.save(disposition1);
-//        animalRepository.save(animal1);
 
 
 

@@ -44,7 +44,7 @@ public class Disposition {
     @Column(columnDefinition = "varchar(500)")
     public String comments;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "animal_id")
     private Animal animal;
 

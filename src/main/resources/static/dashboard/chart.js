@@ -1,3 +1,17 @@
+console.log("inside chart")
+
+const animalDivs = document.querySelectorAll('div[data-animal]');
+let animals = [];
+animalDivs.forEach(div => {
+  const animalName = div.querySelector('p[data-name]').getAttribute('data-name');
+  const animalSpecies = div.querySelector('p[data-species]').getAttribute('data-species');
+  animals.push({ name: animalName, species: animalSpecies });
+});
+console.log(animals)
+
+
+
+
 // Step 1: Create the chart canvas
 var canvas = document.getElementById("myChart");
 var ctx = canvas.getContext("2d");

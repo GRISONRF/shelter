@@ -1,55 +1,62 @@
-//const taskConfig = {
-//    baseUrl: 'http://localhost:8080/api/task',
-//    headers: {'Content-Type':'application/json'}
-//}
-//const staffConfig = {
-//    baseUrl: 'http://localhost:8080/api/staff',
-//    headers: {'Content-Type':'application/json'}
-//}
+console.log("inside dashboard")
 
-//async function handleDeleteTask(taskId) {
-////    console.log(staffId)
-//    console.log(taskId)
-//  await fetch(`${taskConfig.baseUrl}/${taskId}`, {
-//    method: "DELETE",
-//    headers: taskConfig.headers
-//  })
-//    .then(response => response.json())
-//    .then(data => {
-//      console.log(data);
-//      // make another fetch call to retrieve updated data
-//      return fetch(`${staffConfig.baseUrl}/dashboard?staffId=${staffId}`)
-//        .then(response => response.json())
-//        .then(data => {
-//          // update the page with the updated data
-//        })
-////        .catch(err => console.error(err));
-//    })
-////    .catch(err => console.error(err));
-//}
+const animalDivs = document.querySelectorAll('div[data-animal]');
+let animals = [];
+animalDivs.forEach(div => {
+  const animalName = div.querySelector('p[data-name]').getAttribute('data-name');
+  const animalSpecies = div.querySelector('p[data-species]').getAttribute('data-species');
+  animals.push({ name: animalName, species: animalSpecies });
+});
+console.log(animals)
 
+// Step 1: Create the chart canvas
+var canvas = document.getElementById("myChart");
+var ctx = canvas.getContext("2d");
 
-/*
-dashboard:
-display the dashboard info depending on which staff
-when deleting the task:
-
-call handle delete task:
-    call the task id and delete it from the database
-    call the dashboard again with the staffID
+// Step 2: Set chart data
+var chartData = {
+    labels: [],
+    datasets: [{
+        label: '# of each species',
+        data: [],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)'
+        ],
+        borderWidth: 1
+    }]
+};
 
 
+// Step 3: Count the number of each species in the animals array
+const speciesCounts = animals.reduce((counts, animal) => {
+  if (!counts[animal.species]) {
+    counts[animal.species] = 0;
+  }
+  counts[animal.species]++;
+  return counts;
+  }, {});
 
-*/
+// Step 4: Populate chart labels and data based on species count
+for (const species in speciesCounts) {
+  chartData.labels.push(species);
+  chartData.datasets[0].data.push(speciesCounts[species]);
+  }
 
-//async function handleDeleteTask(taskId) {
-//    console.log(taskId);
-//    const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
-//    taskRow.remove();
-//}
-
-//function handleDeleteTask(taskId) {
-//    console.log("inside of here")
-//    const taskElement = document.querySelector([data-task-id='${taskId}']);
-//    taskElement.classList.add('hidden');
-//}
+// Step 5: Initialize chart
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: chartData,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: "Dogs vs Cats"
+        }
+    }
+});

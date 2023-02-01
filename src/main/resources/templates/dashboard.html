@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/dashboard.css" type="text/css">
 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
     <title>System Management - Dashboard</title>
 </head>
@@ -77,11 +78,12 @@
 
             <br><br>
 
+        <div th:each="animal, iterStat : ${animals}" th:id="${'animal-' + iterStat.count}" th:attr="data-animal=${animal}">
+            <!-- Add the animal data as data attributes, which can be accessed in JavaScript -->
+            <p th:attr="data-name=${animal.name}"></p>
+            <p th:attr="data-species=${animal.species}"></p>
+        </div>
 
-<!--            <div th:each="${animals}">-->
-<!--                <div th:text="${animal.name}"></div>-->
-<!--                <div th:text="${animal.species}"></div>-->
-<!--            </div>-->
 
 
         <canvas id="myChart"></canvas>
@@ -91,7 +93,10 @@
 
 
 
-<!--<script src="/dashboard/dashboard.js" type="application/javascript"></script>-->
+<script src="/dashboard/dashboard.js" type="application/javascript"></script>
+<!--<script src="/dashboard/chart.js" type="application/javascript"></script>-->
+
+
 <script>
       $(document).ready(function() {
           $('.delete-button').click(function() {
@@ -99,8 +104,8 @@
           });
       });
 
-      var animals = ${animals};
-      console.log(animals);
+<!--      var animals = ${animals};-->
+<!--      console.log(animals);-->
 
 <!--      var ctx = document.getElementById('myChart').getContext('2d');-->
 <!--      var chartData = [];-->

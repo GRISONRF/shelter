@@ -71,15 +71,15 @@ public class SeedDb implements CommandLineRunner {
         animal6.setDisposition(disposition1);
         animalRepository.save(animal6);
 
-        Animal animal7 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal7 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null);
         animal7.setDisposition(disposition1);
         animalRepository.save(animal7);
 
-        Animal animal8 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal8 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null);
         animal5.setDisposition(disposition1);
         animalRepository.save(animal8);
 
-        Animal animal9 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal9 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null);
         animal9.setDisposition(disposition1);
         animalRepository.save(animal9);
 
@@ -87,7 +87,7 @@ public class SeedDb implements CommandLineRunner {
         animal10.setDisposition(disposition1);
         animalRepository.save(animal10);
 
-        Animal animal11 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal11 = new Animal(null, "Dog", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null);
         animal11.setDisposition(disposition1);
         animalRepository.save(animal11);
 
@@ -99,7 +99,7 @@ public class SeedDb implements CommandLineRunner {
         animal13.setDisposition(disposition1);
         animalRepository.save(animal13);
 
-        Animal animal14 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal14 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
         animal14.setDisposition(disposition1);
         animalRepository.save(animal14);
 
@@ -107,15 +107,15 @@ public class SeedDb implements CommandLineRunner {
         animal15.setDisposition(disposition1);
         animalRepository.save(animal15);
 
-        Animal animal16 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal16 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
         animal16.setDisposition(disposition1);
         animalRepository.save(animal16);
 
-        Animal animal17 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal17 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null);
         animal17.setDisposition(disposition1);
         animalRepository.save(animal7);
 
-        Animal animal18 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal18 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null);
         animal18.setDisposition(disposition1);
         animalRepository.save(animal18);
 
@@ -123,7 +123,7 @@ public class SeedDb implements CommandLineRunner {
         animal19.setDisposition(disposition1);
         animalRepository.save(animal19);
 
-        Animal animal20 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        Animal animal20 = new Animal(null, "Dog", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
         animal20.setDisposition(disposition1);
         animalRepository.save(animal20);
 

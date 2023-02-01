@@ -51,11 +51,83 @@ public class SeedDb implements CommandLineRunner {
 
 
 
-//        Animal animal1 = new Animal(null, "Cat", "Fluffy", "10/04/2020", "Female", "01/01/2023", "Rescued", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Unknown", "Pedigree Cat Food", "1 scoop 2x day", "Available for Adoption");
-//        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster");
-//        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption");
-//        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered");
-//        Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care");
+        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster", null);
+        animal2.setDisposition(disposition1);
+        animalRepository.save(animal2);
+
+        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption", null);
+        animal3.setDisposition(disposition1);
+        animalRepository.save(animal3);
+
+        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered", null);
+        animal4.setDisposition(disposition1);
+        animalRepository.save(animal1);
+
+        Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal5.setDisposition(disposition1);
+        animalRepository.save(animal5);
+
+        Animal animal6 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal6.setDisposition(disposition1);
+        animalRepository.save(animal6);
+
+        Animal animal7 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal7.setDisposition(disposition1);
+        animalRepository.save(animal7);
+
+        Animal animal8 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal5.setDisposition(disposition1);
+        animalRepository.save(animal8);
+
+        Animal animal9 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal9.setDisposition(disposition1);
+        animalRepository.save(animal9);
+
+        Animal animal10 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal10.setDisposition(disposition1);
+        animalRepository.save(animal10);
+
+        Animal animal11 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal11.setDisposition(disposition1);
+        animalRepository.save(animal11);
+
+        Animal animal12 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal12.setDisposition(disposition1);
+        animalRepository.save(animal12);
+
+        Animal animal13 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal13.setDisposition(disposition1);
+        animalRepository.save(animal13);
+
+        Animal animal14 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal14.setDisposition(disposition1);
+        animalRepository.save(animal14);
+
+        Animal animal15 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal15.setDisposition(disposition1);
+        animalRepository.save(animal15);
+
+        Animal animal16 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal16.setDisposition(disposition1);
+        animalRepository.save(animal16);
+
+        Animal animal17 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal17.setDisposition(disposition1);
+        animalRepository.save(animal7);
+
+        Animal animal18 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal18.setDisposition(disposition1);
+        animalRepository.save(animal18);
+
+        Animal animal19 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal19.setDisposition(disposition1);
+        animalRepository.save(animal19);
+
+        Animal animal20 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null);
+        animal20.setDisposition(disposition1);
+        animalRepository.save(animal20);
+
+
 //        animalRepository.saveAll(Arrays.asList(animal1, animal2, animal3, animal4, animal5));
 
 

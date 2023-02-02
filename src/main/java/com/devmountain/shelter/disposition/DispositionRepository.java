@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DispositionRepository extends JpaRepository<Disposition, Long> {
+    Disposition findByAnimalId(Long id);
 }

@@ -96,7 +96,7 @@
             <table class="col-md-6">
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Potty Trained?</b></td>
-                    <td>Yes</td>
+                    <td th:text="${animal.disposition != null && animal.disposition.potty != null ? animal.disposition.potty : 'N/A'}"></td>
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Leash Reactive?</b></td>

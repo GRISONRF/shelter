@@ -42,31 +42,4 @@ public class AnimalRestController {
         return animalService.findAllAnimals();
     }
 
-
-//    @GetMapping("/animals")
-//    public List<AnimalDto> findAnimals(@RequestParam(value = "filter", required = false) String filter) {
-//        List<Animal> animals;
-//        if(filter != null) {
-//            if (filter.equals("cat")) {
-//                animals = animalRepository.findBySpecies("cat");
-//            } else if (filter.equals("dog")) {
-//                animals = animalRepository.findBySpecies("dog");
-//            } else {
-//                animals = animalRepository.findAll();
-//            }
-//        } else {
-//            animals = animalRepository.findAll();
-//        }
-//
-//        List<AnimalDto> animalsDto = new ArrayList<>();
-//        for (Animal animal : animals) {
-//            animalsDto.add(new AnimalDto(animal));
-//        }
-//        return animalsDto;
-//    }
-
-
-
-
-
 }

@@ -1,4 +1,8 @@
 package com.devmountain.shelter.disposition;
 
-public class DispositionService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface DispositionService {
+    Disposition getDispositionByAnimalId(Long animalId);
 }

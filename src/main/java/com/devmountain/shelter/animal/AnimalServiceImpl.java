@@ -1,5 +1,6 @@
 package com.devmountain.shelter.animal;
 
+import com.devmountain.shelter.disposition.DispositionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,16 +15,9 @@ public class AnimalServiceImpl implements AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
 
-//    @Override
-//    @Transactional
-//    public AnimalDto addAnimal(AnimalDto animalDto) {
-//        Animal animal = new Animal(animalDto);
-//
-//        Optional<Animal> animalOptional = animalRepository.findById(animalDto.getId());
-//        animal.setId(animalOptional.get().getId());
-//
-//        return new AnimalDto(animalRepository.saveAndFlush(animal));
-//    }
+    @Autowired
+    private DispositionRepository dispositionRepository;
+
 
     @Transactional
     public List<String> addAnimal(AnimalDto animalDto){
@@ -34,24 +28,6 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
-//    @Transactional
-//    public List<String> addAnimal(List<String> animalDto){
-//        List<String> response = new ArrayList<>();
-//
-//        AnimalDto animal = new AnimalDto();
-//        animal.setName(animalDto.get(0));
-//        animal.setSpecies(animalDto.get(1));
-//        animal.setDob(animalDto.get(2));
-//        animal.setGender(animalDto.get(3));
-//        animal.setAvailability(animalDto.get(4));
-//
-//        Animal savedAnimal = new Animal(animal);
-//        animalRepository.saveAndFlush(savedAnimal);
-//        response.add("Animal Added Successfully");
-//        return response;
-//    }
-
-
 
     @Override
     public List<AnimalDto> findAllAnimals() {
@@ -59,30 +35,16 @@ public class AnimalServiceImpl implements AnimalService {
         return animalList.stream().map(AnimalDto::new).collect(Collectors.toList());
     }
 
-//    public List<AnimalDto> findAnimals(String filter) {
-//        List<Animal> animals;
-//        if (filter != null) {
-//            // Use the filter to retrieve the filtered data from the repository
-//            animals = animalRepository.findByFilter(filter);
-//        } else {
-//            // Retrieve all the data from the repository
-//            animals = animalRepository.findAll();
-//        }
-//        return animals.stream().map(AnimalDto::new).collect(Collectors.toList());
-//    }
-
 
     @Override
     public AnimalDto findAnimalById(Long id){
         Animal animal = animalRepository.findById(id).get();
-        AnimalDto animalDto = new AnimalDto(animal);
-        return animalDto;
+        if (animal != null) {
+            animal.setDisposition(dispositionRepository.findByAnimalId(animal.getId()));
+        }
+        return new AnimalDto(animal);
     }
 
-//    @Override
-//    public List<Animal> getAnimals(boolean available, String gender, String species) {
-//        return null;
-//    }
 
 }
 

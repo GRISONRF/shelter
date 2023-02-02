@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style.css" type="text/css">
-<!--
-    <link rel="stylesheet" href="/dashboard.css" type="text/css">
--->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
@@ -37,7 +34,6 @@
             <!-- Upcoming appointments -->
             <div class="upcoming-tasks">
 
-            </div>
 
 
                 <div th:if="${staff == null}">
@@ -48,7 +44,7 @@
                     <p th:text="'Hello ' + ${staff.name}" style="font-size: 30px;"></p>
                 </div>
                 <div class="task-table-container">
-                    <table>
+                    <table style="font-size: 17px;">
                         <p>YOUR TASKS FOR THE WEEK:</p>
                         <tr>
                             <th style="width: 360px">What</th>
@@ -58,47 +54,49 @@
                             <td th:text="${task.name}"></td>
                             <td th:text="${task.happenedAt}" style="width: 200px"></td>
                             <td><button class="delete-button" id="delete-${task.id}">Task done!</button></td>
-
                         </tr>
                     </table>
                 </div>
+            </div>
 
 
 
-            <div id="dashboard-tasks-container" class="container-fluid"></div>
-        </main>
-            <div class="quick-links">
+<!--            <div id="dashboard-tasks-container" class="container-fluid"></div>-->
+            <div class="down-page" style="display: flex; align-items: center; flex-wrap: wrap; padding-top: 91px; ">
+                <p>Shelter Current Stats</p>
+                <div class="canvas" style="display: flex; margin-left: -80px;">
+
+                    <div th:each="animal, iterStat : ${animals}" th:id="${'animal-' + iterStat.count}" th:attr="data-animal=${animal}">
+                        <!-- Add the animal data as data attributes, which can be accessed in JavaScript -->
+                        <p th:attr="data-name=${animal.name}"></p>
+                        <p th:attr="data-species=${animal.species}"></p>
+                        <p th:attr="data-gender=${animal.gender}"></p>
+                        <p th:attr="data-availability=${animal.availability}"></p>
+                    </div>
+
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div>
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <div>
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-links" style="font-size: 16px;">
                 <p>Quick links:</p>
                 <p>
-                    - <a href="task/add-task.html">Add Task</a><br>
-                    - <a href="animal/add-animal.html">Add Animal</a><br>
-                    - <a href="animals.html">View Animals</a>
+                    - <a href="/taskPage/newTask">Add Task</a><br>
+                    - <a href="/animal/addAnimal.html">Add Animal</a><br>
+                    - <a href="/animal/animals.html">View Animals</a>
                 </p>
-            </div><br>
+            </div>
 
-            <br><br>
-
-        <div th:each="animal, iterStat : ${animals}" th:id="${'animal-' + iterStat.count}" th:attr="data-animal=${animal}">
-            <!-- Add the animal data as data attributes, which can be accessed in JavaScript -->
-            <p th:attr="data-name=${animal.name}"></p>
-            <p th:attr="data-species=${animal.species}"></p>
-            <p th:attr="data-gender=${animal.gender}"></p>
-            <p th:attr="data-availability=${animal.availability}"></p>
-        </div>
-
-
-
-
-
-
-
+        </main>
     </div>
 </div>
-
-<canvas id="myChart"></canvas>
-
-<canvas id="myChart2"></canvas>
-
 
 <script src="/dashboard/dashboard.js" type="application/javascript"></script>
 <!--<script src="/dashboard/chart.js" type="application/javascript"></script>-->

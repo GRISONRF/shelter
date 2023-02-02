@@ -20,12 +20,12 @@ var chartData = {
         label: '# of each species',
         data: [],
         backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
+            'rgba(184, 97, 82, 1)',
+            'rgba(214, 107, 102, 0.79)'
         ],
         borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)'
+            'rgba(184, 97, 82, 1)',
+            'rgba(214, 107, 102, 0.79)'
         ],
         borderWidth: 1
     }]
@@ -83,12 +83,12 @@ var chartData2 = {
         label: '# of each gender',
         data: [],
         backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
+            'rgba(173, 167, 55, 1)',
+            'rgba(215, 201, 144, 1)'
         ],
         borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)'
+            'rgba(194, 186, 29, 1)',
+            'rgba(243, 215, 103, 1)'
         ],
         borderWidth: 1
     }]
@@ -126,4 +126,63 @@ var myPieChart2 = new Chart(ctx2, {
 
 //////////////////////////////////////// AVAILABILITY /////////////////////////////////////
 
+const animalDivs3 = document.querySelectorAll('div[data-animal]');
+let animals3 = [];
+animalDivs3.forEach(div => {
+  const animalAvailability = div.querySelector('p[data-availability]').getAttribute('data-availability');
+  animals3.push(animalAvailability);
+});
+console.log(animals3);
 
+// Step 1: Create the chart canvas
+var canvas3 = document.getElementById("myChart3");
+var ctx3 = canvas3.getContext("2d");
+
+// Step 2: Set chart data
+var chartData3 = {
+    labels: [],
+    datasets: [{
+        label: '# of each availability of animals',
+        data: [],
+        backgroundColor: [
+            'rgba(110, 64, 169, 0.79)',
+            'rgba(93, 56, 140, 1)',
+            'rgba(131, 56, 140, 1)',
+            'rgba(148, 80, 200, 0.91)'
+        ],
+        borderColor: [
+            'rgba(110, 64, 169, 0.79)',
+            'rgba(93, 56, 140, 1)',
+            'rgba(131, 56, 140, 1)',
+            'rgba(148, 80, 200, 0.91)'
+        ],
+        borderWidth: 1
+    }]
+};
+
+// Step 3: Count the number of each availability in the animals array
+const availabilityCounts = animals3.reduce((counts, animal) => {
+  if (!counts[animal]) {
+    counts[animal] = 0;
+  }
+  counts[animal]++;
+  return counts;
+  }, {});
+
+// Step 4: Populate chart labels and data based on availability count
+for (const availability in availabilityCounts) {
+  chartData3.labels.push(availability);
+  chartData3.datasets[0].data.push(availabilityCounts[availability]);
+}
+
+var myPieChart3 = new Chart(ctx3, {
+    type: 'pie',
+    data: chartData3,
+    options: {
+        responsive: false,
+        title: {
+            display: true,
+            text: "Availability"
+        }
+    }
+});

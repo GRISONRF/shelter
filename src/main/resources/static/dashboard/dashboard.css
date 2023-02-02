@@ -80,7 +80,16 @@ aside {
 .myChart{
 
 
+}
 
+.down-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas {
+    display: flex;
 }
 
 

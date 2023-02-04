@@ -10,12 +10,20 @@ console.log("Hello")
 const handleSubmit = async (e) => {
     console.log("second hello")
     e.preventDefault()
-    console.log(typeof document.getElementById('staff-select').value)
+
+    let date = new Date(document.getElementById('happenedAt').value);
+
+    let day = ('0' + date.getDate()).slice(-2);
+    let month = ('0' + (date.getMonth() + 1)).slice(-2);
+
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let formattedDate = `Day: ${day}. Month: ${monthNames[month - 1]}`;
+
 
     let bodyObj = {
         staffId: parseInt(document.getElementById('staff-select').value),
         name: document.getElementById('task').value,
-        happenedAt: document.getElementById('happenedAt').value,
+        happenedAt: formattedDate
     }
     console.log(bodyObj)
 

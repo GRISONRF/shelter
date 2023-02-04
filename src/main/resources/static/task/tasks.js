@@ -41,8 +41,6 @@ const createTaskCards = (array) => {
         const taskName = obj.name
         const happenedAt = obj.happenedAt
 
-        console.log(typeof happenedAt)
-
         let taskCard = document.createElement("div")
         taskCard.classList.add("m-2")
         taskCard.innerHTML = `

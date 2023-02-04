@@ -17,7 +17,7 @@ const handleSubmit = async (e) => {
     let month = ('0' + (date.getMonth() + 1)).slice(-2);
 
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let formattedDate = `Day: ${day}. Month: ${monthNames[month - 1]}`;
+    let formattedDate = `${monthNames[month - 1]} / ${day}`;
 
 
     let bodyObj = {

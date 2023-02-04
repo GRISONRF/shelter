@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label for="breed">Breed</label>
+                    <label for="breed">Breed:</label>
                     <input type="text" class="form-control" id="breed">
                 </div>
 
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label for="dob">Date of Birth</label>
+                    <label for="dob">Date of Birth:</label>
                     <input type="date" class="form-control" id="dob" required>
                 </div>
             </div>
@@ -59,7 +59,7 @@
             <div class="form-row">
 
                 <div class="form-group col-md-7">
-                    <label for="int-method">Intake Method</label>
+                    <label for="int-method">Intake Method:</label>
                     <select class="form-control" id="int-method">
                         <option value="">Select method</option>
                         <option>Born in shelter</option>
@@ -70,7 +70,7 @@
                     </select>
                 </div>
                 <div class="form-group col-md-5">
-                    <label for="int-date">Intake Date</label>
+                    <label for="int-date">Intake Date:</label>
                     <input type="date" class="form-control" id="int-date">
                 </div>
             </div>
@@ -78,13 +78,111 @@
 
             <div class="form-row" >
                 <div class="form-group col-md-6">
-                    <label for="food">Type of Food/Brand</label>
+                    <label for="food">Type of Food/Brand:</label>
                     <input type="text" class="form-control" id="food">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="food-amount">Food Amount</label>
+                    <label for="food-amount">Food Amount:</label>
                     <input type="text" class="form-control" id="food-amount">
+                </div>
+            </div>
+<!--            &lt;!&ndash; END OF ANIMAL THINGS &ndash;&gt;-->
+<!--            &lt;!&ndash; BEGINNING OF ANIMAL DISPOSITION &ndash;&gt;-->
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="potty">Is The Animal Potty Trained?</label>
+                    <input type="text" class="form-control" id="potty">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="leash">How is The Animal With Leash?</label>
+                    <input type="text" class="form-control" id="leash">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="kids">How is The Animal With Kids?</label>
+                    <input type="text" class="form-control" id="kids">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="other-animals">How is The Animal With Other Animals?</label>
+                    <input type="text" class="form-control" id="other-animals">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="temper">How is Animal's Temper?</label>
+                    <input type="text" class="form-control" id="temper">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="crate">Is Animal Crate Trained?</label>
+                    <input type="text" class="form-control" id="crate">
+                </div>
+            </div>
+            <!--  END OF ANIMAL'S DISPOSITION  -->
+            <!--  BEGINNING OF ANIMAL'S HEALTH  -->
+            <div style="border: 11px solid #ffc10730;">
+                <p>Animal's Health:</p>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="spayed">Is Animal Spayed?</label>
+                        <select class="form-control" id="spayed">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Neutered</option>
+                            <option>Cryptorchid</option>
+                            <option>Pregnant</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="stool">How's Animal's Stool?</label>
+                        <input type="text" class="form-control" id="stool">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="weight">Animal's Weight:</label>
+                        <input type="text" class="form-control" id="weight">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="allergy">Known Allergies:</label>
+                        <input type="text" class="form-control" id="allergy">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="disability">Any Disability?</label>
+                        <input type="text" class="form-control" id="disability">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label id="quarantine">Quarantine?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes" value="option1">
+                            <label class="form-check-label" for="available-a">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no" value="option1">
+                            <label class="form-check-label" for="available-a">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label id="rest">Medical Rest?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="yes2" value="option2">
+                            <label class="form-check-label" for="available-a">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="no2" value="option2">
+                            <label class="form-check-label" for="available-a">No</label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -114,102 +212,10 @@
                 </div>
             </div>
 
-
-<!--            &lt;!&ndash; END OF ANIMAL THINGS &ndash;&gt;-->
-<!--            &lt;!&ndash; BEGINNING OF ANIMAL DISPOSITION &ndash;&gt;-->
-
             <div class="form-group">
-                <label for="potty">Is The Animal Potty Trained?</label>
-                <input type="text" class="form-control" id="potty">
-            </div>
-
-            <div class="form-group">
-                <label for="leash">How is The Animal With Leash?</label>
-                <input type="text" class="form-control" id="leash">
-            </div>
-
-            <div class="form-group">
-                <label for="kids">How is The Animal With Kids?</label>
-                <input type="text" class="form-control" id="kids">
-            </div>
-
-            <div class="form-group">
-                <label for="other-animals">How is The Animal With Other Animals?</label>
-                <input type="text" class="form-control" id="other-animals">
-            </div>
-
-            <div class="form-group">
-                <label for="temper">How is Animal's Temper?</label>
-                <input type="text" class="form-control" id="temper">
-            </div>
-
-            <div class="form-group">
-                <label for="crate">Is Animal Crate Trained?</label>
-                <input type="text" class="form-control" id="crate">
-            </div>
-
-            <div class="form-group">
-                <label for="comments">Comments/Notes</label>
+                <label for="comments">Comments/Notes:</label>
                 <textarea class="form-control" id="comments" rows="5"></textarea>
             </div>
-
-
-            <!--  END OF ANIMAL'S DISPOSITION  -->
-            <!--  BEGINNING OF ANIMAL'S HEALTH  -->
-
-<!--            <div class="form-group">-->
-<!--                <label for="spayed">Is Animal Spayed?</label>-->
-<!--                <select class="form-control" id="spayed">-->
-<!--                    <option>Yes</option>-->
-<!--                    <option>No</option>-->
-<!--                    <option>Neutered</option>-->
-<!--                    <option>Cryptorchid</option>-->
-<!--                    <option>Pregnant</option>-->
-<!--                </select>-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="stool">How's Animal's Stool?</label>-->
-<!--                <input type="text" class="form-control" id="stool">-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="weight">Animal's Weight</label>-->
-<!--                <input type="text" class="form-control" id="weight">-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="allergy">Allergies</label>-->
-<!--                <input type="text" class="form-control" id="allergy">-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="disability">Disability</label>-->
-<!--                <input type="text" class="form-control" id="disability">-->
-<!--            </div>-->
-
-<!--            <div class="form-group col-md-6">-->
-<!--                <label id="quarantine">Quarantine?</label>-->
-<!--                <div class="form-check form-check-inline">-->
-<!--                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes" value="option1">-->
-<!--                    <label class="form-check-label" for="available-a">Yes</label>-->
-<!--                </div>-->
-<!--                <div class="form-check form-check-inline">-->
-<!--                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no" value="option1">-->
-<!--                    <label class="form-check-label" for="available-a">No</label>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="form-group col-md-6">-->
-<!--                <label id="rest">Medical Rest?</label>-->
-<!--                <div class="form-check form-check-inline">-->
-<!--                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes2" value="option1">-->
-<!--                    <label class="form-check-label" for="available-a">Yes</label>-->
-<!--                </div>-->
-<!--                <div class="form-check form-check-inline">-->
-<!--                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no2" value="option1">-->
-<!--                    <label class="form-check-label" for="available-a">No</label>-->
-<!--                </div>-->
-<!--            </div>-->
 
 <!--            &lt;!&ndash;  END OF HEALTH  &ndash;&gt;-->
 <!--            &lt;!&ndash;  BEGINNING OF ADOPTION STUFF   &ndash;&gt;-->
@@ -241,12 +247,15 @@
     background-color: #f8f9fa; color: #cbab3c">Upload picture</button>
             </div>
 
-            <div class="mt-1" style="padding-left: 10px;">
-                <button id="submit-button" type="submit" class="btn btn-info">Submit</button>
+            <div class="form-buttons">
+                <div class="mt-1" style="padding-left: 10px;">
+                    <button id="submit-button" type="submit" class="btn btn-warning">Submit</button>
+                </div>
 
-
+                <div class="mt-1" style="padding-left: 10px;">
+                    <button id="cancel" type="submit" class="btn btn-warning" style="background: #d5571d;">Cancel</button>
+                </div>
             </div>
-
 
         </form>
 <!--        <form action="post-form-data" method="post" enctype="multipart/form-data">-->

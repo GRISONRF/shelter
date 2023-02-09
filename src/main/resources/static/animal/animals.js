@@ -22,10 +22,7 @@ async function handleAnimalClick(animalId){
         const animalName = data.name
         console.log(data)
         window.location.replace(animalProfileUrl + data.id)
-
         })
-
-
 }
 
 async function getAnimal() {
@@ -36,24 +33,9 @@ async function getAnimal() {
         headers: animalConfig.headers
     })
         .then(response => response.json())
-
         .then(data => createAnimalCards(data))
-//        .catch(err => console.error(err))
 }
 
-
-//// get all animals
-//async function getAnimals() {
-//
-//    await fetch(`${animalConfig.baseUrl}/animal/animals`, {
-//        method: "GET",
-//        headers: animalConfig.headers
-//    })
-//        .then(response => response.json())
-//
-//        .then(data => createAnimalCards(data))
-////        .catch(err => console.error(err))
-//}
 const select = document.getElementById("filter-select");
 
 

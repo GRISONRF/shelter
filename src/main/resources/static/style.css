@@ -41,11 +41,11 @@ a:visited {
 }
 a:hover {
     text-decoration: none !important;
-    color: #62929E !important;
+    color: #a67247 !important;
 }
 a:active {
     text-decoration: none !important;
-    color: #393D3F !important;
+    color: #a67247 !important;
 }
 /* end navigation */
 
@@ -98,6 +98,8 @@ a:active {
 .quick-links {
     margin-top: 50px;
     margin-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 table {

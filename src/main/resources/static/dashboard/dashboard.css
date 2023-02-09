@@ -36,9 +36,10 @@ aside {
 }
 .quick-links {
     font-size: 16px;
-    display: block;
-    list-style-type: disc;
-    padding: 0;
+    margin-top: 50px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 .submit-note {
     background-color: #62929E;

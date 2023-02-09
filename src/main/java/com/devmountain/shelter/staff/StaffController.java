@@ -27,19 +27,7 @@ public class StaffController {
     @Autowired
     private AnimalRepository animalRepository;
 
-//    @PostMapping("/login")
-//    public String staffLogin(@RequestBody StaffDto staffDto, Model model) {
-//        List<String> response = staffService.staffLogin(staffDto);
-//        if (response.size() == 2) {
-//            model.addAttribute("staffId", response.get(1));
-//
-//            System.out.println("********** staff id ***********" + response.get(1) + "*****");
-//            return "redirect:" + response.get(0);
-//        } else {
-//            model.addAttribute("error", response.get(0));
-//            return "redirect:/dashboard";
-//        }
-//    }
+
 
     @PostMapping("/login")
     public String staffLogin(@RequestBody StaffDto staffDto, Model model) {

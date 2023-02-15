@@ -31,7 +31,17 @@ const handleSubmit = async (e) => {
     console.log("second hello")
     e.preventDefault();
 
-    let bodyObjAni = {
+    let bodyObjDisp = {
+        potty: document.getElementById('potty').value,
+        leash: document.getElementById('leash').value,
+        kids: document.getElementById('kids').value,
+        otherAnimals: document.getElementById('other-animals').value,
+        temper: document.getElementById('temper').value,
+        crate: document.getElementById('crate').value,
+        comments: document.getElementById('comments').value
+    }
+
+    let bodyObj = {
         species: document.getElementById('species').value,
         name: document.getElementById('name').value,
         dob: document.getElementById('dob').value,
@@ -42,7 +52,9 @@ const handleSubmit = async (e) => {
         breed: document.getElementById('breed').value,
         food: document.getElementById('food').value,
         food_amount: document.getElementById('food-amount').value,
-        availability: document.querySelector('input[name="availability"]:checked').value
+        availability: document.querySelector('input[name="availability"]:checked').value,
+        disposition: bodyObjDisp
+//        availability: document.querySelector('input[name="availability"]:checked').innerHTML
     }
 //// ADOPTION STUFF
 //        adoptionDate: document.getElementById('adoption-date').value,
@@ -59,17 +71,8 @@ const handleSubmit = async (e) => {
 //        medicalRest: document.getElementById('rest').value,
 
 
-    let bodyObjDisp = {
-        potty: document.getElementById('potty').value,
-        leash: document.getElementById('leash').value,
-        kids: document.getElementById('kids').value,
-        otherAnimals: document.getElementById('other-animals').value,
-        temper: document.getElementById('temper').value,
-        crate: document.getElementById('crate').value,
-        comments: document.getElementById('comments').value,
-    }
 
-    let bodyObj = { ...bodyObjAni, ...bodyObjDisp }
+//    let bodyObj = {bodyObjAni}
 
     console.log(bodyObj)
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
@@ -78,10 +81,9 @@ const handleSubmit = async (e) => {
         headers: animalConfig.headers
     })
     console.log(response)
-//        .catch(err => console.error(err.message))
+
     if (response.status === 200) {
         window.location.pathname = '/animal/animals.html';
     }
 }
-//addAnimalForm.addEventListener("submit", handleSubmit)
 document.getElementById("submit-button").addEventListener("click", handleSubmit)

@@ -87,6 +87,14 @@ public class Animal {
 //    @JsonBackReference
 //    private List<Task> tasks = new ArrayList<>();
 
+
+    public void setDispositionWithAnimalId(Disposition disposition) {
+        this.disposition = disposition;
+        if (disposition != null) {
+            disposition.setAnimal(this);
+        }
+    }
+
     public Animal(AnimalDto animalDto){
         if (animalDto.getSpecies() != null) {
             this.species = animalDto.getSpecies();

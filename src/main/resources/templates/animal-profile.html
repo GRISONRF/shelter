@@ -96,26 +96,27 @@
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Potty Trained?</b></td>
                     <td th:text="${animal.disposition != null && animal.disposition.potty != null ? animal.disposition.potty : 'N/A'}"></td>
+<!--                    <td th:text="${animal.disposition?.potty}"></td>-->
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Leash Reactive?</b></td>
-                    <td>No</td>
+                    <td th:text="${animal.disposition?.leash}"></td>
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Good With Kids?</b></td>
-                    <td>Yes</td>
+                    <td th:text="${animal.disposition?.kids}"></td>
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Good With Other Animals?</b></td>
-                    <td>Yes</td>
+                    <td th:text="${animal.disposition?.otherAnimals}"></td>
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Temper:</b></td>
-                    <td>Timid</td>
+                    <td th:text="${animal.disposition?.temper}"></td>
                 </tr>
                 <tr>
                     <td style="background-color: #f2f2f2;"><b>Crate Trained?</b></td>
-                    <td>No</td>
+                    <td th:text="${animal.disposition?.crate}"></td>
                 </tr>
             </table>
             <table class="col-md-6">
@@ -123,7 +124,7 @@
                     <th style="padding: 1px;">Additional Comments:</th>
                 </tr>
                 <tr>
-                    <td>Loves playing with her toys, very </td>
+                    <td th:text="${animal.disposition?.comments}"></td>
                 </tr>
             </table>
         </div>

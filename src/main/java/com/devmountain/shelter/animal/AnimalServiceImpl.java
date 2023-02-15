@@ -1,6 +1,9 @@
 package com.devmountain.shelter.animal;
 
+import com.devmountain.shelter.disposition.Disposition;
+import com.devmountain.shelter.disposition.DispositionDto;
 import com.devmountain.shelter.disposition.DispositionRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +26,19 @@ public class AnimalServiceImpl implements AnimalService {
     public List<String> addAnimal(AnimalDto animalDto){
         List<String> response = new ArrayList<>();
         Animal animal = new Animal(animalDto);
+        System.out.println("**********inside add animal service. ANIMAL:");
+
+        System.out.println(animal);
+
+        if (animalDto.getDisposition() != null) {
+            DispositionDto dispositionDto = animalDto.getDisposition();
+            Disposition disposition = new Disposition(dispositionDto);
+            dispositionRepository.save(disposition);  // save the Disposition entity to the database
+            animal.setDispositionWithAnimalId(disposition);;
+        }
+
         animalRepository.saveAndFlush(animal);
+
         response.add("Animal Added Successfully");
         return response;
     }
@@ -37,13 +52,24 @@ public class AnimalServiceImpl implements AnimalService {
 
 
     @Override
-    public AnimalDto findAnimalById(Long id){
-        Animal animal = animalRepository.findById(id).get();
+    public AnimalDto findAnimalById(Long id) {
+        Animal animal = animalRepository.findById(id).orElse(null);
         if (animal != null) {
-            animal.setDisposition(dispositionRepository.findByAnimalId(animal.getId()));
+            Disposition disposition = dispositionRepository.findByAnimalId(animal.getId());
+            animal.setDisposition(disposition);
         }
         return new AnimalDto(animal);
     }
+
+
+
+//    public AnimalDto findAnimalById(Long id){
+//        Animal animal = animalRepository.findById(id).get();
+//        if (animal != null) {
+//            animal.setDisposition(dispositionRepository.findByAnimalId(animal.getId()));
+//        }
+//        return new AnimalDto(animal);
+//    }
 
 
 }

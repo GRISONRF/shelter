@@ -57,12 +57,13 @@ public class TaskRestController {
 
         //create a string body (the body of the email)
         String subject = "New task assigned to you";
-        String body = "Hello " + staffName + ",\n\n"
-                + "You have a new task assigned to you:\n"
-                + "Task: " + taskName + "\n"
-                + "Happened at: " + happenedAt.toString() + "\n"
-                + "Make sure to delete this task as soon as it's completed. Have a great day!";
-        //send it to to emailService.sendHtmlEmail(userEmail,subject, body);
+        String body = "<h1> Hello " + staffName + ",</h1><br>"
+                + "<h2>You have a new task assigned to you: </h2><br>"
+                + "<p><b>Task</b> -> " + taskName + ".<br>"
+                + "<p><b>When</b> -> " + happenedAt.toString() + "<br>"
+                + "<p><i>Make sure to delete this task as soon as it's completed.</i></p>"
+                + "<h2> Have a great day! </h2>";
+
         emailService.sendHtmlEmail(userEmail, subject, body);
 
     }

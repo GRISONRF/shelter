@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const imageInput = document.getElementById('image');
 const addAnimalForm = document.getElementById('add-animal-form')
 console.log("Hello")
+
+
 const handleSubmit = async (e) => {
     console.log("second hello")
     e.preventDefault();
@@ -40,6 +42,8 @@ const handleSubmit = async (e) => {
         crate: document.getElementById('crate').value,
         comments: document.getElementById('comments').value
     }
+    console.log(bodyObjDisp);
+
 
     let bodyObj = {
         species: document.getElementById('species').value,
@@ -72,8 +76,6 @@ const handleSubmit = async (e) => {
 
 
 
-//    let bodyObj = {bodyObjAni}
-
     console.log(bodyObj)
     const response = await fetch(`${animalConfig.baseUrl}/animal/add-animal`, {
         method: "POST",
@@ -87,3 +89,19 @@ const handleSubmit = async (e) => {
     }
 }
 document.getElementById("submit-button").addEventListener("click", handleSubmit)
+
+
+
+/*
+ // Save the disposition in the repository
+    const dispositionResponse = await fetch(`${animalConfig.baseUrl}/disposition/add-disposition`, {
+        method: "POST",
+        body: JSON.stringify(bodyObjDisp),
+        headers: animalConfig.headers
+    });
+    if (!dispositionResponse.ok) {
+        throw new Error(`Failed to save disposition: ${dispositionResponse.status}`);
+    }
+
+    const savedDisposition = await dispositionResponse.json();
+    console.log(savedDisposition);*/

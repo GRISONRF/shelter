@@ -3,7 +3,6 @@ package com.devmountain.shelter.animal;
 import com.devmountain.shelter.disposition.Disposition;
 import com.devmountain.shelter.disposition.DispositionDto;
 import com.devmountain.shelter.disposition.DispositionRepository;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +34,7 @@ public class AnimalServiceImpl implements AnimalService {
             Disposition disposition = new Disposition(dispositionDto);
             dispositionRepository.save(disposition);  // save the Disposition entity to the database
             animal.setDispositionWithAnimalId(disposition);;
+//            disposition.setAnimal(animal); // set the animal object
         }
 
         animalRepository.saveAndFlush(animal);

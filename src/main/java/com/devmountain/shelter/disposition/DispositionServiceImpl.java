@@ -13,4 +13,14 @@ public class DispositionServiceImpl implements DispositionService {
     public Disposition getDispositionByAnimalId(Long animalId) {
         return dispositionRepository.findByAnimalId(animalId);
     }
+
+
+    public Disposition addDisposition(DispositionDto dispositionDto){
+
+        Disposition disposition = new Disposition(dispositionDto);
+        System.out.println("Disposition added successfully");
+        return dispositionRepository.save(disposition);
+
+    }
+
 }

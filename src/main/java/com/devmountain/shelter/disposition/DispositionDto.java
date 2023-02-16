@@ -20,11 +20,12 @@ public class DispositionDto implements Serializable {
     public String otherAnimals;
     public String temper;
     public String crate;
+
     public String comments;
 
     private Long animalId;
 
-    private DispositionDto(Disposition disposition){
+    public DispositionDto(Disposition disposition){
         if (disposition.getId() != null) {
             this.id = disposition.getId();
         }

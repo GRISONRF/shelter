@@ -13,11 +13,13 @@ public class HealthDto implements Serializable {
     public Long id;
     public String spayed;
     public String stool;
-    public Float weight;
+    public String weight;
     public String allergy;
     public String disability;
     public String quarantine;
     public String medicalRest;
+
+    private Long animalId;
 
     public HealthDto(Health health){
         if (health.getId() != null) {

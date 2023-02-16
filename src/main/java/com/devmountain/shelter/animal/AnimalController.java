@@ -3,6 +3,8 @@ package com.devmountain.shelter.animal;
 
 import com.devmountain.shelter.disposition.Disposition;
 import com.devmountain.shelter.disposition.DispositionService;
+import com.devmountain.shelter.health.Health;
+import com.devmountain.shelter.health.HealthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,8 @@ public class AnimalController {
     private AnimalRepository animalRepository;
     @Autowired
     private DispositionService dispositionService;
+    @Autowired
+    private HealthService healthService;
 
 
     @GetMapping(value = "/{id}")
@@ -31,6 +35,9 @@ public class AnimalController {
 
         Disposition disposition = dispositionService.getDispositionByAnimalId(id);
         model.addAttribute("disposition", disposition);
+
+        Health health = healthService.getHealthByAnimalId(id);
+        model.addAttribute("health", health);
 
         return "animal-profile";
     }

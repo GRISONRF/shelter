@@ -45,6 +45,47 @@ const handleSubmit = async (e) => {
     console.log(bodyObjDisp);
 
 
+    let quarantineRadios = document.getElementsByName('inlineRadioOptions');
+    let quarantineValue;
+    for (let i = 0; i < quarantineRadios.length; i++) {
+        if (quarantineRadios[i].checked) {
+            quarantineValue = quarantineRadios[i].nextElementSibling.textContent.trim();
+            break;
+        }
+    }
+
+    let medicalRestRadios = document.getElementsByName('inlineRadioOptions2');
+    let medicalRestValue;
+    for (let i = 0; i < medicalRestRadios.length; i++) {
+        if (medicalRestRadios[i].checked) {
+            medicalRestValue = medicalRestRadios[i].nextElementSibling.textContent.trim();
+            break;
+        }
+    }
+
+    let bodyObjHealth = {
+            spayed: document.getElementById('spayed').value,
+            stool: document.getElementById('stool').value,
+            weight: document.getElementById('weight').value,
+            allergy: document.getElementById('allergy').value,
+            disability: document.getElementById('disability').value,
+            quarantine: quarantineValue,
+            medicalRest: medicalRestValue,
+    }
+
+    console.log(bodyObjHealth);
+
+    let availabilityRadios = document.getElementsByName('availability');
+        let availabilityValue;
+        for (let i = 0; i < availabilityRadios.length; i++) {
+            if (availabilityRadios[i].checked) {
+                availabilityValue = availabilityRadios[i].nextElementSibling.textContent.trim();
+                break;
+            }
+        }
+
+
+
     let bodyObj = {
         species: document.getElementById('species').value,
         name: document.getElementById('name').value,
@@ -56,8 +97,9 @@ const handleSubmit = async (e) => {
         breed: document.getElementById('breed').value,
         food: document.getElementById('food').value,
         food_amount: document.getElementById('food-amount').value,
-        availability: document.querySelector('input[name="availability"]:checked').value,
-        disposition: bodyObjDisp
+        availability: availabilityValue,
+        disposition: bodyObjDisp,
+        health: bodyObjHealth
 //        availability: document.querySelector('input[name="availability"]:checked').innerHTML
     }
 //// ADOPTION STUFF
@@ -65,14 +107,6 @@ const handleSubmit = async (e) => {
 //        ownerName: document.getElementById('owner-name').value,
 //        ownerPhone: document.getElementById('owner-phone').value,
 //        ownerAddress: document.getElementById('owner-address').value,
-
-////HEALTH STUFF
-//        spayed: document.getElementById('spayed').value,
-//        stool: document.getElementById('stool').value,
-//        allergy: document.getElementById('allergy').value,
-//        disability: document.getElementById('disability').value,
-//        quarantine: document.getElementById('quarantine').value,
-//        medicalRest: document.getElementById('rest').value,
 
 
 

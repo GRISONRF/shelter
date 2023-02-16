@@ -136,16 +136,18 @@
                     <th>Stool</th>
                     <th>Weight</th>
                     <th>Allergy</th>
+                    <th>Disabilities</th>
                     <th>Quarantine</th>
                     <th>Medical Rest</th>
                 </tr>
                 <tr>
-                    <td>Yes</td>
-                    <td>Normal</td>
-                    <td>3lb</td>
-                    <td>None</td>
-                    <td>No</td>
-                    <td>No</td>
+                    <td th:text="${health.spayed}"></td>
+                    <td th:text="${health.stool}"></td>
+                    <td th:text="${health.weight}"></td>
+                    <td th:text="${health.allergy}"></td>
+                    <td th:text="${health.disability}"></td>
+                    <td th:text="${health.quarantine}"></td>
+                    <td th:text="${health.medicalRest}"></td>
                 </tr>
             </table>
         </div>

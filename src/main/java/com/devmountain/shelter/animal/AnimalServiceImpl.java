@@ -3,6 +3,9 @@ package com.devmountain.shelter.animal;
 import com.devmountain.shelter.disposition.Disposition;
 import com.devmountain.shelter.disposition.DispositionDto;
 import com.devmountain.shelter.disposition.DispositionRepository;
+import com.devmountain.shelter.health.Health;
+import com.devmountain.shelter.health.HealthDto;
+import com.devmountain.shelter.health.HealthRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,9 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Autowired
     private DispositionRepository dispositionRepository;
+
+    @Autowired
+    private HealthRepository healthRepository;
 
 
     @Transactional
@@ -37,6 +43,14 @@ public class AnimalServiceImpl implements AnimalService {
 //            disposition.setAnimal(animal); // set the animal object
         }
 
+        if (animalDto.getHealth() != null) {
+            HealthDto healthDto = animalDto.getHealth();
+            Health health = new Health(healthDto);
+            healthRepository.save(health);  // save the Health entity to the database
+            animal.setHealthWithAnimalId(health);;
+//            health.setAnimal(animal); // set the animal object
+        }
+
         animalRepository.saveAndFlush(animal);
 
         response.add("Animal Added Successfully");
@@ -47,8 +61,18 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public List<AnimalDto> findAllAnimals() {
         List<Animal> animalList = animalRepository.findAll();
-        return animalList.stream().map(AnimalDto::new).collect(Collectors.toList());
+        return animalList.stream().map(animal -> {
+            AnimalDto animalDto = new AnimalDto(animal);
+            if (animal.getDisposition() != null) {
+                animalDto.setDisposition(new DispositionDto(animal.getDisposition()));
+            }
+            if (animal.getHealth() != null) {
+                animalDto.setHealth(new HealthDto(animal.getHealth()));
+            }
+            return animalDto;
+        }).collect(Collectors.toList());
     }
+
 
 
     @Override

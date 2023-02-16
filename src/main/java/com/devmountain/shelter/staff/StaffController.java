@@ -2,6 +2,7 @@ package com.devmountain.shelter.staff;
 
 import com.devmountain.shelter.animal.Animal;
 import com.devmountain.shelter.animal.AnimalRepository;
+import com.devmountain.shelter.health.Health;
 import com.devmountain.shelter.task.Task;
 import com.devmountain.shelter.task.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ public class StaffController {
 
                 List<Animal> animals = animalRepository.findAll(); // get the animal data
                 System.out.println(animals + "****** ANIMALS <<<<<<<<<");
+
                 model.addAttribute("animals", animals); // add the data to the model object
                 return "redirect:/staff/dashboard?staffId="+staffOptional.get().getId();
 

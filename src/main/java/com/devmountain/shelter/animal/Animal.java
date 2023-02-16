@@ -11,8 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -78,9 +76,8 @@ public class Animal {
     @OneToOne(cascade = CascadeType.MERGE, mappedBy = "animal")
     private Disposition disposition;
 //
-//    //health
-//    @OneToOne
-//    private Health health;
+    @OneToOne(cascade = CascadeType.MERGE, mappedBy = "animal")
+    private Health health;
 
 //    //task
 //    @OneToMany(mappedBy = "task", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -92,6 +89,12 @@ public class Animal {
         this.disposition = disposition;
         if (disposition != null) {
             disposition.setAnimal(this);
+        }
+    }
+    public void setHealthWithAnimalId(Health health) {
+        this.health = health;
+        if (health != null) {
+            health.setAnimal(this);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.devmountain.shelter.animal;
 
 import com.devmountain.shelter.disposition.DispositionDto;
+import com.devmountain.shelter.health.HealthDto;
 import com.devmountain.shelter.task.Task;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,7 @@ public class AnimalDto implements Serializable   {
 //    private List<Task> tasks = new ArrayList<>();
 
     private DispositionDto disposition;
+    private HealthDto health;
 
     public AnimalDto(Animal animal) {
         if (animal.getId() != null){

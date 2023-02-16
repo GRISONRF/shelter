@@ -26,7 +26,7 @@ public class Health {
     public String stool;
 
     @Column
-    public Float weight;
+    public String weight;
 
     @Column
     public String allergy;
@@ -41,8 +41,8 @@ public class Health {
     public String medicalRest;
 
     //animal_id
-    @OneToOne
-    @JsonBackReference
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "animal_id")
     private Animal animal;
 
     public Health (HealthDto healthDto) {

@@ -137,7 +137,7 @@ public class SeedDb implements CommandLineRunner {
 
         Staff staff1 = new Staff();
         staff1.setId(null);
-        staff1.setEmail("staff1@test.com");
+        staff1.setEmail("grisonrf@gmail.com");
         staff1.setPassword("123test");
         staff1.setName("Amanda Jones");
         staff1.setPhone("(720) 232-0909");

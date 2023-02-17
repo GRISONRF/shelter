@@ -21,41 +21,6 @@ public class StaffRestController {
     private StaffRepository staffRepository;
 
 
-//    @GetMapping("/login")
-//    public String handleGet() {
-//        return "This endpoint only supports POST requests";
-//    }
-
-//    @PostMapping("/login")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto, HttpServletResponse httpResponse, HttpSession session){
-//
-//        LoginResponse response = (LoginResponse) service.staffLogin(staffDto);
-//        if (response.isSuccessful()) {
-//            session.setAttribute("staff-id", response.getResponse().get(1));
-//            System.out.println(session.getAttribute("staff-id"));
-//
-//            return ResponseEntity.ok().body(response.getResponse());
-//        } else {
-//            return ResponseEntity.badRequest().body(response.getResponse());
-//        }
-//
-//    }
-
-//    @PostMapping(value = "/login", headers = "Content-Type=application/json")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto){
-//
-//        var response = staffService.staffLogin(staffDto);
-//        System.out.println(response);
-//        return ResponseEntity.ok().body(response);
-//
-//    }
-
-//    @PostMapping(value = "/login", consumes = "application/json")
-//    public List<String> staffLogin(@RequestBody StaffDto staffDto){
-//        System.out.println(staffDto);
-//        return staffService.staffLogin(staffDto);
-//    }
-
     @GetMapping("/staff")
     public List<StaffDto> findAllStaff(StaffDto staffDto, Model model) {
         ModelAndView modelAndView = new ModelAndView();
@@ -75,5 +40,9 @@ public class StaffRestController {
         return staffRepository.findAll();
     }
 
+    @PostMapping("/add")
+    public List<String> addStaff(@RequestBody StaffDto staffDto){
+        return staffService.addStaff(staffDto);
+    }
 
 }

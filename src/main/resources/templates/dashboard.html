@@ -40,7 +40,8 @@
                     <a href="/login">Login First</a>
                 </div>
 
-                <div th:if="${staff != null}" class="dash-name" data-staffid="${staff.id}">
+                <div th:if="${staff != null}" class="dash-name">
+                    <p th:attr="data-name=${staff.id}"></p>
                     <p th:text="'Hello ' + ${staff.name}" style="font-size: 30px;"></p>
                 </div>
                 <div class="task-table-container">

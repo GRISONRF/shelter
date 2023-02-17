@@ -189,8 +189,9 @@ var myPieChart3 = new Chart(ctx3, {
 
 
 ///////////////////////////// NOTES //////////////////////////////////
-const staffId = document.querySelector(".dash-name").getAttribute("data-staffid");
-console.log(staffId)
+const element = document.querySelector('p[data-name]');
+const staffId = element.getAttribute('data-name');
+console.log(staffId);
 //const staffId = 1
 
 const noteConfig = {

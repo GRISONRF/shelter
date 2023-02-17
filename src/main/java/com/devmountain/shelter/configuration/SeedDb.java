@@ -6,6 +6,8 @@ import com.devmountain.shelter.disposition.Disposition;
 import com.devmountain.shelter.disposition.DispositionRepository;
 import com.devmountain.shelter.health.Health;
 import com.devmountain.shelter.health.HealthRepository;
+import com.devmountain.shelter.notes.Note;
+import com.devmountain.shelter.notes.NoteRepository;
 import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffRepository;
 import com.devmountain.shelter.task.Task;
@@ -32,6 +34,8 @@ public class SeedDb implements CommandLineRunner {
     private StaffRepository staffRepository;
     @Autowired
     private TaskRepository taskRepository;
+    @Autowired
+    private NoteRepository noteRepository;
 
 
     @Override
@@ -178,6 +182,8 @@ public class SeedDb implements CommandLineRunner {
         staffRepository.saveAll(Arrays.asList(staff1,staff2, staff3, staff4, staff5));
 
 
+        Note note1 = new Note(null, "Don't forget to call the Vet", staff1);
+        noteRepository.saveAndFlush(note1);
 
 
 //        Animal animalTest = animalRepository.findById(1L).orElse(null);

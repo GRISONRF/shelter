@@ -186,3 +186,96 @@ var myPieChart3 = new Chart(ctx3, {
         }
     }
 });
+
+
+///////////////////////////// NOTES //////////////////////////////////
+const staffId = document.querySelector(".dash-name").getAttribute("data-staffid");
+console.log(staffId)
+//const staffId = 1
+
+const noteConfig = {
+    baseUrl:'http://localhost:8080/api',
+    headers: {
+        'Content-Type':'application/json'
+    }
+}
+
+const submitForm = document.getElementById("note-form")
+const noteContainer = document.getElementById("note-container")
+
+
+const handleSubmit = async (e) => {
+    e.preventDefault()
+    let bodyObj = {
+        body: document.getElementById("note-input").value
+    }
+    console.log("handle submit text")
+    console.log(bodyObj)
+    await addNote(bodyObj);
+    document.getElementById("note-input").value = ''
+}
+
+submitForm.addEventListener("submit", handleSubmit)
+
+
+
+async function addNote(obj) {
+    const response = await fetch(`${noteConfig.baseUrl}/notes/staff/${staffId}`, {
+        method: "POST",
+        body: JSON.stringify(obj),
+        headers: noteConfig.headers
+    })
+    console.log("add note:")
+    console.log(response)
+        .catch(err => console.error(err.message))
+        if (response.status == 200) {
+        return getNotes(staffId);
+    }
+}
+
+
+
+
+async function getNotes(staffId) {
+    await fetch(`${noteConfig.baseUrl}/notes/staff/${staffId}`, {
+        method: "GET",
+        headers: noteConfig.headers
+    })
+        .then(response => response.json())
+        .then(data => createNoteCards(data))
+        .catch(err => console.error(err))
+}
+
+getNotes(staffId);
+
+
+
+
+
+const createNoteCards = (array) => {
+    noteContainer.innerHTML = ''
+    array.forEach(data => {
+        console.log(data)
+        let noteCard = document.createElement("div")
+        noteCard.classList.add("note")
+        noteCard.innerHTML = `
+            <div class="note-card">
+                <p class="notes-styling">- ${data.body} <text class="delete-note" onclick="handleDelete(${data.id})">delete</text></p>
+            </div>`
+
+        noteContainer.append(noteCard);
+    })
+}
+
+
+
+
+async function handleDelete(noteId){
+    await fetch(`${noteConfig.baseUrl}/notes/` + noteId, {
+        method: "DELETE",
+        headers: noteConfig.headers
+    })
+        .catch(err => console.error(err))
+
+    return getNotes(staffId);
+}

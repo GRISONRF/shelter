@@ -40,7 +40,7 @@
                     <a href="/login">Login First</a>
                 </div>
 
-                <div th:if="${staff != null}" class="dash-name">
+                <div th:if="${staff != null}" class="dash-name" data-staffid="${staff.id}">
                     <p th:text="'Hello ' + ${staff.name}" style="font-size: 30px;"></p>
                 </div>
                 <div class="task-table-container">
@@ -60,6 +60,36 @@
             </div>
 
 
+            <!--     ADD NOTES / REMINDERS        -->
+
+<!--&lt;!&ndash;            displaying using thymeleaf&ndash;&gt;-->
+<!--            <div id="note-container" class="notes-styling">-->
+<!--                <ul>-->
+<!--                    <li th:each="note : ${notes}" th:text="${note.text}"></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+
+            <ul>
+                <li th:each="note : ${notes}">
+                    <span th:text="${note.note}"></span>
+                </li>
+            </ul>
+
+            <div id="note-container" class="notes-styling"></div>
+
+            <br><br>
+            <p class="sidebar-title">Add note</p>
+            <form id="note-form">
+                <div class="form-group">
+                    <textarea class="form-control" id="note-input" placeholder="Write your note." rows="5" style="width: 190px"></textarea>
+                </div>
+
+                <div>
+                    <button id="submit-button" type="submit" class="submit-note">Add Note</button>
+                </div>
+            </form>
+<!--  end of add notes  -->
 
 <!--            <div id="dashboard-tasks-container" class="container-fluid"></div>-->
             <div class="down-page" style="display: flex;align-items: center;padding-top: 9px;padding-bottom: 49px;flex-direction: column;background-color: #c0c0891f;">

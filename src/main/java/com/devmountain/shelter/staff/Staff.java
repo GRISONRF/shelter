@@ -1,5 +1,6 @@
 package com.devmountain.shelter.staff;
 
+import com.devmountain.shelter.notes.Note;
 import com.devmountain.shelter.task.Task;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -9,7 +10,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "staff")
@@ -32,6 +35,10 @@ public class Staff {
     public String address;
     @Column
     public String role;
+
+    @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JsonManagedReference
+    private Set<Note> noteSet = new HashSet<>();
 
 //    @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JsonManagedReference

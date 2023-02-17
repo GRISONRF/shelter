@@ -7,14 +7,16 @@ html, body {
 }
 .header {
     margin-top: 7px;
-    margin-bottom: 3px;
     margin-left: 32px;
-    justify-content: flex-start !important;
+    justify-content: space-between;
     display: flex !important;
     max-height: 100px;
     width: auto;
 }
 
+button {
+    cursor: pointer;
+}
 
 /* begin navigation */
 nav {
@@ -40,13 +42,17 @@ a:visited {
     color: #393D3F !important;
 }
 a:hover {
-    text-decoration: none !important;
     color: #a67247 !important;
 }
 a:active {
     text-decoration: none !important;
     color: #a67247 !important;
 }
+
+.logout-btn {
+  margin-left: auto;
+}
+
 /* end navigation */
 
 
@@ -79,7 +85,7 @@ a:active {
 
 .layout-container {
     margin: 30px;
-    font-size: 20px;
+    font-size: 19px;
 
 }
 
@@ -93,7 +99,39 @@ a:active {
     border: 1px solid #ccc; /* add a thin line */
     padding: 10px; /* add some padding */
     padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 73%;
 }
+
+.notes-table-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+    /*height: 300px; *//**//* set a fixed height */
+/*overflow-y: scroll; */
+/* add scroll bar if content overflows */
+
+}
+
+.note-container {
+    overflow-y: scroll;
+    height: 79px;
+    width: 252px;
+}
+
+.notes-styling {
+    font-size: 16px;
+}
+
+.sidebar-title {
+    margin-bottom: 0px;
+    font-size: 17px;
+
+}
+
 
 .quick-links {
     margin-top: 50px;
@@ -107,4 +145,27 @@ table {
 }
 .hidden {
 display: none;
+}
+
+
+.bottom-up {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch
+}
+
+.dash-name {
+    margin-top: -36px;
+}
+
+.delete-button {
+    color: #4b4e4f;
+    background-color: #f4e6a7;
+    border-color: #cbab3c;
+}
+
+.submit-note {
+    color: #4b4e4f;
+    background-color: #f4e6a7;
+    border-color: #cbab3c;
 }

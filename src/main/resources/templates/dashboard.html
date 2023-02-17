@@ -15,7 +15,7 @@
 
     <nav>
         <ul>
-            <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+            <li><a href="../staff/dashboard?staffId=1">Dashboard</a></li>
             <li><a href="../animal/animals.html">Animals</a></li>
             <li><a href="../staff/all-staff.html">Staff</a></li>
             <li><a href="../task/tasks.html">Tasks</a></li>
@@ -31,11 +31,7 @@
 <div class="content">
     <div class="layout-container">
         <main>
-            <!-- Upcoming appointments -->
-            <div class="upcoming-tasks">
-
-
-
+            <div class="hello-header">
                 <div th:if="${staff == null}">
                     <a href="/login">Login First</a>
                 </div>
@@ -44,55 +40,57 @@
                     <p th:attr="data-name=${staff.id}"></p>
                     <p th:text="'Hello ' + ${staff.name}" style="font-size: 30px;"></p>
                 </div>
-                <div class="task-table-container">
+            </div>
+
+
+            <div class="bottom-up row">
+                <!--        TASKS        -->
+                <div class="task-table-container col-md-7">
+
                     <table style="font-size: 17px;">
-                        <p>YOUR TASKS FOR THE WEEK:</p>
-                        <tr>
-                            <th style="width: 360px">What</th>
-                            <th>When</th>
-                        </tr>
-                        <tr th:each="task : ${tasks}">
-                            <td th:text="${task.name}"></td>
-                            <td th:text="${task.happenedAt}" style="width: 200px"></td>
-                            <td><button class="delete-button" id="delete-${task.id}">Task done!</button></td>
-                        </tr>
+                        <div>
+                            <p>YOUR TASKS FOR THE WEEK:</p>
+                        </div>
+                        <div>
+                            <tr>
+                                <th colspan="2">What    </th>
+                                <th colspan="2">    When</th>
+                            </tr>
+                            <tr th:each="task : ${tasks}">
+                                <td th:text="${task.name}"></td>
+                                <td>         |         </td>
+                                <td th:text="${task.happenedAt}"></td>
+                                <td><button class="delete-button" id="delete-${task.id}">Task done!</button></td>
+                            </tr>
+                        </div>
                     </table>
+                </div>
+
+
+                <!--        NOTES        -->
+                <div class="notes-table-container col-md-5">
+                    <ul>
+                        <li th:each="note : ${notes}">
+                            <span th:text="${note.note}"></span>
+                        </li>
+                    </ul>
+
+                    <div id="note-container" class="notes-styling" style="overflow-y: scroll;"></div>
+
+                    <form id="note-form">
+                        <div class="form-group">
+                            <textarea class="form-control" id="note-input" placeholder="Write your note." rows="5" style="width: 190px"></textarea>
+                        </div>
+
+                        <div>
+                            <button id="submit-button" type="submit" class="submit-note">Add Note</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
 
 
-            <!--     ADD NOTES / REMINDERS        -->
-
-<!--&lt;!&ndash;            displaying using thymeleaf&ndash;&gt;-->
-<!--            <div id="note-container" class="notes-styling">-->
-<!--                <ul>-->
-<!--                    <li th:each="note : ${notes}" th:text="${note.text}"></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-
-
-            <ul>
-                <li th:each="note : ${notes}">
-                    <span th:text="${note.note}"></span>
-                </li>
-            </ul>
-
-            <div id="note-container" class="notes-styling"></div>
-
-            <br><br>
-            <p class="sidebar-title">Add note</p>
-            <form id="note-form">
-                <div class="form-group">
-                    <textarea class="form-control" id="note-input" placeholder="Write your note." rows="5" style="width: 190px"></textarea>
-                </div>
-
-                <div>
-                    <button id="submit-button" type="submit" class="submit-note">Add Note</button>
-                </div>
-            </form>
-<!--  end of add notes  -->
-
-<!--            <div id="dashboard-tasks-container" class="container-fluid"></div>-->
             <div class="down-page" style="display: flex;align-items: center;padding-top: 9px;padding-bottom: 49px;flex-direction: column;background-color: #c0c0891f;">
                 <p>Shelter Current Stats</p><br>
                 <div class="canvas" style="display: flex; margin-left: -80px;">

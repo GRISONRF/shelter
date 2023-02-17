@@ -39,17 +39,13 @@
 
     <div class="button-container">
         <div class="button">
-<!--            <button type="submit" id="add-staff-btn" class="add-staff-btn" style="-->
-<!--                    margin: 30px;-->
-<!--                    background-color: #f8f9fa;-->
-<!--                    color: #cbab3c;-->
-<!--                    font-size: medium;-->
-<!--                    border-color: #f8f9fa;-->
-<!--                ">Add New Staff Member</button>-->
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Add New Staff Member
-            </button>
+            <button type="button" id="add-staff-btn" class="add-staff-btn" data-toggle="modal" data-target="#exampleModal" style="
+                    margin: 30px;
+                    background-color: #f8f9fa;
+                    color: #cbab3c;
+                    font-size: medium;
+                    border-color: #f8f9fa;
+                ">Add New Staff Member</button>
         </div>
     </div>
 
@@ -65,16 +61,19 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group">
-                            <label for="staffName">Name</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="staffName" placeholder="First and Last name" style="font-size: 12px;">
-                            <small id="staffName" class="form-text text-muted"></small>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="staffName">Name</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="staffName" placeholder="First and Last name" style="font-size: 12px;">
+                                <small id="staffName" class="form-text text-muted"></small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="staffRole">Role/Position</label>
+                                <input type="text" class="form-control" id="role" aria-describedby="staffRole" placeholder="" style="font-size: 12px;">
+                                <small id="staffRole" class="form-text text-muted"></small>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="staffRole">Role/Position</label>
-                            <input type="text" class="form-control" id="role" aria-describedby="staffRole" placeholder="" style="font-size: 12px;">
-                            <small id="staffRole" class="form-text text-muted"></small>
-                        </div>
+
                         <div class="form-group">
                             <label for="staffEmail">Email address</label>
                             <input type="text" class="form-control" id="staffEmail" aria-describedby="email" placeholder="Enter email" style="font-size: 12px;">
@@ -95,25 +94,37 @@
 
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="add-staff-button">Add Staff</button>
-                    >
+                <div class="modal-footer" style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn" id="add-staff-button" style="
+                    margin: 30px;
+                    background-color: #cbab3c;
+                    color: #ffffff;
+                    font-size: medium;
+                    border-color: #d39e00;">Add Staff</button>
+
+                    <button type="button" class="btn" data-dismiss="modal" style="
+                    margin: 30px;
+                    background-color: #d5571d;
+                    color: #ffffff;
+                    font-size: medium;
+                    border-color: #f8f9fa;">Close</button>
+
+
                 </div>
             </div>
         </div>
     </div>
 
+<!--END OF MODAL ADD A NEW STAFF-->
 
 
 
-
-    <div class="staff-card-header">
+    <div class="staff-card-header" style="margin-left: 20px;">
         <ul>
             <li style="width: 100px; text-decoration: underline">Name</li>
             <li style="width: 115px; text-decoration: underline">Role</li>
-            <li style="width: 130px; text-decoration: underline">Email</li>
-            <li style="width: 124px; text-decoration: underline">Phone</li>
+            <li style="width: 173px; text-decoration: underline">Email</li>
+            <li style="width: 161px; text-decoration: underline">Phone</li>
 
         </ul>
     </div>

@@ -26,9 +26,13 @@ public class NoteServiceImpl implements NoteService {
     @Override
     @Transactional
     public void addNote(NoteDto noteDto, Long staffId) {
+        System.out.println("*********** INSIDE ADD NOTE SERVICE");
+        System.out.println(noteDto);
+        System.out.println(staffId);
         Optional<Staff> staffOptional = staffRepository.findById(staffId);
         Note note = new Note(noteDto);
         staffOptional.ifPresent(note::setStaff);
+        System.out.println(note);
         noteRepository.saveAndFlush(note);
     }
 

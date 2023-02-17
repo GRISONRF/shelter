@@ -228,8 +228,8 @@ async function addNote(obj) {
     })
     console.log("add note:")
     console.log(response)
-        .catch(err => console.error(err.message))
         if (response.status == 200) {
+        console.log(staffId)
         return getNotes(staffId);
     }
 }
@@ -244,7 +244,6 @@ async function getNotes(staffId) {
     })
         .then(response => response.json())
         .then(data => createNoteCards(data))
-        .catch(err => console.error(err))
 }
 
 getNotes(staffId);
@@ -276,7 +275,6 @@ async function handleDelete(noteId){
         method: "DELETE",
         headers: noteConfig.headers
     })
-        .catch(err => console.error(err))
 
     return getNotes(staffId);
 }

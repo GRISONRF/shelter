@@ -10,15 +10,15 @@ import java.util.Optional;
 public interface NoteService {
 
     @Transactional
-    public void addNote(NoteDto noteDto, Long staffId);
+    void addNote(NoteDto noteDto, Long staffId);
 
     @Transactional
-    public void deleteNoteById(Long noteId);
+    void deleteNoteById(Long noteId);
 
     @Transactional
-    public void updateNoteById(NoteDto noteDto);
+    void updateNoteById(NoteDto noteDto);
 
-    public List<NoteDto> getAllNotesByStaffId(Long staffId);
+    List<NoteDto> getAllNotesByStaffId(Long staffId);
 
-    public Optional<NoteDto> getNoteById(Long noteId);
+    Optional<NoteDto> getNoteById(Long noteId);
 }

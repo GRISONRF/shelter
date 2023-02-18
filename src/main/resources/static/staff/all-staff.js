@@ -5,7 +5,7 @@ const staffConfig = {
 
 let staffContainer = document.getElementById("staff-container")
 
-//get all the staff
+///////////////  get all the staff /////////////////////
 
 async function getStaff() {
 
@@ -26,6 +26,7 @@ const createStaffCards = (array) => {
     array.forEach(obj => {
         console.log(obj)
 
+        const staffId = obj.id
         const name = obj.name
         const role = obj.role
         const email = obj.email
@@ -38,12 +39,113 @@ const createStaffCards = (array) => {
                 <ul class="staff-styling">
                     <li style="font-size: 17px; width: 100px">${name}</li>
                     <li style="font-size: 17px; width: 115px">${role}</li>
-                    <li style="font-size: 17px; width: 130px">${email}</li>
-                    <li style="font-size: 17px; width: 124px;">${phone}</li>
+                    <li style="font-size: 17px; width: 173px">${email}</li>
+                    <li style="font-size: 17px; width: 161px;">${phone}</li>
+                    <li style="font-size: 17px; cursor: pointer" class="delete-staff">&#128465;</li>
+                    <li style="font-size: 17px; cursor: pointer">&#9998;</li>
                 </ul>
             </div>
         `
-    staffContainer.append(staffCard);
-    })
+
+        staffContainer.append(staffCard);
+
+        ///////// delete staff ///////
+        const deleteIcon = staffCard.querySelector('.delete-staff');
+//        const staffId = liElement.getAttribute('class');
+
+        deleteIcon.addEventListener('click', () => {
+          const modal = document.createElement('div');
+          modal.classList.add('modal', 'fade', );
+          modal.setAttribute('data-backdrop', 'false');
+          modal.setAttribute('style', 'z-index: 999999999;')
+          modal.innerHTML = `
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Confirm deletion</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-backdrop="false"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete this staff? All their information will be erased.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-backdrop="false">Cancel</button>
+                  <button type="button" class="btn btn-danger" id="confirm-delete" data-backdrop="false">Delete</button>
+                </div>
+              </div>
+            </div>
+          `;
+
+          const confirmButton = modal.querySelector('#confirm-delete');
+
+          confirmButton.addEventListener('click', async () => {
+
+            const response = await fetch(`${staffConfig.baseUrl}/${staffId}`, {
+              method: 'DELETE',
+              headers: staffConfig.headers,
+            });
+
+            if (response.ok) {
+              staffCard.remove();
+              console.log('Staff deleted!');
+              modal.remove();
+            }
+
+          });
+
+          const cancelButton = modal.querySelector('.btn-secondary');
+          cancelButton.addEventListener('click', () => {
+            modal.remove();
+          });
+
+          document.body.appendChild(modal);
+          const bsModal = new bootstrap.Modal(modal);
+          bsModal.show();
+
+          modal.addEventListener('hidden.bs.modal', () => {
+            modal.remove();
+          });
+        });
+    });
 }
+
 getStaff();
+
+
+
+
+
+
+
+
+
+
+///////////////////// Add a new staff  ////////////////////
+
+const addStaffButton = document.getElementById('add-staff-button');
+
+addStaffButton.addEventListener("click", async () => {
+
+    let bodyObjStaff = {
+        email: document.getElementById('staffEmail').value,
+        password: document.getElementById('staffPassword').value,
+        name: document.getElementById('name').value,
+        phone: document.getElementById('staffPhone').value,
+        address: document.getElementById('staffAddress').value,
+        role: document.getElementById('staffRole').value
+    }
+    console.log(bodyObjStaff)
+
+    const response = await fetch(`${staffConfig.baseUrl}/add`, {
+        method: "POST",
+        body: JSON.stringify(bodyObjStaff),
+        headers: staffConfig.headers,
+        })
+
+    if (response.ok) {
+        console.log("Staff added!!!")
+        window.location.reload();
+    } else {
+        console.log("got an error :(")
+    }
+});

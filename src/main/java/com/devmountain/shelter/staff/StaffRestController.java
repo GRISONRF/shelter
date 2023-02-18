@@ -1,5 +1,8 @@
 package com.devmountain.shelter.staff;
 
+import com.devmountain.shelter.notes.Note;
+import com.devmountain.shelter.notes.NoteRepository;
+import com.devmountain.shelter.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/staff")
@@ -15,46 +19,11 @@ public class StaffRestController {
     @Autowired
     private StaffService staffService;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
     @Autowired
     private StaffRepository staffRepository;
+    @Autowired
+    private NoteRepository noteRepository;
 
-
-//    @GetMapping("/login")
-//    public String handleGet() {
-//        return "This endpoint only supports POST requests";
-//    }
-
-//    @PostMapping("/login")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto, HttpServletResponse httpResponse, HttpSession session){
-//
-//        LoginResponse response = (LoginResponse) service.staffLogin(staffDto);
-//        if (response.isSuccessful()) {
-//            session.setAttribute("staff-id", response.getResponse().get(1));
-//            System.out.println(session.getAttribute("staff-id"));
-//
-//            return ResponseEntity.ok().body(response.getResponse());
-//        } else {
-//            return ResponseEntity.badRequest().body(response.getResponse());
-//        }
-//
-//    }
-
-//    @PostMapping(value = "/login", headers = "Content-Type=application/json")
-//    public ResponseEntity<List<String>> staffLogin(@RequestBody StaffDto staffDto){
-//
-//        var response = staffService.staffLogin(staffDto);
-//        System.out.println(response);
-//        return ResponseEntity.ok().body(response);
-//
-//    }
-
-//    @PostMapping(value = "/login", consumes = "application/json")
-//    public List<String> staffLogin(@RequestBody StaffDto staffDto){
-//        System.out.println(staffDto);
-//        return staffService.staffLogin(staffDto);
-//    }
 
     @GetMapping("/staff")
     public List<StaffDto> findAllStaff(StaffDto staffDto, Model model) {
@@ -73,6 +42,18 @@ public class StaffRestController {
     @GetMapping("/all")
     public List<Staff> getAllStaff() {
         return staffRepository.findAll();
+    }
+
+    @PostMapping("/add")
+    public List<String> addStaff(@RequestBody StaffDto staffDto){
+        return staffService.addStaff(staffDto);
+    }
+
+    @DeleteMapping("/{staffId}")
+    public void deleteStaff(@PathVariable String staffId) {
+        Long id = Long.parseLong(staffId);
+        System.out.println("inside delete staff method");
+        staffService.deleteStaff(id);
     }
 
 

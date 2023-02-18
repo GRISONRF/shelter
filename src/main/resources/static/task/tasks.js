@@ -47,7 +47,7 @@ const createTaskCards = (array) => {
             <div class="task-card">
                 <ul class="task-styling">
                     <li style="font-size: 17px; width: 160px; border-bottom: 1px solid #ddd">${staffName}</li>
-                    <li style="font-size: 17px; width: 160px; border-bottom: 1px solid #ddd">${taskName}</li>
+                    <li style="font-size: 17px; width: 324px; border-bottom: 1px solid #ddd">${taskName}</li>
                     <li style="font-size: 17px; width: 160px; border-bottom: 1px solid #ddd">${happenedAt}</li>
 
                     ${staffName === "Amanda Jones"? `<li><button class="delete" onclick="handleDeleteTask(${taskId})" style="background-color: #cbab3c; color: white">delete</button></li>`: ''}

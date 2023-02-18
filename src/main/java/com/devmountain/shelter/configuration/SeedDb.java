@@ -59,11 +59,11 @@ public class SeedDb implements CommandLineRunner {
 
 
 
-        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster", null, null);
+        Animal animal2 = new Animal(null, "Dog", "Kai", "06/01/2019", "Male", "06/01/2019", "Born in shelter", "https://www.rd.com/wp-content/uploads/2022/01/GettyImages-912084898-e1641834261695.jpg?resize=700,466", "Golden Retriever", "Dog food brand name", "2 1/2 scoops 2x day", "Available for Foster", null, null);
         animal2.setDisposition(disposition1);
         animalRepository.save(animal2);
 
-        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption", null, null);
+        Animal animal3 = new Animal(null, "Dog", "Lily", "01/14/2021", "Female", "07/25/2021", "Stray Animal", "https://www.pawtracks.com/wp-content/uploads/sites/2/2022/02/brown-poodle-sitting-by-window.jpg?fit=1024%2C1024&p=1", "Poodle", "Doog food", "1 scoop 2x day", "Available for Adoption", null, null);
         animal3.setDisposition(disposition1);
         animalRepository.save(animal3);
 
@@ -181,21 +181,25 @@ public class SeedDb implements CommandLineRunner {
         staff5.setRole("Kennel technician");
         staffRepository.saveAll(Arrays.asList(staff1,staff2, staff3, staff4, staff5));
 
-
         Note note1 = new Note(null, "Don't forget to call the Vet", staff1);
         noteRepository.saveAndFlush(note1);
 
 
 //        Animal animalTest = animalRepository.findById(1L).orElse(null);
         Staff staffTest = staffRepository.findById(1L).orElse(null);
-        Task task1 = new Task(null, "Take the trash out", "Wednesday - 2pm", staff1);
-        Task task2 = new Task(null, "Feed the cats", "Monday - 7am and 6pm", staff2);
-        Task task3 = new Task(null, "Take Fluffy to get the vaccines", "Tuesday 1pm", staff4);
-        Task task4 = new Task(null, "Clean the kennel", "Friday", staff3);
-        Task task5 = new Task(null, "Feed the dogs", "Tuesday - 10am", staff1);
-        taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4, task5));
+        Task task1 = new Task(null, "Take the trash out", "Feb / 20", staff1);
+        Task task2 = new Task(null, "Buy Coco's special dog food", "Feb / 20", staff2);
+        Task task3 = new Task(null, "Take Fluffy to get the vaccines at 2pm", "Feb / 20", staff4);
+        Task task4 = new Task(null, "Clean the kennels 1 and 2", "Feb / 20", staff3);
+        Task task5 = new Task(null, "Take Lily, Kai, Max to the groomer at 10am", "Feb / 21", staff1);
+        Task task6 = new Task(null, "Send last month's report to Roberta", "Feb / 21", staff3);
+        Task task7 = new Task(null, "Daisy's spay surgery at 1:30pm", "Feb / 22", staff2);
+        Task task8 = new Task(null, "Fix door at kannel 4", "Feb / 22", staff4);
+        Task task9 = new Task(null, "Assist new volunteers", "Feb / 22", staff1);
+        Task task10 = new Task(null, "Take bear for his DHPP vaccine - 11am", "Feb / 23", staff4);
 
 
+        taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4, task5, task6, task7, task8, task9, task10));
 
     }
 }

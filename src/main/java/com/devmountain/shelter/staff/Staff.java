@@ -36,13 +36,9 @@ public class Staff {
     @Column
     public String role;
 
-    @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "staff", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private Set<Note> noteSet = new HashSet<>();
-
-//    @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JsonManagedReference
-//    List<Task> tasks = new ArrayList<>();
 
 
     public Staff (StaffDto staffDto){

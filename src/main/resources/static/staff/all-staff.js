@@ -5,7 +5,7 @@ const staffConfig = {
 
 let staffContainer = document.getElementById("staff-container")
 
-//get all the staff
+///////////////  get all the staff /////////////////////
 
 async function getStaff() {
 
@@ -40,25 +40,42 @@ const createStaffCards = (array) => {
                     <li style="font-size: 17px; width: 115px">${role}</li>
                     <li style="font-size: 17px; width: 173px">${email}</li>
                     <li style="font-size: 17px; width: 161px;">${phone}</li>
-                    <li style="font-size: 17px; cursor: pointer">&#128465;</li>
+                    <li style="font-size: 17px; cursor: pointer" class="delete-staff">&#128465;</li>
                     <li style="font-size: 17px; cursor: pointer">&#9998;</li>
-
-
                 </ul>
             </div>
         `
     staffContainer.append(staffCard);
     })
 }
+
 getStaff();
 
-///////////////////// Add a new staff member ////////////////////
+////////////////// delete staff ///////////////////
+let deleteIcon = staffCard.querySelector('.delete-staff');
+deleteIcon.addEventListener('click', async () => {
+  const response = await fetch(`${staffConfig.baseUrl}/${staffId}`, {
+    method: 'DELETE',
+    headers: staffConfig.headers,
+  });
 
-/*const staffConfig = {
-    baseUrl: 'http://localhost:8080/api/staff',
-    headers: {'Content-Type':'application/json'}
-}*/
+  if (response.ok) {
+    staffCard.remove();
+    console.log('Staff deleted!');
+  } else {
+    console.log('Error deleting staff!');
+  }
+});
 
+
+
+
+
+
+
+
+
+///////////////////// Add a new staff  ////////////////////
 
 const addStaffButton = document.getElementById('add-staff-button');
 

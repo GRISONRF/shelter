@@ -1,5 +1,8 @@
 package com.devmountain.shelter.staff;
 
+import com.devmountain.shelter.notes.Note;
+import com.devmountain.shelter.notes.NoteRepository;
+import com.devmountain.shelter.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/staff")
@@ -15,10 +19,10 @@ public class StaffRestController {
     @Autowired
     private StaffService staffService;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
     @Autowired
     private StaffRepository staffRepository;
+    @Autowired
+    private NoteRepository noteRepository;
 
 
     @GetMapping("/staff")
@@ -44,5 +48,12 @@ public class StaffRestController {
     public List<String> addStaff(@RequestBody StaffDto staffDto){
         return staffService.addStaff(staffDto);
     }
+
+    @DeleteMapping("/{staffId}")
+    public void deleteStaff(@PathVariable Long staffId) {
+        System.out.println("inside delete staff method");
+        staffService.deleteStaff(staffId);
+    }
+
 
 }

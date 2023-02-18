@@ -22,4 +22,6 @@ public class NoteDto implements Serializable {
         }
     }
 
+    public void setStaff(Object o) {
+    }
 }

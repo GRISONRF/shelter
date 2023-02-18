@@ -63,29 +63,6 @@ public class NoteServiceImpl implements NoteService {
         return Collections.emptyList();
     }
 
-//    @Override
-//    public List<NoteDto> getAllNotesByStaffId(Long staffId) {
-//        Optional<Staff> staffOptional = staffRepository.findById(staffId);
-//
-//        if (staffOptional.isPresent()) {
-//            List<Object[]> noteList = noteRepository.getAllNotesByStaffId(staffId);
-//
-//            return noteList.stream()
-//                    .map(note -> new NoteDto(new Note(
-//                            (Long) note[0],
-//                            (String) note[1],
-//                            staffOptional.get())))
-//                    .collect(Collectors.toList());
-//        }
-//        return Collections.emptyList();
-//    }
-
-//    @Override
-//    public List<Object[]> getAllNotesByStaffId(Long staffId) {
-//        return noteRepository.getAllNotesByStaffId(staffId);
-//    }
-
-
 
     @Override
     public Optional<NoteDto> getNoteById(Long noteId) {

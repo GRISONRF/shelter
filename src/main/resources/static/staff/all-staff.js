@@ -26,6 +26,7 @@ const createStaffCards = (array) => {
     array.forEach(obj => {
         console.log(obj)
 
+        const staffId = obj.id
         const name = obj.name
         const role = obj.role
         const email = obj.email
@@ -45,27 +46,71 @@ const createStaffCards = (array) => {
                 </ul>
             </div>
         `
-    staffContainer.append(staffCard);
-    })
+
+        staffContainer.append(staffCard);
+
+        ///////// delete staff ///////
+        const deleteIcon = staffCard.querySelector('.delete-staff');
+//        const staffId = liElement.getAttribute('class');
+
+        deleteIcon.addEventListener('click', () => {
+          const modal = document.createElement('div');
+          modal.classList.add('modal', 'fade', );
+          modal.setAttribute('data-backdrop', 'false');
+          modal.setAttribute('style', 'z-index: 999999999;')
+          modal.innerHTML = `
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Confirm deletion</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-backdrop="false"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to delete this staff? All their information will be erased.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-backdrop="false">Cancel</button>
+                  <button type="button" class="btn btn-danger" id="confirm-delete" data-backdrop="false">Delete</button>
+                </div>
+              </div>
+            </div>
+          `;
+
+          const confirmButton = modal.querySelector('#confirm-delete');
+
+          confirmButton.addEventListener('click', async () => {
+
+            const response = await fetch(`${staffConfig.baseUrl}/${staffId}`, {
+              method: 'DELETE',
+              headers: staffConfig.headers,
+            });
+
+            if (response.ok) {
+              staffCard.remove();
+              console.log('Staff deleted!');
+              modal.remove();
+            }
+
+          });
+
+          const cancelButton = modal.querySelector('.btn-secondary');
+          cancelButton.addEventListener('click', () => {
+            modal.remove();
+          });
+
+          document.body.appendChild(modal);
+          const bsModal = new bootstrap.Modal(modal);
+          bsModal.show();
+
+          modal.addEventListener('hidden.bs.modal', () => {
+            modal.remove();
+          });
+        });
+    });
 }
 
 getStaff();
 
-////////////////// delete staff ///////////////////
-let deleteIcon = staffCard.querySelector('.delete-staff');
-deleteIcon.addEventListener('click', async () => {
-  const response = await fetch(`${staffConfig.baseUrl}/${staffId}`, {
-    method: 'DELETE',
-    headers: staffConfig.headers,
-  });
-
-  if (response.ok) {
-    staffCard.remove();
-    console.log('Staff deleted!');
-  } else {
-    console.log('Error deleting staff!');
-  }
-});
 
 
 

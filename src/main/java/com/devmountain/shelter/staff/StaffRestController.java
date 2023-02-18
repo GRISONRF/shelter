@@ -50,9 +50,10 @@ public class StaffRestController {
     }
 
     @DeleteMapping("/{staffId}")
-    public void deleteStaff(@PathVariable Long staffId) {
+    public void deleteStaff(@PathVariable String staffId) {
+        Long id = Long.parseLong(staffId);
         System.out.println("inside delete staff method");
-        staffService.deleteStaff(staffId);
+        staffService.deleteStaff(id);
     }
 
 

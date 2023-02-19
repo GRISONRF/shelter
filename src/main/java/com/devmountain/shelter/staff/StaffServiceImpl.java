@@ -1,13 +1,11 @@
 package com.devmountain.shelter.staff;
 
 import com.devmountain.shelter.notes.Note;
-import com.devmountain.shelter.notes.NoteDto;
 import com.devmountain.shelter.notes.NoteRepository;
 import com.devmountain.shelter.task.Task;
 import com.devmountain.shelter.task.TaskRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -36,8 +34,6 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public List<String> staffLogin(StaffDto staffDto){
-        System.out.println(staffDto);
-
         List<String> response = new ArrayList<>();
         Optional<Staff> staffOptional = staffRepository.findByEmail(staffDto.getEmail());
 
@@ -71,31 +67,44 @@ public class StaffServiceImpl implements StaffService {
     @Transactional
     public void deleteStaff(Long staffId) {
         Staff staff = staffRepository.findById(staffId).orElse(null);
-        System.out.println("*****************");
-        System.out.println(staff);
 
         if (staff == null) {
             // Handle the case when the Staff object does not exist.
             return;
         }
 
-//        Set<Note> notes = staff.getNoteSet();
-//        System.out.println(notes);
         List<Task> tasks = taskRepository.findByStaff(staff);
         List<Note> notesDto = noteRepository.findByStaffId(staffId);
         Set<Note> notes = new HashSet<>(notesDto);
 
-        System.out.println("tasks:");
-        System.out.println(tasks);
-        System.out.println("notes:");
-        System.out.println(notesDto);
         notesDto.forEach(note -> note.setStaff(null));
         taskRepository.deleteAll(tasks);
         noteRepository.deleteAll(notes);
         staffRepository.deleteById(staffId);
     }
 
+    @Override
+    @Transactional
+    public List<String> updateStaff(Long staffId, StaffDto staffDto){
+        List<String> response = new ArrayList<>();
 
+        Optional<Staff> staffOptional  = staffRepository.findById(staffId);
+
+        // update the staff object
+        staffOptional.ifPresent(staff -> {
+            staff.setName(staffDto.getName());
+            staff.setEmail(staffDto.getEmail());
+            staff.setPhone(staffDto.getPhone());
+            staff.setAddress(staffDto.getAddress());
+            staff.setRole(staffDto.getRole());
+            staffRepository.save(staff);
+            System.out.println(staff);
+        });
+
+        response.add("http://localhost:8080/staff/all-staff.html");
+        return response;
+
+    }
 
 
 }

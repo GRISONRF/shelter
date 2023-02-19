@@ -1,13 +1,11 @@
 package com.devmountain.shelter.staff;
 
 import com.devmountain.shelter.notes.Note;
-import com.devmountain.shelter.notes.NoteDto;
 import com.devmountain.shelter.notes.NoteRepository;
 import com.devmountain.shelter.task.Task;
 import com.devmountain.shelter.task.TaskRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

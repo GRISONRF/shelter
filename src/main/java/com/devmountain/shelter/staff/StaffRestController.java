@@ -1,16 +1,13 @@
 package com.devmountain.shelter.staff;
 
-import com.devmountain.shelter.notes.Note;
 import com.devmountain.shelter.notes.NoteRepository;
-import com.devmountain.shelter.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/staff")
@@ -29,8 +26,6 @@ public class StaffRestController {
     public List<StaffDto> findAllStaff(StaffDto staffDto, Model model) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/staff/all-staff.html");
-//        model.addAttribute("species", staffDto.getName());
-
         return staffService.findAllStaff();
     }
 
@@ -52,15 +47,11 @@ public class StaffRestController {
     @DeleteMapping("/{staffId}")
     public void deleteStaff(@PathVariable String staffId) {
         Long id = Long.parseLong(staffId);
-        System.out.println("inside delete staff method");
         staffService.deleteStaff(id);
     }
 
     @PutMapping("/{id}")
     public List<StaffDto> updateStaff(@PathVariable Long id, @RequestBody StaffDto staffDto) {
-        System.out.println("***************** update");
-        System.out.println(id);
-        System.out.println(staffDto);
 
         staffService.updateStaff(id, staffDto);
         ModelAndView modelAndView = new ModelAndView();

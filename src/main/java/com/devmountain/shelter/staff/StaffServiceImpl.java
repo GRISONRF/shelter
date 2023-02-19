@@ -79,8 +79,6 @@ public class StaffServiceImpl implements StaffService {
             return;
         }
 
-//        Set<Note> notes = staff.getNoteSet();
-//        System.out.println(notes);
         List<Task> tasks = taskRepository.findByStaff(staff);
         List<Note> notesDto = noteRepository.findByStaffId(staffId);
         Set<Note> notes = new HashSet<>(notesDto);
@@ -95,7 +93,27 @@ public class StaffServiceImpl implements StaffService {
         staffRepository.deleteById(staffId);
     }
 
+    @Override
+    @Transactional
+    public void updateStaff(Long staffId, StaffDto staffDto){
+        Optional<Staff> staffOptional  = staffRepository.findById(staffId);
 
+        // update the staff object
+        staffOptional.ifPresent(staff -> {
+            staff.setName(staffDto.getName());
+            staff.setEmail(staffDto.getEmail());
+            staff.setPhone(staffDto.getPhone());
+            staff.setAddress(staffDto.getAddress());
+            staff.setRole(staffDto.getRole());
+            staffRepository.save(staff);
+        });
+
+
+        // save the updated staff object
+//        staffRepository.saveAndFlush(staff);
+
+
+    }
 
 
 }

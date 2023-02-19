@@ -27,5 +27,7 @@ public interface StaffService {
 //    Optional<StaffDto> getStaffById(Long staffId);
 
     void deleteStaff(Long staffId);
+
+    void updateStaff(Long id, StaffDto staffDto);
 }
 

@@ -56,5 +56,11 @@ public class StaffRestController {
         staffService.deleteStaff(id);
     }
 
+    @PutMapping("/{id}")
+    public void updateStaff(@PathVariable Long id, @RequestBody StaffDto staffDto) {
+        staffService.updateStaff(id, staffDto);
+    }
+
+
 
 }

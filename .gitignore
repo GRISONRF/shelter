@@ -5,6 +5,8 @@ target/
 !**/src/test/**/target/
 **/.DS_STORE
 **/application.properties
+package.json
+package-lock.json
 
 
 ### STS ###
@@ -35,8 +37,11 @@ secrets.sh
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-/src/main/resources/application.properties
-/src/main/java/com/devmountain/shelter/notes.md
+
 
 ### VS Code ###
 .vscode/
+
+/src/main/resources/application.properties
+/src/main/java/com/devmountain/shelter/notes.md
+node_modules/

@@ -4,17 +4,10 @@ package com.devmountain.shelter.disposition;
 import com.devmountain.shelter.animal.Animal;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 @Entity
 @Table(name = "disposition")
 @Data
-//@Getter
-//@Setter
-//@ToString
-//@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class Disposition {

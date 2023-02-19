@@ -1,8 +1,5 @@
 package com.devmountain.shelter.disposition;
 
-import com.devmountain.shelter.animal.Animal;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

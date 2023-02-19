@@ -1,6 +1,5 @@
 package com.devmountain.shelter.health;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

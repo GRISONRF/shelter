@@ -2,12 +2,10 @@ package com.devmountain.shelter.notes;
 
 import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffRepository;
-import jakarta.persistence.Table;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -26,13 +24,10 @@ public class NoteServiceImpl implements NoteService {
     @Override
     @Transactional
     public void addNote(NoteDto noteDto, Long staffId) {
-        System.out.println("*********** INSIDE ADD NOTE SERVICE");
-        System.out.println(noteDto);
-        System.out.println(staffId);
+
         Optional<Staff> staffOptional = staffRepository.findById(staffId);
         Note note = new Note(noteDto);
         staffOptional.ifPresent(note::setStaff);
-        System.out.println(note);
         noteRepository.saveAndFlush(note);
     }
 

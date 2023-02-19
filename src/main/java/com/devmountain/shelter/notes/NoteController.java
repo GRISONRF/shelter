@@ -16,10 +16,6 @@ public class NoteController {
 
     @PostMapping("/staff/{staffId}")
     public void addNote(@RequestBody NoteDto noteDto, @PathVariable Long staffId) {
-        System.out.println("*******************ADD NOTE CONTROLLER");
-        System.out.println(noteDto);
-        System.out.println(staffId);
-
         noteService.addNote(noteDto, staffId);
     }
 

@@ -2,7 +2,6 @@ package com.devmountain.shelter.health;
 
 
 import com.devmountain.shelter.animal.Animal;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

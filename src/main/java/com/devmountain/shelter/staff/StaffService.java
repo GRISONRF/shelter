@@ -28,6 +28,6 @@ public interface StaffService {
 
     void deleteStaff(Long staffId);
 
-    void updateStaff(Long id, StaffDto staffDto);
+    List<String> updateStaff(Long id, StaffDto staffDto);
 }
 

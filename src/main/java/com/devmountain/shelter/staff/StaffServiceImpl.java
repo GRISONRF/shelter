@@ -95,23 +95,33 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     @Transactional
-    public void updateStaff(Long staffId, StaffDto staffDto){
+    public List<String> updateStaff(Long staffId, StaffDto staffDto){
+        List<String> response = new ArrayList<>();
+
+        System.out.println("***********inside update staff***** staff optional:");
         Optional<Staff> staffOptional  = staffRepository.findById(staffId);
+        System.out.println(staffOptional);
+        System.out.println("end of optional");
 
         // update the staff object
         staffOptional.ifPresent(staff -> {
+            System.out.println("inside the loop");
+
             staff.setName(staffDto.getName());
             staff.setEmail(staffDto.getEmail());
             staff.setPhone(staffDto.getPhone());
             staff.setAddress(staffDto.getAddress());
             staff.setRole(staffDto.getRole());
             staffRepository.save(staff);
+            System.out.println(staff);
         });
+        System.out.println("outside loop");
 
 
         // save the updated staff object
 //        staffRepository.saveAndFlush(staff);
-
+        response.add("http://localhost:8080/staff/all-staff.html");
+        return response;
 
     }
 

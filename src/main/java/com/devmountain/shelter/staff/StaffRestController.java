@@ -57,8 +57,16 @@ public class StaffRestController {
     }
 
     @PutMapping("/{id}")
-    public void updateStaff(@PathVariable Long id, @RequestBody StaffDto staffDto) {
+    public List<StaffDto> updateStaff(@PathVariable Long id, @RequestBody StaffDto staffDto) {
+        System.out.println("***************** update");
+        System.out.println(id);
+        System.out.println(staffDto);
+
         staffService.updateStaff(id, staffDto);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/staff/all-staff.html");
+        return staffService.findAllStaff();
+
     }
 
 

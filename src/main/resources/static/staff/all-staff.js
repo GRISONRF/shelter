@@ -229,12 +229,6 @@ getStaff();
 
 
 
-
-
-
-
-
-
 ///////////////////// Add a new staff  ////////////////////
 
 const addStaffButton = document.getElementById('add-staff-button');

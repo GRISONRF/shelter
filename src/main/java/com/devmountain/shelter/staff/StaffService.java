@@ -18,14 +18,6 @@ public interface StaffService {
 
     StaffDto findStaff(Long id);
 
-//    @Transactional
-//    void deleteStaff(Long staffId);
-
-//    @Transactional
-//    void deleteStaffById(Long staffId);
-//
-//    Optional<StaffDto> getStaffById(Long staffId);
-
     void deleteStaff(Long staffId);
 
     List<String> updateStaff(Long id, StaffDto staffDto);

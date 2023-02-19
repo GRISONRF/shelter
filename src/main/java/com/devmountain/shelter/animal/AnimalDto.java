@@ -2,16 +2,11 @@ package com.devmountain.shelter.animal;
 
 import com.devmountain.shelter.disposition.DispositionDto;
 import com.devmountain.shelter.health.HealthDto;
-import com.devmountain.shelter.task.Task;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor

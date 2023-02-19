@@ -31,16 +31,12 @@ public class AnimalServiceImpl implements AnimalService {
     public List<String> addAnimal(AnimalDto animalDto){
         List<String> response = new ArrayList<>();
         Animal animal = new Animal(animalDto);
-        System.out.println("**********inside add animal service. ANIMAL:");
-
-        System.out.println(animal);
 
         if (animalDto.getDisposition() != null) {
             DispositionDto dispositionDto = animalDto.getDisposition();
             Disposition disposition = new Disposition(dispositionDto);
             dispositionRepository.save(disposition);  // save the Disposition entity to the database
             animal.setDispositionWithAnimalId(disposition);;
-//            disposition.setAnimal(animal); // set the animal object
         }
 
         if (animalDto.getHealth() != null) {
@@ -48,7 +44,6 @@ public class AnimalServiceImpl implements AnimalService {
             Health health = new Health(healthDto);
             healthRepository.save(health);  // save the Health entity to the database
             animal.setHealthWithAnimalId(health);;
-//            health.setAnimal(animal); // set the animal object
         }
 
         animalRepository.saveAndFlush(animal);
@@ -74,7 +69,6 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
 
-
     @Override
     public AnimalDto findAnimalById(Long id) {
         Animal animal = animalRepository.findById(id).orElse(null);
@@ -86,14 +80,6 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
 
-
-//    public AnimalDto findAnimalById(Long id){
-//        Animal animal = animalRepository.findById(id).get();
-//        if (animal != null) {
-//            animal.setDisposition(dispositionRepository.findByAnimalId(animal.getId()));
-//        }
-//        return new AnimalDto(animal);
-//    }
 
 
 }

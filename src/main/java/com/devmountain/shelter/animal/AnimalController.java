@@ -29,7 +29,6 @@ public class AnimalController {
 
     @GetMapping(value = "/{id}")
     public String getAnimalId(@PathVariable Long id, Model model) {
-        System.out.println("inside get animal id");
         AnimalDto animal = animalService.findAnimalById(id);
         model.addAttribute("animal", animal);
 

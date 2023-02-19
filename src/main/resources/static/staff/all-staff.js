@@ -56,24 +56,29 @@ const createStaffCards = (array) => {
         deleteIcon.addEventListener('click', () => {
           const modal = document.createElement('div');
           modal.classList.add('modal', 'fade', );
-          modal.setAttribute('data-backdrop', 'false');
-          modal.setAttribute('style', 'z-index: 999999999;')
+          modal.setAttribute('id', 'exampleModal');
+          modal.setAttribute('tabindex', '-1');
+          modal.setAttribute('role', 'dialog');
+          modal.setAttribute('aria-labelledby', 'exampleModalLabel');
+          modal.setAttribute('aria-hidden', 'true');
           modal.innerHTML = `
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Confirm deletion</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-backdrop="false"></button>
-                </div>
-                <div class="modal-body">
-                  Are you sure you want to delete this staff? All their information will be erased.
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-backdrop="false">Cancel</button>
-                  <button type="button" class="btn btn-danger" id="confirm-delete" data-backdrop="false">Delete</button>
+              <div>
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirm deletion</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" data-backdrop="false"></button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure you want to delete this staff? All their information will be erased.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger" id="confirm-delete">Delete</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
           `;
 
           const confirmButton = modal.querySelector('#confirm-delete');
@@ -89,6 +94,7 @@ const createStaffCards = (array) => {
               staffCard.remove();
               console.log('Staff deleted!');
               modal.remove();
+              document.querySelector('.modal-backdrop').remove();
             }
 
           });
@@ -96,6 +102,7 @@ const createStaffCards = (array) => {
           const cancelButton = modal.querySelector('.btn-secondary');
           cancelButton.addEventListener('click', () => {
             modal.remove();
+            document.querySelector('.modal-backdrop').remove();
           });
 
           document.body.appendChild(modal);
@@ -104,6 +111,7 @@ const createStaffCards = (array) => {
 
           modal.addEventListener('hidden.bs.modal', () => {
             modal.remove();
+            document.querySelector('.modal-backdrop').remove();
           });
         });
     });

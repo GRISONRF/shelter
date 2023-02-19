@@ -36,8 +36,6 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public List<String> staffLogin(StaffDto staffDto){
-        System.out.println(staffDto);
-
         List<String> response = new ArrayList<>();
         Optional<Staff> staffOptional = staffRepository.findByEmail(staffDto.getEmail());
 
@@ -71,8 +69,6 @@ public class StaffServiceImpl implements StaffService {
     @Transactional
     public void deleteStaff(Long staffId) {
         Staff staff = staffRepository.findById(staffId).orElse(null);
-        System.out.println("*****************");
-        System.out.println(staff);
 
         if (staff == null) {
             // Handle the case when the Staff object does not exist.
@@ -83,10 +79,6 @@ public class StaffServiceImpl implements StaffService {
         List<Note> notesDto = noteRepository.findByStaffId(staffId);
         Set<Note> notes = new HashSet<>(notesDto);
 
-        System.out.println("tasks:");
-        System.out.println(tasks);
-        System.out.println("notes:");
-        System.out.println(notesDto);
         notesDto.forEach(note -> note.setStaff(null));
         taskRepository.deleteAll(tasks);
         noteRepository.deleteAll(notes);
@@ -98,15 +90,10 @@ public class StaffServiceImpl implements StaffService {
     public List<String> updateStaff(Long staffId, StaffDto staffDto){
         List<String> response = new ArrayList<>();
 
-        System.out.println("***********inside update staff***** staff optional:");
         Optional<Staff> staffOptional  = staffRepository.findById(staffId);
-        System.out.println(staffOptional);
-        System.out.println("end of optional");
 
         // update the staff object
         staffOptional.ifPresent(staff -> {
-            System.out.println("inside the loop");
-
             staff.setName(staffDto.getName());
             staff.setEmail(staffDto.getEmail());
             staff.setPhone(staffDto.getPhone());
@@ -115,11 +102,7 @@ public class StaffServiceImpl implements StaffService {
             staffRepository.save(staff);
             System.out.println(staff);
         });
-        System.out.println("outside loop");
 
-
-        // save the updated staff object
-//        staffRepository.saveAndFlush(staff);
         response.add("http://localhost:8080/staff/all-staff.html");
         return response;
 

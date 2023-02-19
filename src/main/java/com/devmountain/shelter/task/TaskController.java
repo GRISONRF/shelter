@@ -40,16 +40,9 @@ public class TaskController {
 
     @GetMapping("/newTask")
     public String newTask(Model model) {
-        System.out.println("* * * * * * INSIDE OF NEW TASK!! * * * ");
         List<Staff> staffList = staffRepository.findAll();
         model.addAttribute("staffList", staffList);
         return "newTask";
     }
 
-
-//    @DeleteMapping("/tasks/{id}")
-//    public String deleteTaskById(@PathVariable("id") Long id) {
-//        taskService.deleteTaskById(id);
-//        return "redirect:/tasks";
-//    }
 }

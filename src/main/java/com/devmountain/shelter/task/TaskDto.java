@@ -1,9 +1,6 @@
 package com.devmountain.shelter.task;
 
-import com.devmountain.shelter.animal.AnimalDto;
-import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffDto;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,9 +18,6 @@ public class TaskDto implements Serializable {
     public Long staffId;
 
     public StaffDto staffDto;
-
-//    public AnimalDto animalDto;
-
 
 
     public TaskDto (Task task) {

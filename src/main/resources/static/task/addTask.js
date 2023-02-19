@@ -33,10 +33,8 @@ const handleSubmit = async (e) => {
         headers: taskConfig.headers
     })
     console.log(response)
-//        .catch(err => console.error(err.message))
     if (response.status === 200) {
         window.location.pathname = '/task/tasks.html';
     }
 }
-//addTaskForm.addEventListener("submit", handleSubmit)
 document.getElementById("submit-button").addEventListener("click", handleSubmit)

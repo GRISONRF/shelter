@@ -38,39 +38,20 @@ public class TaskServiceImpl implements TaskService {
 
     @Transactional
     public List<String> addTask(TaskDto taskDto){
-        System.out.println("FIRST LINE ADD TASK !!!!!!!!!!!!!!!!!!!!!!!!!!!");
         List<String> response = new ArrayList<>();
         Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaffId());
-        System.out.println("STAFF? " + staffOptional);
 
         Task task = new Task(taskDto);
         staffOptional.ifPresentOrElse(staff -> {
             task.setStaff(staff);
         },()->{
-            System.out.println("staff id not found");
-            //add some logging here to understand why staff is not found.
+
         });
 
-        System.out.println("****** INSIDE OF ADDTASK." + task);
-        System.out.println(taskDto);
         taskRepository.saveAndFlush(task);
         response.add("Task Added Successfully");
         return response;
     }
-
-
-//    @Transactional
-//    @Override
-//    public TaskDto addTask(TaskDto taskDto){   //changed the addTask to return a taskDto
-//        Task task = new Task(taskDto);
-//        Optional<Staff> staffOptional = staffRepository.findById(taskDto.getStaffId());
-//        System.out.println("\n" + staffOptional);
-//
-//        task.setStaff(staffOptional.get());
-//        return new TaskDto(taskRepository.saveAndFlush(task));
-//
-//    }
-
 
 
     @Override
@@ -79,6 +60,5 @@ public class TaskServiceImpl implements TaskService {
         Optional<Task> taskOptional = taskRepository.findById(taskId);
         taskOptional.ifPresent(task -> taskRepository.delete(task));
     }
-
 
 }

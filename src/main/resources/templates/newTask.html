@@ -23,15 +23,6 @@
     <form id="add-task-form" class="form">
 
 
-<!--        <div class="form-group">-->
-<!--            <label for="staff">Staff</label>-->
-<!--            <select id="staff" class="form-control">-->
-<!--                <option value="0">Select Staff</option>-->
-<!--                <th:block th:each="staff: ${staffList}">-->
-<!--                    <option th:value="${staff.id}" th:text="${staff.name}"></option>-->
-<!--                </th:block>-->
-<!--            </select>-->
-<!--        </div>-->
         <div style="padding-left: 10px;">Select a Staff:
             <select id="staff-select">
                 <option th:each="staff : ${staffList}" th:value="${staff.id}" th:text="${staff.name}"></option>
@@ -40,7 +31,7 @@
 
         <div class="form-group">
             <label for="task">Task:</label>
-            <textarea type="text" class="form-control" id="task"></textarea>
+            <textarea type="text" class="form-control" id="task" style="height: 215px;"></textarea>
         </div>
 
         <div class="form-group">

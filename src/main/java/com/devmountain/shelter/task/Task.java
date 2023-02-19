@@ -1,6 +1,5 @@
 package com.devmountain.shelter.task;
 
-import com.devmountain.shelter.animal.Animal;
 import com.devmountain.shelter.staff.Staff;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

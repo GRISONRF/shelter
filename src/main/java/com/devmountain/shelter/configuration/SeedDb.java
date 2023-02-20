@@ -154,7 +154,7 @@ public class SeedDb implements CommandLineRunner {
         staff1.setPassword("123test");
         staff1.setName("Rafaela Grison");
         staff1.setPhone("(720) 232-0909");
-        staff1.setAddress("Denver-CO");
+        staff1.setAddress("123 Street, 80333. Denver-CO");
         staff1.setRole("Volunteer");
 
         Staff staff2 = new Staff();
@@ -162,7 +162,7 @@ public class SeedDb implements CommandLineRunner {
         staff2.setPassword("123test");
         staff2.setEmail("sandraolmo@hotmail.com");
         staff2.setPhone("(720) 111-5050");
-        staff2.setAddress("Denver-CO");
+        staff2.setAddress("123 Street, 80333. Denver-CO");
         staff2.setRole("Manager");
 
         Staff staff3 = new Staff();
@@ -170,7 +170,7 @@ public class SeedDb implements CommandLineRunner {
         staff3.setPassword("123test");
         staff3.setEmail("patrickcallahan@aol.com");
         staff3.setPhone("(360) 455-9977");
-        staff3.setAddress("Denver-CO");
+        staff3.setAddress("123 Street, 80333. Denver-CO");
         staff3.setRole("Animal caretaker");
 
         Staff staff4 = new Staff();
@@ -178,7 +178,7 @@ public class SeedDb implements CommandLineRunner {
         staff4.setPassword("123test");
         staff4.setEmail("gloriaphipps@mail.com");
         staff4.setPhone("(240) 324-1133");
-        staff4.setAddress("Denver-CO");
+        staff4.setAddress("123 Street, 80333. Denver-CO");
         staff4.setRole("Veterinarian");
 
         Staff staff5 = new Staff();
@@ -186,7 +186,7 @@ public class SeedDb implements CommandLineRunner {
         staff5.setPassword("123test");
         staff5.setEmail("dennisjohnson@yahoo.com");
         staff5.setPhone("(240) 689-4022");
-        staff5.setAddress("Denver-CO");
+        staff5.setAddress("123 Street, 80333. Denver-CO");
         staff5.setRole("Kennel technician");
         staffRepository.saveAll(Arrays.asList(staff5, staff4, staff2, staff3 ,staff1));
 

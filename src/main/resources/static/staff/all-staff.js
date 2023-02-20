@@ -267,7 +267,7 @@ addStaffButton.addEventListener("click", async () => {
         name: document.getElementById('name').value,
         phone: document.getElementById('staffPhone').value,
         address: document.getElementById('staffAddress').value,
-        role: document.getElementById('staffRole').value
+        role: document.getElementById('role').value
     }
     console.log(bodyObjStaff)
 

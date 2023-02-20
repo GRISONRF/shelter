@@ -31,6 +31,7 @@ const createStaffCards = (array) => {
         const role = obj.role
         const email = obj.email
         const phone = obj.phone
+        const address = obj.address
 
         let staffCard = document.createElement("div")
         staffCard.classList.add("m-2")
@@ -39,10 +40,10 @@ const createStaffCards = (array) => {
                 <ul class="staff-styling">
                     <li style="font-size: 17px; width: 100px">${name}</li>
                     <li style="font-size: 17px; width: 115px">${role}</li>
-                    <li style="font-size: 17px; width: 173px">${email}</li>
+                    <li style="font-size: 17px; width: 227px">${email}</li>
                     <li style="font-size: 17px; width: 161px;">${phone}</li>
                     <li style="font-size: 17px; cursor: pointer" class="delete-staff">&#128465;</li>
-                    <li style="font-size: 17px; cursor: pointer" class="edit-staff">&#9998;</li>
+                    <li style="font-size: 17px; cursor: pointer" class="edit-staff" data-name="${name}" data-role="${role}" data-email="${email}" data-phone="${phone}" data-address="${address}">&#9998;</li>
                 </ul>
             </div>
         `
@@ -122,8 +123,20 @@ const createStaffCards = (array) => {
 
         // Attach an event listener to the edit icon
         editIcon.addEventListener("click", () => {
+
+            const name = editIcon.dataset.name;
+            const role = editIcon.dataset.role;
+            const email = editIcon.dataset.email;
+            const phone = editIcon.dataset.phone;
+            const address = editIcon.dataset.address;
+
+
+
+
             //create the modal to 'edit' the staff
             const modal = document.createElement('div');
+
+
             modal.classList.add('modal', 'fade', );
             modal.setAttribute('id', 'updateModal');
             modal.setAttribute('tabindex', '-1');
@@ -167,13 +180,24 @@ const createStaffCards = (array) => {
                             </form>
                         </div>
                         <div class="modal-footer" style="display: flex; justify-content: flex-end;">
-                            <button type="button" class="btn" id="update-staff-button" style="margin: 30px; background-color: #cbab3c; color: #ffffff; font-size: medium; border-color: #d39e00;">Update Staff Info"</button>
+                            <button type="button" class="btn" id="update-staff-button" style="margin: 30px; background-color: #cbab3c; color: #ffffff; font-size: medium; border-color: #d39e00;">Update Staff Info</button>
 
                             <button type="button" class="btn" id="nada" data-dismiss="modal" style="margin: 30px; background-color: #d5571d;color: #ffffff;font-size: medium; border-color: #f8f9fa;">Close</button>
                         </div>
                     </div>
                 </div>
             `;
+            const nameInput = modal.querySelector("#name2");
+            const roleInput = modal.querySelector("#role2");
+            const emailInput = modal.querySelector("#staffEmail2");
+            const phoneInput = modal.querySelector("#phone2");
+            const addressInput = modal.querySelector("#address2")
+
+            nameInput.value = name;
+            roleInput.value = role;
+            emailInput.value = email;
+            phoneInput.value = phone;
+            addressInput.value = address;
 
 
             const updateButton = modal.querySelector("#update-staff-button");

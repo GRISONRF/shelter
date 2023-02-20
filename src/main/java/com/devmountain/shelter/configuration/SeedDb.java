@@ -67,83 +67,92 @@ public class SeedDb implements CommandLineRunner {
         animal3.setDisposition(disposition1);
         animalRepository.save(animal3);
 
-        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered", null, null);
+        Animal animal4 = new Animal(null, "Cat", "Luna", "08/30/2022", "Female", "11/28/2022", "Transferred", "https://images.squarespace-cdn.com/content/v1/5e389e57a5944945a0f92994/1581900690817-EHSYM5H567FAOS20GZJ2/shutterstock_143254729.jpg?format=500w", "Siamese", "Cat food", "1/2 scoop 2x day", "Fostered", null, null);
         animal4.setDisposition(disposition1);
         animalRepository.save(animal1);
 
-        Animal animal5 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal5 = new Animal(null, "Dog", "Coco Bark Park", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://ggsc.s3.amazonaws.com/images/made/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner_300_200_int_c1-1x.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal5.setDisposition(disposition1);
         animalRepository.save(animal5);
 
-        Animal animal6 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal6 = new Animal(null, "Dog", "Stuart", "11/20/2020", "Female", "09/12/2019", "Surrender", "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal6.setDisposition(disposition1);
         animalRepository.save(animal6);
 
-        Animal animal7 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
+        Animal animal7 = new Animal(null, "Dog", "Jersey", "03/25/2019", "Female", "09/12/2019", "Surrender", "https://people.com/thmb/yubadLTVOD2kV9iykZ7G68emU4Y=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(904x0:906x2):format(webp)/pug-1-0d4c0f988e3d421ca4954917b1450664.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
         animal7.setDisposition(disposition1);
         animalRepository.save(animal7);
 
-        Animal animal8 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null, null);
+        Animal animal8 = new Animal(null, "Dog", "Shadow", "05/18/2018", "Female", "09/12/2019", "Transferred", "https://www.adelaide.edu.au/newsroom/sites/default/files/styles/ua_image_landscape/public/media/images/2022-03/dog-gbfe9c6841_1920_2.jpg?h=7187ef5e&itok=VvBjqE9_", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null, null);
         animal5.setDisposition(disposition1);
         animalRepository.save(animal8);
 
-        Animal animal9 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null, null);
+        Animal animal9 = new Animal(null, "Dog", "Flower", "01/09/2016", "Female", "09/12/2019", "Stray Animal", "https://puccicafe.com/wp-content/uploads/2021/08/Train-a-Stray-Dog-PUCCI-Cafe.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Fostered", null, null);
         animal9.setDisposition(disposition1);
         animalRepository.save(animal9);
 
-        Animal animal10 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal10 = new Animal(null, "Dog", "Malika", "10/22/2020", "Female", "09/12/2019", "Transferred", "https://i0.wp.com/blog.frontiersin.org/wp-content/uploads/2020/01/frontiers-psychology-stray-dogs-human-cues-behavior.jpg?resize=940%2C528&ssl=1", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal10.setDisposition(disposition1);
         animalRepository.save(animal10);
 
-        Animal animal11 = new Animal(null, "Dog", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
+        Animal animal11 = new Animal(null, "Dog", "Taro", "08/25/2015", "Male", "09/12/2019", "Transferred", "https://ichef.bbci.co.uk/news/976/cpsprodpb/387B/production/_126795441_gettyimages-979935038-170667a.jpg.webp", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
         animal11.setDisposition(disposition1);
         animalRepository.save(animal11);
 
-        Animal animal12 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal12 = new Animal(null, "Dog", "Ozzy", "01/03/2019", "Female", "09/12/2019", "Stray Animal", "https://media.4-paws.org/2/1/f/2/21f2e1c51bedd0a4315cf9b234a17075150c711e/VIER%20PFOTEN_2014-09-09_025-3330x2304-1300x899.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal12.setDisposition(disposition1);
         animalRepository.save(animal12);
 
-        Animal animal13 = new Animal(null, "Dog", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal13 = new Animal(null, "Dog", "Aswut", "07/12/2020", "Female", "09/12/2019", "Transferred", "https://media.4-paws.org/b/e/7/7/be7731d9adaa3878f35c565dd97dcf268443bc05/VIER%20PFOTEN_2012-05-18_009-1300x865.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal13.setDisposition(disposition1);
         animalRepository.save(animal13);
 
-        Animal animal14 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal14 = new Animal(null, "Cat", "Eagle", "12/04/2017", "Male", "09/12/2019", "Surrender", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ko%C4%8Dka_v_Dra%C5%A1nici.jpg/220px-Ko%C4%8Dka_v_Dra%C5%A1nici.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal14.setDisposition(disposition1);
         animalRepository.save(animal14);
 
-        Animal animal15 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal15 = new Animal(null, "Cat", "Max", "10/29/2018", "Female", "09/12/2019", "Stray Animal", "https://www.rspcasa.org.au/wp-content/uploads/2022/09/StrayCAt-800-x-600-1024x768.png", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal15.setDisposition(disposition1);
         animalRepository.save(animal15);
 
-        Animal animal16 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal16 = new Animal(null, "Cat", "Farao", "01/01/2020", "Male", "09/12/2019", "Surrender", "https://www.aspcapro.org/sites/default/files/styles/image_component/public/image-paragraph/cage-cat-tnr.jpg?itok=rQlSatqf", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal16.setDisposition(disposition1);
         animalRepository.save(animal16);
 
-        Animal animal17 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
+        Animal animal17 = new Animal(null, "Cat", "Cooper", "07/28/2019", "Female", "09/12/2019", "Surrender", "https://1stpetvet.com/wp-content/uploads/kitten-1024x683.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
         animal17.setDisposition(disposition1);
         animalRepository.save(animal7);
 
-        Animal animal18 = new Animal(null, "Cat", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
+        Animal animal18 = new Animal(null, "Cat", "Birdie", "06/04/2015", "Male", "09/12/2019", "Surrender", "https://s30379.pcdn.co/wp-content/uploads/2019/09/p1cuv198jk1t3oief1vesoae1rnq6.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Available for Adoption", null, null);
         animal18.setDisposition(disposition1);
         animalRepository.save(animal18);
 
-        Animal animal19 = new Animal(null, "Cat", "Bella", "05/18/2018", "Female", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal19 = new Animal(null, "Cat", "Bear", "07/22/2022", "Female", "09/12/2019", "Surrender", "https://southwesthumane.org/media/2032/lost-found_stray-cats-kittens.png?width=730&height=340&mode=crop", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal19.setDisposition(disposition1);
         animalRepository.save(animal19);
 
-        Animal animal20 = new Animal(null, "Dog", "Bella", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.boredpanda.com/blog/wp-content/uploads/2021/03/url-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        Animal animal20 = new Animal(null, "Dog", "Juniper", "05/18/2018", "Male", "09/12/2019", "Surrender", "https://www.aljazeera.com/wp-content/uploads/2022/09/000_32HB9XR.jpg?resize=1170%2C780&quality=80", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
         animal20.setDisposition(disposition1);
         animalRepository.save(animal20);
 
+        Animal animal21 = new Animal(null, "Cat", "Felix", "30/11/2018", "Male", "09/12/2019", "Surrender", "https://d339b5nop2tkmp.cloudfront.net/uploads/pictures/2232/content_IMG_1230-1.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        animal21.setDisposition(disposition1);
+        animalRepository.save(animal21);
 
-//        animalRepository.saveAll(Arrays.asList(animal1, animal2, animal3, animal4, animal5));
+        Animal animal22 = new Animal(null, "Cat", "Angel", "04/27/2021", "Male", "09/12/2019", "Surrender", "https://topdogtips.com/wp-content/uploads/2021/11/Untitled-design-2021-10-23T212440.070.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        animal22.setDisposition(disposition1);
+        animalRepository.save(animal22);
+
+        Animal animal23 = new Animal(null, "Dog", "Lucky", "01/15/2017", "Male", "09/12/2019", "Surrender", "https://www.sciencenews.org/wp-content/uploads/2022/04/042822_AG_dog-breeds_feats-1030x580.jpg", "Rottweiler", "Dog food", "2 scoops 2x day", "Shelter Care", null, null);
+        animal23.setDisposition(disposition1);
+        animalRepository.save(animal23);
 
 
         Staff staff1 = new Staff();
         staff1.setId(null);
         staff1.setEmail("grisonrf@gmail.com");
         staff1.setPassword("123test");
-        staff1.setName("Amanda Jones");
+        staff1.setName("Rafaela Grison");
         staff1.setPhone("(720) 232-0909");
         staff1.setAddress("Denver-CO");
         staff1.setRole("Volunteer");
@@ -151,7 +160,7 @@ public class SeedDb implements CommandLineRunner {
         Staff staff2 = new Staff();
         staff2.setName("Sandra Olmo");
         staff2.setPassword("123test");
-        staff2.setEmail("staff2@test.com");
+        staff2.setEmail("sandraolmo@hotmail.com");
         staff2.setPhone("(720) 111-5050");
         staff2.setAddress("Denver-CO");
         staff2.setRole("Manager");
@@ -159,7 +168,7 @@ public class SeedDb implements CommandLineRunner {
         Staff staff3 = new Staff();
         staff3.setName("Patrick Callahan");
         staff3.setPassword("123test");
-        staff3.setEmail("staff3@test.com");
+        staff3.setEmail("patrickcallahan@aol.com");
         staff3.setPhone("(360) 455-9977");
         staff3.setAddress("Denver-CO");
         staff3.setRole("Animal caretaker");
@@ -167,7 +176,7 @@ public class SeedDb implements CommandLineRunner {
         Staff staff4 = new Staff();
         staff4.setName("Gloria Phipps");
         staff4.setPassword("123test");
-        staff4.setEmail("staff4@test.com");
+        staff4.setEmail("gloriaphipps@mail.com");
         staff4.setPhone("(240) 324-1133");
         staff4.setAddress("Denver-CO");
         staff4.setRole("Veterinarian");
@@ -175,23 +184,22 @@ public class SeedDb implements CommandLineRunner {
         Staff staff5 = new Staff();
         staff5.setName("Dennis Johnson");
         staff5.setPassword("123test");
-        staff5.setEmail("staff5@test.com");
+        staff5.setEmail("dennisjohnson@yahoo.com");
         staff5.setPhone("(240) 689-4022");
         staff5.setAddress("Denver-CO");
         staff5.setRole("Kennel technician");
-        staffRepository.saveAll(Arrays.asList(staff1,staff2, staff3, staff4, staff5));
+        staffRepository.saveAll(Arrays.asList(staff5, staff4, staff2, staff3 ,staff1));
 
         Note note1 = new Note(null, "Don't forget to call the Vet", staff1);
         noteRepository.saveAndFlush(note1);
 
 
-//        Animal animalTest = animalRepository.findById(1L).orElse(null);
         Staff staffTest = staffRepository.findById(1L).orElse(null);
         Task task1 = new Task(null, "Take the trash out", "Feb / 20", staff1);
         Task task2 = new Task(null, "Buy Coco's special dog food", "Feb / 20", staff2);
         Task task3 = new Task(null, "Take Fluffy to get the vaccines at 2pm", "Feb / 20", staff4);
         Task task4 = new Task(null, "Clean the kennels 1 and 2", "Feb / 20", staff3);
-        Task task5 = new Task(null, "Take Lily, Kai, Max to the groomer at 10am", "Feb / 21", staff1);
+        Task task5 = new Task(null, "Take Lily, Kai and Max to the groomer at 10am", "Feb / 21", staff1);
         Task task6 = new Task(null, "Send last month's report to Roberta", "Feb / 21", staff3);
         Task task7 = new Task(null, "Daisy's spay surgery at 1:30pm", "Feb / 22", staff2);
         Task task8 = new Task(null, "Fix door at kannel 4", "Feb / 22", staff4);

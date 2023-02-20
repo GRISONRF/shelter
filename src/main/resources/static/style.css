@@ -150,7 +150,9 @@ display: none;
 
 .bottom-up {
     display: flex;
+/*
     justify-content: space-around;
+*/
     align-items: stretch
 }
 

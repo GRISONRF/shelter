@@ -187,17 +187,17 @@ const createStaffCards = (array) => {
                     </div>
                 </div>
             `;
-            const nameInput = modal.querySelector("#name2");
-            const roleInput = modal.querySelector("#role2");
             const emailInput = modal.querySelector("#staffEmail2");
+            const nameInput = modal.querySelector("#name2");
             const phoneInput = modal.querySelector("#phone2");
             const addressInput = modal.querySelector("#address2")
+            const roleInput = modal.querySelector("#role2");
 
             nameInput.value = name;
-            roleInput.value = role;
             emailInput.value = email;
             phoneInput.value = phone;
             addressInput.value = address;
+            roleInput.value = role;
 
 
             const updateButton = modal.querySelector("#update-staff-button");
@@ -210,7 +210,7 @@ const createStaffCards = (array) => {
                     name: document.getElementById('name2').value,
                     phone: document.getElementById('phone2').value,
                     address: document.getElementById('address2').value,
-                    role: document.getElementById('role2').value
+                    role: document.getElementById('role2').value,
                     }
 
                 console.log(bodyUpdate)
@@ -221,7 +221,9 @@ const createStaffCards = (array) => {
                     headers: staffConfig.headers
                 });
 
+
                 if (response.ok) {
+                    console.log(response)
                     console.log("Staff updated!");
                     window.location.reload();
                 } else {

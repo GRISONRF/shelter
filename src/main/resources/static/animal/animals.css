@@ -4,7 +4,7 @@
 }
 
 .animal-card {
-  border: 1px solid #e1ba1042;
+    border: 1px solid #e1ba1042;
 }
 
 
@@ -14,5 +14,14 @@ a:hover {
 }
 
 #animalForm {
-  display: none;
+    display: none;
+}
+
+
+.all-ans {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

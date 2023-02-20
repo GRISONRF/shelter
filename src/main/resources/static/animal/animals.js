@@ -110,7 +110,7 @@ const createAnimalCards = (array) => {
         animalCard.innerHTML = `
             <div class="animal-card">
                 <ul class="animal-styling">
-                    <li style="font-size: 17px; width: 100px">
+                    <li style="font-size: 17px; width: 100px" class="all-ans">
                         <img src="${picture}" width="100" height="100" alt="Animal Image">
                     </li>
                     <li style="font-size: 17px; width: 70px">${species}</li>

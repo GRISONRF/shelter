@@ -7,7 +7,7 @@ This app has been designed to help manage the day-to-day operations of an animal
 * 🤖 [Technologies](#technologies-used)
 * ⭐ [Features](#features)
 * 📖 [Setting up](#getting-started)
-* 🌸 [About Me](#about-me)
+* 🌸 [About the Author](#about-the-author)
 
 
 ## Technologies Used
@@ -17,6 +17,7 @@ This app has been designed to help manage the day-to-day operations of an animal
 
 
 ## Features
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Dashboard
 * User can see their pending tasks for the week, along with their deadline and a button to mark them as completed. 
@@ -51,6 +52,7 @@ https://user-images.githubusercontent.com/81582376/220480909-c83eb7d8-a992-4a54-
 
 
 ## Getting Started
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 Install the software needed to run Java code:
@@ -109,31 +111,12 @@ $ git clone https://github.com/GRISONRF/shelter.git
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (52/52), done.
 ```
+
+
+
+
+## About the Author
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]:https://img.shields.io/badge/CONTRIBUTERS-5-green
-[contributors-url]: https://github.com/ileanahi/doctors-office/graphs/contributors
-[forks-shield]: https://img.shields.io/badge/FORKS-2-blue
-[forks-url]: https://github.com/ileanahi/doctors-office/network/members
-[issues-shield]: https://img.shields.io/badge/ISSUES-0%20OPEN-yellow
-[issues-url]: https://github.com/ileanahi/doctors-office/issues
-[Java-shield]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=&logoColor=white
-[Java-url]: https://www.java.com/en
-[Thymeleaf-shield]: https://img.shields.io/badge/Thymeleaf-48892c?style=for-the-badge&logo=&logoColor=white
-[Thymeleaf-url]: https://www.thymeleaf.org/
-[SpringBoot-shield]: https://img.shields.io/badge/SpringBoot-8fce00?style=for-the-badge&logo=springboot&logoColor=white
-[SpringBoot-url]: https://spring.io/
-[Hibernate-shield]: https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white
-[Hibernate-url]: https://hibernate.org/
-[Register-Page-shield]: https://user-images.githubusercontent.com/81582376/217858466-336fd40a-c6e1-4d12-a8e1-c3694b91f294.png
-[Patient-Portal-shield]: https://user-images.githubusercontent.com/81582376/217858611-4051169d-ce13-4a3c-b498-8366fdad0c62.png
-
-
-
-
-## About me
-
+Rafaela completed a comprehensive full-stack bootcamp in the previous year, where she gained in-depth knowledge of several technologies, including Python, Flask, React, and Data Manipulation. <br>
+Following her bootcamp, she continued her pursuit of knowledge by contributing her expertise to various open-source projects, and volunteered to HackforLA and Out in Tech, collaborating with fellow software engineers and exploring different tech stacks.<br>
+In 2023, she embarked on a new journey to acquire proficiency in Java, and the Walmart vs. Hackbright bootcamp provided the necessary impetus to achieve this objective!

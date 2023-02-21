@@ -22,7 +22,9 @@ This app has been designed to help manage the day-to-day operations of an animal
 * User can see their pending tasks for the week, along with their deadline and a button to mark them as completed. 
 * They can also see a list of notes with the option to delete and create new ones.
 * Using Chart.js, current stats of the shelter are displayed, showing the number of animals, their species, and their availability.
-<img src="src/main/resources/static/images/dashboard.png">
+
+https://user-images.githubusercontent.com/81582376/220479408-ad699ce5-e52c-4184-82e9-17ab0a7d8e1a.mp4
+
 
 
 ### Tasks

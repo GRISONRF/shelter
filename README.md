@@ -19,6 +19,8 @@ This app has been designed to help manage the day-to-day operations of an animal
 ## Features
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+[:tv: Click here to watch the walk-through video](https://youtu.be/KwknAXhYQzI)
+
 ### Dashboard
 * User can see their pending tasks for the week, along with their deadline and a button to mark them as completed. 
 * They can also see a list of notes with the option to delete and create new ones.
@@ -49,6 +51,7 @@ https://user-images.githubusercontent.com/81582376/220480886-742366d2-dcf7-44e8-
 * On the staff page, the user can see the information about the staff, add new staff members, and delete them.
 
 https://user-images.githubusercontent.com/81582376/220480909-c83eb7d8-a992-4a54-a34c-2bc89d8bf5a8.mp4
+
 
 
 ## Getting Started

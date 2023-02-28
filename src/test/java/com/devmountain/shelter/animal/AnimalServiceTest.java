@@ -1,4 +1,4 @@
-package com.devmountain.shelter;
+package com.devmountain.shelter.animal;
 
 import com.devmountain.shelter.animal.Animal;
 import com.devmountain.shelter.animal.AnimalDto;

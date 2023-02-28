@@ -1,4 +1,4 @@
-package com.devmountain.shelter;
+package com.devmountain.shelter.staff;
 
 import com.devmountain.shelter.staff.Staff;
 import com.devmountain.shelter.staff.StaffRepository;

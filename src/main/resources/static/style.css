@@ -165,9 +165,18 @@ display: none;
     background-color: #f4e6a7;
     border-color: #cbab3c;
 }
+.delete-button:hover {
+    color: #f4e6a7 !important;
+    background-color: #cbab3c;
+}
 
 .submit-note {
     color: #4b4e4f;
     background-color: #f4e6a7;
     border-color: #cbab3c;
+}
+
+.submit-note:hover{
+    color: #f4e6a7 !important;
+    background-color: #cbab3c;
 }

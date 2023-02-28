@@ -48,6 +48,12 @@ aside {
     width: 100px;
     height: 30px;
 }
+
+.submit-note:hover{
+    color: #f4e6a7 !important;
+    background-color: #cbab3c;
+}
+
 .notes-styling {
     inline-size: 250px;
     overflow-wrap: break-word;

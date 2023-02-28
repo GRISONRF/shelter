@@ -6,6 +6,7 @@ This app has been designed to help manage the day-to-day operations of an animal
 ## Table of contents
 * 🤖 [Technologies](#technologies-used)
 * ⭐ [Features](#features)
+* 🔨 [Improvements](#improvements)
 * 📖 [Setting up](#getting-started)
 * 🌸 [About the Author](#about-the-author)
 
@@ -52,6 +53,10 @@ https://user-images.githubusercontent.com/81582376/220480886-742366d2-dcf7-44e8-
 
 https://user-images.githubusercontent.com/81582376/220480909-c83eb7d8-a992-4a54-a34c-2bc89d8bf5a8.mp4
 
+## Improvements
+Some improvements I am currently actively working on:
+- Making the Frontend fully accessible, including: Use of semantic HTML tags, use ARIA roles and attributes, providing keyboard access for all interactive elements, providing alternative text for images, changing button/items colors for better contrasts.
+- Using JUnit 5 and Spring Boot's MockMvc to perform integration tests.
 
 
 ## Getting Started

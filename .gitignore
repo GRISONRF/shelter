@@ -45,3 +45,4 @@ build/
 /src/main/resources/application.properties
 /src/main/java/com/devmountain/shelter/notes.md
 node_modules/
+src/test/resources/application.properties

@@ -20,7 +20,6 @@ public class Config {
         return new BCryptPasswordEncoder();
     }
 
-
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();

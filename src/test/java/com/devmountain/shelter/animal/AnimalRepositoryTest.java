@@ -1,11 +1,13 @@
 package com.devmountain.shelter.animal;
 
+import com.devmountain.shelter.TestConfigForMail;
 import com.devmountain.shelter.health.Health;
 import com.devmountain.shelter.health.HealthRepository;
 import com.devmountain.shelter.task.EmailSenderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.mail.javamail.JavaMailSender;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.mock;
 
 @DataJpaTest
+@Import(TestConfigForMail.class)
 class AnimalRepositoryTest {
 
     @Autowired
@@ -22,6 +25,7 @@ class AnimalRepositoryTest {
     private HealthRepository healthRepository;
     @Autowired
     private JavaMailSender mailSender;
+
 
     @Test
     void itShouldFindAllAnimalsWithHealth() {

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@ComponentScan
+//@ComponentScan
 @Controller
 @RequestMapping("/staff")
 public class StaffController {

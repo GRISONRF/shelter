@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@ComponentScan
+//@ComponentScan
 @Controller
 @RequestMapping("taskPage")
 public class TaskController {

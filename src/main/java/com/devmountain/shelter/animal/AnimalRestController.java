@@ -13,8 +13,7 @@ import java.util.List;
 public class AnimalRestController {
     @Autowired
     private AnimalService animalService;
-    @Autowired
-    private AnimalRepository animalRepository;
+
 
     @PostMapping(value = "/add-animal", consumes = "application/json")
     public void addAnimal(@RequestBody AnimalDto animalDto){

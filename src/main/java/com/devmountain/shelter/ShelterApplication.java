@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.devmountain.shelter")
+//@ComponentScan(basePackages = "com.devmountain.shelter")
 public class ShelterApplication {
 
 	public static void main(String[] args) {
